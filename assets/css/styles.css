@@ -1,0 +1,267 @@
+/* --- Paleta y tipografía base --- */
+:root {
+  --bg: #f6efee; /* fondo general */
+  --ink: #2b2b2b; /* texto principal */
+  --muted: #6b6b6b; /* texto secundario */
+  --tinto: #6d0f20; /* acento tinto (títulos/hover) */
+  --rose: #b55a6a; /* acento suave (links generales) */
+  --line: #e7dadd; /* líneas/bordes suaves */
+  --card: #fff7f4; /* superficies (cards) con tinte mínimo */
+  --wash: #f7f1f2; /* fondo suave para secciones destacadas */
+  --header-bg: #e1d2d0;
+  --footer-bg: #e1d2d0;
+  --edge-line: #d7c5c4; /* línea separadora un poco más marcada */
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding-inline: 32px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+header,
+nav,
+main,
+section,
+article,
+footer {
+  display: block;
+}
+
+/* --- Header y navegación principal --- */
+header {
+  padding: 1rem;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--edge-line);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+}
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+  color: var(--tinto);
+}
+
+/* Logo + titulo  */
+.brand {
+  margin-bottom: 0.25rem;
+}
+
+.brand-logo {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 2px;
+  vertical-align: middle;
+}
+
+/* Marca del sitio (link) con voz distinta */
+.brand-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5a0d1b;
+  text-decoration: none;
+  margin-left: 0.6rem;
+}
+.brand-title:hover {
+  text-decoration: underline;
+}
+
+/* --- Navegación --- */
+.nav {
+  margin-top: 0.25rem;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.35rem 0.55rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+.nav a:hover {
+  background: #ffffff;
+  color: var(--tinto);
+  outline: 1px solid var(--edge-line);
+  text-decoration: none;
+}
+/* página activa */
+.nav a.active {
+  background: var(--tinto);
+  color: #ffffff;
+}
+
+/* --- Contenido --- */
+main {
+  padding: 1rem;
+}
+h2 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.3rem;
+  color: var(--tinto);
+}
+h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.1rem;
+  color: var(--tinto);
+}
+p {
+  margin: 0.5rem 0;
+}
+
+/* Título de página */
+.page-title {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.9rem;
+  color: var(--tinto);
+  margin: 0.4rem 0 1rem;
+}
+
+/* Enlaces generales */
+a {
+  color: var(--rose);
+}
+a:hover {
+  color: var(--tinto);
+  text-decoration: underline;
+}
+
+/* --- Tarjetas  */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  max-width: 1080px;
+  box-shadow: 0 0 0 1px var(--line) inset; /* borde sutil */
+  padding: 0.75rem;
+  margin: 1rem 0;
+}
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card figure {
+  margin: 0 0 0.6rem;
+}
+
+/* Figuras e imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.region-img {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin: 0 0 0.5rem 0; /* ← ya no se centra */
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+/* maridaje */
+.pair-img {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin: 0 0 0.5rem 0;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.maridajes .card p {
+  margin: 0.35rem 0;
+}
+
+/* Uvas */
+.thumb {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin: 0; /* <- quita el centrado */
+  border: 0;
+}
+
+.card figure {
+  margin: 0 0 0.6rem;
+}
+
+.card figure figcaption {
+  display: block;
+  margin-top: 0.375rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* --- Listas --- */
+ul {
+  padding-left: 1.2rem;
+}
+li + li {
+  margin-top: 0.25rem;
+}
+
+/* Lista de bodegas por región */
+.bodegas {
+  margin: 0.25rem 0 0.5rem;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+}
+.bodegas li {
+  margin: 0.1rem 0;
+}
+
+.bg-wash {
+  background: var(--wash);
+  border: 1px solid var(--line);
+}
+.section-sep {
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+
+/* --- Footer --- */
+footer {
+  background: var(--footer-bg); /* antes #f7f1f2 */
+  color: #6b6b6b;
+  font-size: 0.95rem;
+  padding: 8px 1rem;
+  border-top: 1px solid var(--edge-line); /* antes var(--line) */
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+footer a {
+  color: var(--tinto);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer address {
+  font-style: normal;
+  margin: 6px 0;
+}
+footer .social {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+}
+footer .social li {
+  display: inline;
+  margin-right: 8px;
+}

@@ -1,0 +1,13 @@
+# Node y dependencias (por si usás herramientas)
+node_modules/
+dist/
+.build/
+
+# SO / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs y temporales
+*.log
+*.tmp
