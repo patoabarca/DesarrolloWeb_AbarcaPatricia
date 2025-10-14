@@ -13,15 +13,15 @@ El objetivo de esta primera entrega fue prototipar, maquetar y dar estilo básic
 
 El sitio incluye las siguientes secciones:
 
-Inicio: presentación general y navegación principal.
+Index: presentación general y navegación principal.
 
 Uvas destacadas: fichas informativas sobre cepas argentinas (Malbec, Torrontés, etc.).
 
 Regiones: descripción de zonas vitivinícolas del país (Mendoza, Salta, Patagonia…).
 
-Recomendaciones: consejos básicos para elegir y degustar vino.
+Maridajes: Combinaciones de ocmidas y vino
 
-Contacto: futura sección para formulario o redes sociales.
+Glosario: Terminos relacionados con el vino, para aprender el lenguaje
 
 🧩 Contenidos incluidos
 🖼️ Wireframe / Prototipo
@@ -84,4 +84,4 @@ Git / GitHub → control de versiones y publicación.
 Patricia Abarca
 Curso: Desarrollo Web 3.0 – Coderhouse
 Entrega: PreEntrega1 – Wireframe + HTML + CSS Inicial
-Modalidad: Flex (clases en vivo + material asincrónico)
+
