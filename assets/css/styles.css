@@ -3,14 +3,14 @@
   --bg: #f6efee; /* fondo general */
   --ink: #2b2b2b; /* texto principal */
   --muted: #6b6b6b; /* texto secundario */
-  --tinto: #6d0f20; /* acento tinto (títulos/hover) */
-  --rose: #b55a6a; /* acento suave (links generales) */
+  --tinto: #6d0f20; /* acento */
+  --rose: #b55a6a; /* acento */
   --line: #e7dadd; /* líneas/bordes suaves */
-  --card: #fff7f4; /* superficies (cards) con tinte mínimo */
+  --card: #fff7f4; /* superficies cards */
   --wash: #f7f1f2; /* fondo suave para secciones destacadas */
   --header-bg: #e1d2d0;
   --footer-bg: #e1d2d0;
-  --edge-line: #d7c5c4; /* línea separadora un poco más marcada */
+  --edge-line: #d7c5c4; /* línea separadora*/
 }
 
 html {
@@ -48,7 +48,7 @@ h1 {
   color: var(--tinto);
 }
 
-/* Logo + titulo  */
+/* Logo + titulo */
 .brand {
   margin-bottom: 0.25rem;
 }
@@ -63,7 +63,6 @@ h1 {
   vertical-align: middle;
 }
 
-/* Marca del sitio (link) con voz distinta */
 .brand-title {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
