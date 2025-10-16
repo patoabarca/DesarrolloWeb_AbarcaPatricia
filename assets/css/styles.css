@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;600;700&display=swap");
+
 /* --- Paleta y tipografía base --- */
 :root {
   --bg: #f6efee; /* fondo general */
@@ -119,7 +121,7 @@ p {
 
 /* Título de página */
 .page-title {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Lora", Georgia, "Times New Roman", serif;
   font-size: 1.9rem;
   color: var(--tinto);
   margin: 0.4rem 0 1rem;
