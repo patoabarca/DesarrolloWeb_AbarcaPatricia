@@ -6,17 +6,29 @@
     <title>Guía de Vinos | Glosario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Términos básicos del vino.">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/vendor/bootstrap.bundle.min.js" defer></script>
+    <script src="../assets/js/site.js" defer></script>
 </head>
 
 <body>
-    <header>
+    <!-- HEADER: Brand + Menú hamburguesa -->
+    <header class="site-header">
         <div class="brand">
             <img class="brand-logo" src="../assets/img/imag_menu.png" alt="Logo Guía de Vinos">
             <a class="brand-title" href="../index.html">Guía de Vinos para Principiantes</a>
         </div>
+        <!-- boton hamburguesa-->
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+            </svg>
+        </button>
 
-        <nav class="nav">
+        <!--Navegación principal -->
+        <nav id="primary-nav" class="primary-nav">
             <a href="../index.html">Inicio</a>
             <a href="uvas.html">Uvas</a>
             <a href="regiones.html">Regiones</a>
