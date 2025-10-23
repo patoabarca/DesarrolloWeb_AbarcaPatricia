@@ -242,37 +242,89 @@ li + li {
   margin: 0.1rem 0;
 }
 
-/* --- Footer --- */
-footer {
+/* Contenedor visual del footer */
+.site-footer {
   background: var(--footer-bg);
   color: #6b6b6b;
-  font-size: 0.95rem;
-  padding: 8px 1rem;
   border-top: 1px solid var(--edge-line);
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
+  padding: 12px 1rem;
+  font-size: 0.95rem;
 }
-footer a {
+
+/* Grid interno del footer */
+.footer-inner {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px 16px;
+  align-items: start;
+}
+
+/* Créditos / legal */
+.footer-legal p {
+  margin: 0;
+}
+
+/* Contacto */
+.footer-contact {
+  font-style: normal;
+  margin: 0;
+}
+.footer-contact p {
+  margin: 0 0 4px;
+}
+.site-footer a {
   color: var(--tinto);
   text-decoration: none;
 }
-footer a:hover {
+.site-footer a:hover {
   text-decoration: underline;
 }
-footer address {
-  font-style: normal;
-  margin: 6px 0;
+
+/* Redes (lista con flex + gap) */
+.footer-social {
+  justify-self: end;
 }
-footer .social {
+.social-list {
   list-style: none;
-  margin: 6px 0 0;
   padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-footer .social li {
-  display: inline;
-  margin-right: 8px;
+.social-list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  outline: 1px solid var(--edge-line);
+  background: #fff;
+}
+.social-list a:hover {
+  outline-color: var(--tinto);
+}
+.social-list svg {
+  display: block;
 }
 
-/* ===== Tablet (≤991px): colapsado ===== */
+/* Accesibilidad: oculto visual, visible para lectores */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== Tablet (≤991px)*/
 @media (max-width: 991px) {
   .nav-toggle {
     display: inline-flex;
@@ -307,9 +359,16 @@ footer .social li {
   .primary-nav.is-open {
     display: flex;
   }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-social {
+    justify-self: start;
+  }
 }
 
-/* ===== Mobile (≤480px): microajustes ===== */
+/* ===== Mobile (≤480px)===== */
 @media (max-width: 480px) {
   .brand-logo {
     width: 48px;
@@ -317,5 +376,9 @@ footer .social li {
   }
   .brand-title {
     font-size: 1.05rem;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }
