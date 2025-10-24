@@ -2,7 +2,7 @@
 
 /* --- Paleta y tipografía base --- */
 :root {
-  --bg: #f6efee; /* fondo general */
+  --bg: #ede2e0; /* fondo general */
   --ink: #2b2b2b; /* texto principal */
   --muted: #6b6b6b; /* texto secundario */
   --tinto: #6d0f20; /* acento */
@@ -17,6 +17,15 @@
 
 html {
   font-size: 18px;
+}
+/* ===== Ajustes anti-pisadas y ancho fluido ===== */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -123,6 +132,16 @@ p {
   margin: 0.5rem 0;
 }
 
+/*INDEX: Intro*/
+.intro {
+  /* separa y da aire al bloque de bienvenida */
+  background: #ffffffaa;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  max-width: none;
+}
+
 /* Título de página */
 .page-title {
   font-family: "Lora", Georgia, "Times New Roman", serif;
@@ -141,16 +160,55 @@ a:hover {
 }
 /* Section */
 .bg-wash {
-  max-width: 1080px;
+  max-width: none;
   background: var(--wash);
   border: 1px solid var(--line);
 }
+
 .section-sep {
   border-top: 1px solid var(--line);
   padding-top: 0.75rem;
 }
 
 /* --- Tarjetas  */
+
+/* Grid de cards: 3 columnas Index - Flex dentro de la card*/
+
+/* el título de "Destacados" ocupa todo el ancho de la grilla ===== */
+.cards-grid > h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 0.5rem;
+}
+
+.cards-grid {
+  /* el h2 va arriba; los artículos se distribuyen en columnas */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px; /* separación entre cards */
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--wash);
+  margin-bottom: 1.25rem; /* aire antes del footer */
+  padding-bottom: 0.5rem;
+}
+
+/* Las cards ocupan toda la columna y crecen parejo */
+.cards-grid .card {
+  margin: 0; /* usamos el gap del grid */
+  max-width: none; /* ocupa toda su columna */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cards-grid .card a {
+  align-self: flex-start;
+  margin-top: auto;
+  font-weight: 600;
+}
+/* Card genérica */
 .card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -175,15 +233,23 @@ img {
   display: block;
 }
 
-.region-img {
-  display: block;
+/* Regiones: imágenes consistentes dentro de la card */
+.cards-grid .region-img {
   width: 100%;
-  max-width: 560px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3; /* asegura alto parejo */
   object-fit: cover;
-  margin: 0 0 0.5rem 0;
   border: 1px solid var(--line);
   background: #fff;
+}
+
+/* Regiones: separa un poco los <ul> del párrafo anterior */
+.cards-grid .bodegas {
+  margin-top: 0.25rem;
+}
+
+/* Regiones: evita “salto” visual si un h3 ocupa dos líneas */
+.cards-grid .card h3 {
+  min-height: 2.2em;
 }
 
 /* maridaje */
@@ -250,6 +316,9 @@ li + li {
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
   padding: 12px 1rem;
   font-size: 0.95rem;
+  position: relative;
+  margin-top: 1rem;
+  clear: both;
 }
 
 /* Grid interno del footer */
@@ -359,7 +428,11 @@ li + li {
   .primary-nav.is-open {
     display: flex;
   }
-
+  /* Tablet: 2 columnas */
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
   .footer-inner {
     grid-template-columns: 1fr 1fr;
   }
@@ -376,6 +449,21 @@ li + li {
   }
   .brand-title {
     font-size: 1.05rem;
+  }
+  /* Mobile: 1 columna y menos padding lateral global */
+  body {
+    padding-inline: 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    padding: 0.6rem 0.75rem;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro {
+    padding: 0.6rem 0.75rem;
   }
   .footer-inner {
     grid-template-columns: 1fr;
