@@ -252,14 +252,11 @@ img {
   min-height: 2.2em;
 }
 
-/* maridaje */
-.pair-img {
-  display: block;
+/* Maridajes: imágenes uniformes dentro de la card */
+.cards-grid .pair-img {
   width: 100%;
-  max-width: 560px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  margin: 0 0 0.5rem 0;
   border: 1px solid var(--line);
   background: #fff;
 }
