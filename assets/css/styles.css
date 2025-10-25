@@ -88,6 +88,14 @@ footer {
   text-decoration: underline;
 }
 
+/* Mostrar/ocultar versión completa vs. corta del título */
+.brand-title .brand-full {
+  display: inline;
+}
+.brand-title .brand-short {
+  display: none;
+}
+
 .primary-nav {
   display: flex;
   flex-direction: row;
@@ -479,6 +487,17 @@ li + li {
   .primary-nav.is-open {
     display: flex;
   }
+
+  .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .brand-title .brand-full {
+    display: none;
+  }
+  .brand-title .brand-short {
+    display: inline;
+  }
   /* Tablet: 2 columnas */
   .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -500,7 +519,12 @@ li + li {
   }
   .brand-title {
     font-size: 1.05rem;
+    white-space: nowrap;
   }
+  .nav-toggle {
+    margin-left: 0.25rem;
+  }
+
   /* Mobile: 1 columna y menos padding lateral global */
   body {
     padding-inline: 16px;
