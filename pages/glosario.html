@@ -6,10 +6,12 @@
     <title>Guía de Vinos | Glosario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Términos básicos del vino.">
-    <link rel="stylesheet" href="../assets/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <script src="../assets/vendor/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../assets/js/site.js" defer></script>
+
 </head>
 
 <body>
@@ -37,95 +39,224 @@
         </nav>
     </header>
 
+    <!-- ===== MAIN con grid de Bootstrap + buscador ===== -->
     <main class="contenido">
+        <!-- título de página -->
         <h1 class="page-title">Glosario</h1>
-        <section class="bg-wash">
-            <article class="card">
-                <h3>Aromas primarios</h3>
-                <p>Notas que provienen de la uva (fruta, flores, hierbas). Suelen percibirse en vinos jóvenes.</p>
-            </article>
 
-            <article class="card">
-                <h3>Aromas secundarios</h3>
-                <p>Surgen de la fermentación y manejo en bodega (pan, lácteos, levadura, banana en algunos blancos
-                    jóvenes).
-                </p>
-            </article>
-
-            <article class="card">
-                <h3>Aromas terciarios</h3>
-                <p>Provienen de la crianza y la evolución (madera, vainilla, cuero, tabaco, frutos secos, miel).</p>
-            </article>
-
-            <article class="card">
-                <h3>Equilibrio</h3>
-                <p>Relación armoniosa entre acidez, taninos, alcohol y dulzor. Ningún componente “domina” al resto.</p>
-            </article>
-
-            <article class="card">
-                <h3>Persistencia (final)</h3>
-                <p>Tiempo que permanecen los sabores luego de tragar. Puede ser corta, media o larga.</p>
-            </article>
-
-            <article class="card">
-                <h3>Varietal</h3>
-                <p>Vino elaborado principalmente con una sola cepa (ej. Malbec, Torrontés). Suele indicar la uva en la
-                    etiqueta.</p>
-            </article>
-
-            <article class="card">
-                <h3>Corte (assemblage)</h3>
-                <p>Mezcla de dos o más cepas (ej. Malbec–Cabernet). Se busca complejidad y equilibrio.</p>
-            </article>
-
-            <article class="card">
-                <h3>Terroir</h3>
-                <p>Conjunto de factores naturales y humanos (suelo, clima, altitud, manejo) que influyen en el carácter
-                    del
-                    vino.</p>
-            </article>
-
-            <article class="card">
-                <h3>Azúcar residual</h3>
-                <p>Azúcar que queda sin fermentar. Define estilos: seco, semiseco, dulce. Aporta volumen y suavidad.</p>
-            </article>
-
-            <article class="card">
-                <h3>Seco / Semiseco / Dulce</h3>
-                <p>Clasificación por dulzor percibido. Seco: poco o nada de azúcar; dulce: azúcar notable.</p>
-            </article>
-
-            <article class="card">
-                <h3>Alcohol</h3>
-                <p>Da sensación de calor y cuerpo. En exceso puede desbalancear; en equilibrio aporta volumen.</p>
-            </article>
-
-            <article class="card">
-                <h3>Oxidación</h3>
-                <p>Contacto excesivo con oxígeno: colores más apagados y notas de nuez/manzana. A veces buscada en
-                    ciertos
-                    estilos.</p>
-            </article>
-
-            <article class="card">
-                <h3>Reducción</h3>
-                <p>Baja exposición al oxígeno. Puede dar notas cerradas o sulfúricas al abrir; suelen disipar con
-                    aireación.
-                </p>
-            </article>
-
-            <article class="card">
-                <h3>Barrica (roble)</h3>
-                <p>Recipiente de madera para crianza. Aporta notas de vainilla, coco, especias y micro-oxigenación.</p>
-            </article>
-
-            <article class="card">
-                <h3>Temperatura de servicio</h3>
-                <p>Rango recomendado para disfrutar aromas y textura (blancos 7–12 °C, tintos 14–18 °C, aprox.).</p>
-            </article>
+        <!-- ===== Buscador: input + contador + botón limpiar ===== -->
+        <section class="bg-wash py-3 py-md-4">
+            <div class="container px-3 px-md-4"><!-- container del buscador -->
+                <div class="row g-2 align-items-center"><!-- fila del formulario -->
+                    <div class="col-12 col-md-8 col-lg-6"><!-- columna: input -->
+                        <label for="glossary-search" class="form-label mb-1">Buscar término</label>
+                        <input id="glossary-search" type="search" class="form-control"
+                            placeholder="Escribí: acidez, taninos, barrica, etc.">
+                        <div class="form-text">Filtra en tiempo real por palabra clave.</div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-6 d-flex gap-2 mt-2 mt-md-4"><!-- columna: contador + limpiar -->
+                        <span id="glossary-count" class="badge text-bg-secondary align-self-start">0 / 0</span>
+                        <button id="glossary-clear" type="button"
+                            class="btn btn-outline-secondary btn-sm align-self-start">
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- ===== Aromas ===== -->
+        <section class="bg-wash py-3 py-md-4">
+            <div class="container px-3 px-md-4"><!-- container de sección -->
+                <h2 class="h4 mb-3">Aromas</h2>
+                <div class="row g-3"><!-- grid: 1→2→3 -->
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Aromas primarios</h3>
+                            <p class="mb-0">Conjunto de notas que provienen directamente de la uva y su variedad
+                                (frutas, flores, hierbas, cítricos). Se perciben con claridad en vinos jóvenes y suelen
+                                disminuir con la crianza prolongada.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Aromas secundarios</h3>
+                            <p class="mb-0">Aromas generados por fermentación y manejo en bodega: panadería,
+                                yogur/lácteos, levaduras, masa, plátano en ciertos blancos, o leves notas de
+                                caramelización. Dependen del tipo de levadura y la temperatura.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Aromas terciarios</h3>
+                            <p class="mb-0">Aparecen por crianza y/o evolución en botella: vainilla, coco, chocolate,
+                                cuero, tabaco, frutos secos, miel, tostados. Aportan complejidad y sensación de “vino
+                                evolucionado”.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Estructura y equilibrio (6 ítems) ===== -->
+        <section class="bg-wash py-3 py-md-4">
+            <div class="container px-3 px-md-4">
+                <h2 class="h4 mb-3">Estructura y equilibrio</h2>
+                <div class="row g-3"><!-- grid: 1→2→3 -->
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Equilibrio</h3>
+                            <p class="mb-0">Relación armónica entre acidez, taninos, alcohol y dulzor. Un vino
+                                equilibrado no deja que ningún componente domine; mantiene fluidez del ataque al final.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Acidez</h3>
+                            <p class="mb-0">Sensación de frescura y “nervio”. Sostiene el sabor y limpia grasas en el
+                                maridaje. Baja acidez: vinos planos; alta acidez: vinos filosos que piden comida o
+                                servicio más frío.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Taninos</h3>
+                            <p class="mb-0">Fenoles de pieles/semillas y madera. Dan estructura y astringencia. Pueden
+                                ser finos/sedosos o firmes/secantes según madurez y elaboración; se pulen con la
+                                crianza.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Alcohol</h3>
+                            <p class="mb-0">Aporta volumen y calor. Si se impone, el vino “pesa” y tapa aromas; en
+                                balance con acidez y taninos suma textura y amplitud.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Azúcar residual</h3>
+                            <p class="mb-0">Azúcar que no fermentó. Aporta suavidad y cuerpo. Su percepción depende de
+                                la acidez: mayor acidez “disimula” el dulzor y vuelve el vino más refrescante.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Persistencia (final)</h3>
+                            <p class="mb-0">Duración e intensidad de los sabores tras tragar. Un final largo y nítido
+                                suele asociarse con más concentración y calidad.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Vinificación y crianza ===== -->
+        <section class="bg-wash py-3 py-md-4">
+            <div class="container px-3 px-md-4">
+                <h2 class="h4 mb-3">Vinificación y crianza</h2>
+                <div class="row g-3"><!-- grid: 1→2→3 -->
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Oxidación</h3>
+                            <p class="mb-0">Exposición elevada al oxígeno. Puede dar colores apagados y notas de nuez o
+                                manzana madura. En algunos estilos es buscada; indeseada si opaca fruta y frescura.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Reducción</h3>
+                            <p class="mb-0">Baja exposición al oxígeno. En apertura puede mostrar notas
+                                cerradas/azufradas que suelen disipar con aireación, dejando ver mayor pureza de fruta.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Barrica (roble)</h3>
+                            <p class="mb-0">Crianza en madera: especias dulces (vainilla, coco), tostados y
+                                micro-oxigenación que pulen textura. El impacto depende del tipo de roble, tostado y
+                                tiempo.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Estilos y origen ===== -->
+        <section class="bg-wash py-3 py-md-4">
+            <div class="container px-3 px-md-4">
+                <h2 class="h4 mb-3">Estilos y origen</h2>
+                <div class="row g-3"><!-- grid: 1→2→3 -->
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Varietal</h3>
+                            <p class="mb-0">Vino elaborado mayoritariamente con una sola cepa (p. ej. Malbec,
+                                Torrontés). Suele indicarse en etiqueta y busca expresar la tipicidad de la uva y su
+                                origen.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Corte (assemblage)</h3>
+                            <p class="mb-0">Mezcla de cepas (p. ej. Malbec–Cabernet) para complementar virtudes de
+                                aroma, estructura, frescura o textura; aporta complejidad y equilibrio final.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Terroir</h3>
+                            <p class="mb-0">Conjunto de factores naturales y humanos —suelo, clima, altitud y manejo—
+                                que modelan el carácter del vino y su identidad de lugar.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Seco / Semiseco / Dulce</h3>
+                            <p class="mb-0">Clasificación por dulzor percibido y azúcar residual. “Seco” va de nada a
+                                trazas; “semiseco” muestra dulzor amable; “dulce” es franco y envolvente. El balance
+                                depende de la acidez y la temperatura de servicio.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Servicio (3 ítems) ===== -->
+        <section class="bg-wash py-3 py-md-4">
+            <div class="container px-3 px-md-4">
+                <h2 class="h4 mb-3">Servicio</h2>
+                <div class="row g-3"><!-- grid: 1→2→3 -->
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Temperatura de servicio</h3>
+                            <p class="mb-0">Blancos y espumosos 7–12 °C; rosados 8–12 °C; tintos ligeros 12–14 °C;
+                                tintos medios 14–16 °C; tintos estructurados 16–18 °C. La temperatura correcta realza
+                                aromas y textura.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Copa y servicio</h3>
+                            <p class="mb-0">Copa tulipa para blancos/espumosos; copa más amplia para tintos. Llenar ~⅓
+                                para poder girar y liberar aromas. Sostener del tallo para no calentar el vino.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4"><!-- item -->
+                        <article class="g-card">
+                            <h3 class="h6 mb-2">Oxigenación / Decantación</h3>
+                            <p class="mb-0">Airear abre aromas y suaviza aristas. La decantación separa posos en vinos
+                                con crianza y ayuda en tintos jóvenes muy concentrados. Evitar decantar blancos muy
+                                delicados.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+
 
     <!--FOOTER: créditos + contacto + redes - Desktop: 3 columnas (grid) - Tablet/Mobile: se apila-->
 
@@ -143,7 +274,7 @@
                 <p>Email: <a href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a></p>
             </address>
 
-            <!-- Footer Redes sociales (con iconos SVG) -->
+            <!-- Footer Redes sociales (con iconos) -->
             <nav class="footer-social" aria-label="Redes sociales">
                 <ul class="social-list">
                     <li>

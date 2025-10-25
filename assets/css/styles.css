@@ -265,6 +265,36 @@ img {
   margin: 0.35rem 0;
 }
 
+/* tarjeta del glosario (evita chocar con .card) */
+.g-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  box-shadow: inset 0 0 0 1px var(--line);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.g-card h3 {
+  color: var(--tinto);
+}
+.bg-wash .row + h2 {
+  margin-top: 1.25rem;
+}
+.bg-wash {
+  padding-bottom: 0.5rem;
+}
+
+/* Grupos dentro de bg-wash: coherencia visual y separación del footer */
+.bg-wash .row + h2 {
+  margin-top: 1.25rem;
+}
+.bg-wash {
+  padding-bottom: 0.5rem;
+}
+
 /* Uvas */
 .thumb {
   display: block;
@@ -304,7 +334,7 @@ li + li {
 .bodegas li {
   margin: 0.1rem 0;
 }
-
+/*===== FOOTER =====*/
 /* Contenedor visual del footer */
 .site-footer {
   background: var(--footer-bg);
@@ -322,7 +352,7 @@ li + li {
 .footer-inner {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr auto; /* 3 columnas: legal | contacto | redes */
   gap: 12px 16px;
   align-items: start;
 }
@@ -340,12 +370,22 @@ li + li {
 .footer-contact p {
   margin: 0 0 4px;
 }
+
+/* Links del footer: heredan color de marca */
 .site-footer a {
   color: var(--tinto);
   text-decoration: none;
 }
 .site-footer a:hover {
   text-decoration: underline;
+}
+
+/* Iconos en la sección de contacto (tel + mail) */
+.contact-icon {
+  margin-right: 8px;
+  font-size: 1rem; /* tamaño del icono de contacto */
+  color: var(--tinto); /* alinea con el color de los links */
+  vertical-align: -1px; /* ajuste fino vertical */
 }
 
 /* Redes (lista con flex + gap) */
@@ -360,6 +400,8 @@ li + li {
   align-items: center;
   gap: 10px;
 }
+
+/* Botón circular para cada red */
 .social-list a {
   display: inline-flex;
   align-items: center;
@@ -369,12 +411,24 @@ li + li {
   border-radius: 50%;
   outline: 1px solid var(--edge-line);
   background: #fff;
+  text-decoration: none;
+  transition: outline-color 0.15s ease, transform 0.15s ease;
 }
+
+/* Iconos de redes (Font Awesome) */
+.social-list i {
+  font-size: 1rem; /* ~16px dentro del botón de 36px */
+  line-height: 1;
+  color: #6b6b6b; /* gris base del icono */
+}
+
+/* Hover en redes: cambia outline + color del icono + micro elevación */
 .social-list a:hover {
   outline-color: var(--tinto);
+  transform: translateY(-1px);
 }
-.social-list svg {
-  display: block;
+.social-list a:hover i {
+  color: var(--tinto);
 }
 
 /* Accesibilidad: oculto visual, visible para lectores */
