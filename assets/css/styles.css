@@ -378,27 +378,61 @@ img {
 .bg-wash {
   padding-bottom: 0.5rem;
 }
-
 /* Uvas */
 .thumb {
   display: block;
   width: 100%;
-  max-width: 560px;
-  aspect-ratio: 4 / 3;
+  height: auto;
   object-fit: cover;
-  margin: 0; /* <- quita el centrado */
   border: 0;
+  margin: 0;
 }
 
+/* Figure y figcaption */
 .card figure {
   margin: 0 0 0.6rem;
 }
-
 .card figure figcaption {
   display: block;
   margin-top: 0.375rem;
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+/* Grilla de 2 columnas en Uvas */
+.cards-grid.cards-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ⚠️ Anula el flex heredado de otras páginas */
+.cards-grid.cards-2 .card {
+  display: block; /* clave para que funcione el float */
+  margin: 0; /* usamos el gap del grid */
+  height: 100%;
+}
+
+/* Layout lateral: imagen izquierda, texto derecha */
+.cards-grid.cards-2 .card.media figure {
+  float: left;
+  width: 44%; /* 42–46% ok */
+  margin: 0 1rem 0.6rem 0;
+}
+.cards-grid.cards-2 .card.media .thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.cards-grid.cards-2 .card.media .card-body {
+  overflow: hidden; /* texto fluye junto al float */
+}
+.cards-grid.cards-2 .card.media::after {
+  content: "";
+  display: block;
+  clear: both; /* limpia el float */
 }
 
 /* --- Listas --- */
@@ -595,10 +629,20 @@ li + li {
   .brand-title .brand-short {
     display: inline;
   }
-  /* Tablet: 2 columnas */
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  /* Uvas (cards-2): pasar a 1 columna */
+  .cards-grid.cards-2 {
+    grid-template-columns: 1fr;
     gap: 14px;
+  }
+  /* Mantener layout lateral */
+  .cards-grid.cards-2 .card.media figure {
+    float: left;
+    width: 44%;
+    margin: 0 0.9rem 0.6rem 0;
+  }
+  .cards-grid.cards-2 .card.media .thumb {
+    aspect-ratio: 4 / 3;
   }
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -627,11 +671,16 @@ li + li {
     padding-inline: 16px;
   }
 
-  .cards-grid {
+  .cards-grid.cards-2 {
     grid-template-columns: 1fr;
-    padding: 0.6rem 0.75rem;
-    gap: 12px;
-    margin-bottom: 1.5rem;
+  }
+  .cards-grid.cards-2 .card.media figure {
+    float: none;
+    width: 100%;
+    margin: 0 0 0.6rem 0;
+  }
+  .cards-grid.cards-2 .card.media .thumb {
+    aspect-ratio: 16 / 9;
   }
 
   .intro {
