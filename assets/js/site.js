@@ -48,6 +48,40 @@
   });
 })();
 
+// ===== Submenú Uvas (click para abrir/cerrar en mobile) =====
+const subToggles = document.querySelectorAll(".submenu-toggle");
+
+subToggles.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    // Evita que el hover desktop interfiera en mobile
+    const parent = btn.closest(".has-submenu");
+    const isOpen = parent.classList.contains("open");
+
+    // Cerrar otros submenús
+    document.querySelectorAll(".has-submenu.open").forEach((n) => {
+      if (n !== parent) n.classList.remove("open");
+      const t = n.querySelector(".submenu-toggle");
+      if (t) t.setAttribute("aria-expanded", "false");
+    });
+
+    // Toggle actual
+    parent.classList.toggle("open", !isOpen);
+    btn.setAttribute("aria-expanded", String(!isOpen));
+  });
+});
+
+// Cerrar submenú si se hace click fuera
+document.addEventListener("click", (e) => {
+  const anyOpen = document.querySelector(".has-submenu.open");
+  if (!anyOpen) return;
+  const inside = anyOpen.contains(e.target);
+  if (!inside) {
+    anyOpen.classList.remove("open");
+    const t = anyOpen.querySelector(".submenu-toggle");
+    if (t) t.setAttribute("aria-expanded", "false");
+  }
+});
+
 /* ===== Glosario: filtro en vivo ===== */
 (function () {
   const searchInput = document.getElementById("glossary-search");

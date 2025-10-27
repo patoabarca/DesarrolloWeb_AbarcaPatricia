@@ -25,19 +25,27 @@
         </div>
         <!-- boton hamburguesa-->
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
-            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-                <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" />
-            </svg>
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
         <!-- Navegación principal -->
         <nav id="primary-nav" class="primary-nav" role="navigation">
             <a href="../index.html" class="active">Inicio</a>
-            <a href="../pages/uvas.html">Uvas</a>
+
+            <div class="nav-item has-submenu">
+                <button class="submenu-toggle" aria-haspopup="true" aria-expanded="false">
+                    Uvas
+                </button>
+                <ul class="submenu" aria-label="Submenú Uvas">
+                    <li><a href="./pages/uvas_tintas.html">Uvas tintas</a></li>
+                    <li><a href="./pages/uvas_blancas.html">Uvas blancas</a></li>
+                </ul>
+            </div>
+
             <a href="../pages/regiones.html">Regiones</a>
             <a href="../pages/maridajes.html">Maridajes</a>
             <a href="../pages/glosario.html">Glosario</a>
         </nav>
+
     </header>
 
 

@@ -118,9 +118,85 @@ footer {
   color: #fff;
 }
 
+/*boton hamburguesa*/
 .nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--edge-line);
+  background: #fff;
+  color: var(--ink);
+  padding: 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
   display: none;
-} /* oculto en desktop */
+}
+.nav-toggle i {
+  font-size: 28px;
+  line-height: 1;
+}
+.nav-toggle:hover {
+  background: #fff;
+  color: var(--tinto);
+  outline: 1px solid var(--edge-line);
+}
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--tinto);
+  outline-offset: 2px;
+}
+
+/* ===== Submenú Uvas ===== */
+.nav-item {
+  position: relative;
+}
+
+.submenu-toggle {
+  background: none;
+  border: none;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+}
+.submenu-toggle:hover {
+  background: #fff;
+  color: var(--tinto);
+  outline: 1px solid var(--edge-line);
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  margin: 0.25rem 0 0;
+  padding: 0.4rem;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--edge-line);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  z-index: 1001;
+}
+.submenu li a {
+  display: block;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.submenu li a:hover {
+  background: #f9f5f5;
+  color: var(--tinto);
+}
+
+/* Mostrar por hover en desktop */
+.has-submenu:hover .submenu {
+  display: block;
+}
 
 /* --- Contenido --- */
 main {
@@ -486,6 +562,27 @@ li + li {
   }
   .primary-nav.is-open {
     display: flex;
+  }
+  .has-submenu {
+    width: 100%;
+  }
+  .submenu {
+    position: static;
+    display: none;
+    margin: 0.25rem 0 0 0.25rem;
+    padding: 0.25rem 0 0.25rem 0.25rem;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  .has-submenu.open .submenu {
+    display: block;
+  }
+
+  /* que el botón se vea como los links del menú */
+  .submenu-toggle {
+    width: 100%;
+    text-align: left;
   }
 
   .brand {
