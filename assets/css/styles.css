@@ -343,189 +343,31 @@ li + li {
   margin: 0.1rem 0;
 }
 /*===== FOOTER =====*/
-/* Contenedor visual del footer */
-.site-footer {
-  background: var(--footer-bg);
-  color: #6b6b6b;
-  border-top: 1px solid var(--edge-line);
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
-  padding: 12px 1rem;
-  font-size: 0.95rem;
-  position: relative;
-  margin-top: 1rem;
-  clear: both;
-}
-
-/* Grid interno del footer */
-.footer-inner {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr auto; /* 3 columnas: legal | contacto | redes */
-  gap: 12px 16px;
-  align-items: start;
-}
-
-/* Créditos / legal */
-.footer-legal p {
-  margin: 0;
-}
-
-/* Contacto */
-.footer-contact {
-  font-style: normal;
-  margin: 0;
-}
-.footer-contact p {
-  margin: 0 0 4px;
-}
-
-/* Links del footer: heredan color de marca */
-.site-footer a {
-  color: var(--tinto);
-  text-decoration: none;
-}
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Iconos en la sección de contacto (tel + mail) */
-.contact-icon {
-  margin-right: 8px;
-  font-size: 1rem; /* tamaño del icono de contacto */
-  color: var(--tinto); /* alinea con el color de los links */
-  vertical-align: -1px; /* ajuste fino vertical */
-}
-
-/* Redes (lista con flex + gap) */
-.footer-social {
-  justify-self: end;
-}
-.social-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Botón circular para cada red */
-.social-list a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  outline: 1px solid var(--edge-line);
-  background: #fff;
-  text-decoration: none;
-  transition: outline-color 0.15s ease, transform 0.15s ease;
-}
-
-/* Iconos de redes (Font Awesome) */
-.social-list i {
-  font-size: 1rem; /* ~16px dentro del botón de 36px */
+.site-footer .btn i {
   line-height: 1;
-  color: #6b6b6b; /* gris base del icono */
 }
-
-/* Hover en redes: cambia outline + color del icono + micro elevación */
-.social-list a:hover {
-  outline-color: var(--tinto);
-  transform: translateY(-1px);
-}
-.social-list a:hover i {
+.site-footer .btn:hover {
+  border-color: var(--tinto);
   color: var(--tinto);
 }
-
-/* Accesibilidad: oculto visual, visible para lectores */
-.sr-only {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+.site-footer p,
+.site-footer address {
+  font-size: 0.95rem;
+}
+.text-tinto {
+  color: var(--tinto) !important;
 }
 
 /* ===== Tablet (≤991px)*/
+
 @media (max-width: 991px) {
-  .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--edge-line);
-    background: #fff;
-    color: var(--ink);
-    padding: 0.4rem;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .nav-toggle:focus-visible {
-    outline: 2px solid var(--tinto);
-    outline-offset: 2px;
-  }
-
-  .primary-nav {
-    position: absolute;
-    top: 100%; /* aparece pegado debajo del header */
-    left: 1rem;
-    right: 1rem;
-    display: none; /* oculto por defecto */
-    flex-direction: column;
-    gap: 0.4rem;
-    background: #fff;
-    border: 1px solid var(--edge-line);
-    border-radius: 12px;
-    padding: 0.6rem;
-    z-index: 1000;
-  }
-  .primary-nav.is-open {
-    display: flex;
-  }
-  .has-submenu {
-    width: 100%;
-  }
-  .submenu {
-    position: static;
-    display: none;
-    margin: 0.25rem 0 0 0.25rem;
-    padding: 0.25rem 0 0.25rem 0.25rem;
-    border: none;
-    box-shadow: none;
-    background: transparent;
-  }
-  .has-submenu.open .submenu {
-    display: block;
-  }
-
-  /* que el botón se vea como los links del menú */
-  .submenu-toggle {
-    width: 100%;
-    text-align: left;
-  }
-
-  .brand {
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-  .brand-title .brand-full {
-    display: none;
-  }
-  .brand-title .brand-short {
-    display: inline;
-  }
-
+  /* Grillas generales */
   .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 
-  /* “Uvas” se mantiene en 1 columna y lateral */
+  /* Uvas: mantener 1 columna con layout lateral (imagen izq., texto der.) */
   .cards-grid.cards-2 {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -536,19 +378,18 @@ li + li {
     margin: 0 0.9rem 0.6rem 0;
   }
   .cards-grid.cards-2 .card.media .thumb {
-    aspect-ratio: 4/3;
+    aspect-ratio: 4 / 3;
   }
 
-  .footer-inner {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-social {
-    justify-self: start;
+  /* (Opcional) Tipografía/espaciado */
+  .intro {
+    padding: 0.6rem 0.9rem;
   }
 }
 
 /* ===== Mobile (≤480px)===== */
 @media (max-width: 480px) {
+  /* Microtune de marca (o usá utilidades Bootstrap y borrá esto) */
   .brand-logo {
     width: 48px;
     height: 48px;
@@ -557,21 +398,18 @@ li + li {
     font-size: 1.05rem;
     white-space: nowrap;
   }
-  .nav-toggle {
-    margin-left: 0.25rem;
-  }
 
-  /* Mobile: 1 columna y menos padding lateral global */
+  /* Menos padding lateral global */
   body {
     padding-inline: 16px;
   }
 
-  /* General: 1 columna en todas las grillas */
+  /* Grillas: 1 columna */
   .cards-grid {
     grid-template-columns: 1fr;
   }
 
-  /* “Uvas”: apilado clásico (imagen arriba, texto abajo) */
+  /* Uvas: apilado clásico (imagen arriba, texto abajo) */
   .cards-grid.cards-2 .card.media figure {
     float: none;
     width: 100%;
@@ -579,13 +417,5 @@ li + li {
   }
   .cards-grid.cards-2 .card.media .thumb {
     aspect-ratio: 16 / 9;
-  }
-
-  .intro {
-    padding: 0.6rem 0.75rem;
-  }
-  .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 8px;
   }
 }

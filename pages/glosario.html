@@ -310,59 +310,50 @@
         </section>
     </main>
 
+    <!-- Footer -->
 
+    <footer class="site-footer py-3 mt-4" style="background: var(--footer-bg); border-top:1px solid var(--edge-line);">
+        <div class="container">
+            <div class="row gy-3 align-items-start">
+                <!-- Créditos / legal -->
+                <div class="col-12 col-md-5">
+                    <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
+                </div>
 
-    <!--FOOTER: créditos + contacto + redes - Desktop: 3 columnas (grid) - Tablet/Mobile: se apila-->
-    <footer class="site-footer">
-        <div class="footer-inner">
+                <!-- Contacto -->
+                <div class="col-12 col-md-4">
+                    <address class="mb-0">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-phone text-tinto"></i>
+                            <a class="link-underline-opacity-0" href="tel:+5491123456789"
+                                style="color: var(--tinto);">+54 9 11 2345-6789</a>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mt-1">
+                            <i class="fa-solid fa-envelope text-tinto"></i>
+                            <a class="link-underline-opacity-0" href="mailto:patoabarca07@gmail.com"
+                                style="color: var(--tinto);">patoabarca07@gmail.com</a>
+                        </div>
+                    </address>
+                </div>
 
-            <!-- Footer Créditos / legal -->
-            <section class="footer-legal">
-                <p>© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
-            </section>
-
-            <!-- Footer Contacto (address semántico + iconos + texto visible) -->
-            <address class="footer-contact">
-                <p><strong>Contacto</strong></p>
-
-                <!-- Teléfono: icono + link tel: -->
-                <p>
-                    <i class="fa-solid fa-phone contact-icon" aria-hidden="true"></i>
-                    <a href="tel:+5491123456789">+54 9 11 2345-6789</a>
-                </p>
-
-                <!-- Correo: icono + link mailto: -->
-                <p>
-                    <i class="fa-regular fa-envelope contact-icon" aria-hidden="true"></i>
-                    <a href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a>
-                </p>
-            </address>
-
-            <!-- Footer Redes sociales (Font Awesome) -->
-            <nav class="footer-social" aria-label="Redes sociales">
-                <ul class="social-list">
-                    <li>
-                        <a class="btn-social github" href="https://github.com/patoabarca" target="_blank"
-                            rel="noopener noreferrer" aria-label="GitHub de Patricia Abarca">
-                            <!-- Icono GitHub -->
-                            <i class="fa-brands fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
+                <!-- Redes -->
+                <div class="col-12 col-md-3">
+                    <div class="d-flex gap-2 justify-content-md-end">
+                        <a class="btn btn-light rounded-circle border" href="https://github.com/patoabarca"
+                            target="_blank" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
                         </a>
-                    </li>
-
-                    <li>
-                        <a class="btn-social linkedin" href="https://www.linkedin.com/in/patricia-abarca-3b6720136/"
-                            target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Patricia Abarca">
-                            <!-- Icono LinkedIn -->
-                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                            <span class="sr-only">LinkedIn</span>
+                        <a class="btn btn-light rounded-circle border"
+                            href="https://www.linkedin.com/in/patricia-abarca-3b6720136/" target="_blank"
+                            aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                    </li>
-                </ul>
-            </nav>
-
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
     <!-- Bootstrap 5.3.8 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
