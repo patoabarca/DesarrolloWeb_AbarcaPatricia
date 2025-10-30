@@ -1,86 +1,86 @@
-/* ===== MENU: Toggle hamburguesa ===== */
-(function () {
-  console.log("[site.js] cargado");
+// /* ===== MENU: Toggle hamburguesa ===== */
+// (function () {
+//   console.log("[site.js] cargado");
 
-  const btn = document.querySelector(".nav-toggle");
-  const nav = document.querySelector("#primary-nav");
+//   const btn = document.querySelector(".nav-toggle");
+//   const nav = document.querySelector("#primary-nav");
 
-  if (!btn) {
-    console.warn("No se encontró .nav-toggle");
-    return;
-  }
-  if (!nav) {
-    console.warn("No se encontró #primary-nav");
-    return;
-  }
+//   if (!btn) {
+//     console.warn("No se encontró .nav-toggle");
+//     return;
+//   }
+//   if (!nav) {
+//     console.warn("No se encontró #primary-nav");
+//     return;
+//   }
 
-  function openMenu() {
-    nav.classList.add("is-open");
-    btn.setAttribute("aria-expanded", "true");
-  }
+//   function openMenu() {
+//     nav.classList.add("is-open");
+//     btn.setAttribute("aria-expanded", "true");
+//   }
 
-  function closeMenu() {
-    nav.classList.remove("is-open");
-    btn.setAttribute("aria-expanded", "false");
-  }
+//   function closeMenu() {
+//     nav.classList.remove("is-open");
+//     btn.setAttribute("aria-expanded", "false");
+//   }
 
-  function toggleMenu() {
-    nav.classList.contains("is-open") ? closeMenu() : openMenu();
-  }
+//   function toggleMenu() {
+//     nav.classList.contains("is-open") ? closeMenu() : openMenu();
+//   }
 
-  // Toggle
-  btn.addEventListener("click", toggleMenu);
+//   // Toggle
+//   btn.addEventListener("click", toggleMenu);
 
-  // Cerrar al clickear un link
-  nav.addEventListener("click", (e) => {
-    if (e.target && e.target.tagName === "A") closeMenu();
-  });
+//   // Cerrar al clickear un link
+//   nav.addEventListener("click", (e) => {
+//     if (e.target && e.target.tagName === "A") closeMenu();
+//   });
 
-  // Cerrar con Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
+//   // Cerrar con Escape
+//   document.addEventListener("keydown", (e) => {
+//     if (e.key === "Escape") closeMenu();
+//   });
 
-  // Cerrar clic fuera
-  document.addEventListener("click", (e) => {
-    const clickDentro = nav.contains(e.target) || btn.contains(e.target);
-    if (!clickDentro && nav.classList.contains("is-open")) closeMenu();
-  });
-})();
+//   // Cerrar clic fuera
+//   document.addEventListener("click", (e) => {
+//     const clickDentro = nav.contains(e.target) || btn.contains(e.target);
+//     if (!clickDentro && nav.classList.contains("is-open")) closeMenu();
+//   });
+// })();
 
-// ===== Submenú Uvas (click para abrir/cerrar en mobile) =====
-const subToggles = document.querySelectorAll(".submenu-toggle");
+// // ===== Submenú Uvas (click para abrir/cerrar en mobile) =====
+// const subToggles = document.querySelectorAll(".submenu-toggle");
 
-subToggles.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    // Evita que el hover desktop interfiera en mobile
-    const parent = btn.closest(".has-submenu");
-    const isOpen = parent.classList.contains("open");
+// subToggles.forEach((btn) => {
+//   btn.addEventListener("click", (e) => {
+//     // Evita que el hover desktop interfiera en mobile
+//     const parent = btn.closest(".has-submenu");
+//     const isOpen = parent.classList.contains("open");
 
-    // Cerrar otros submenús
-    document.querySelectorAll(".has-submenu.open").forEach((n) => {
-      if (n !== parent) n.classList.remove("open");
-      const t = n.querySelector(".submenu-toggle");
-      if (t) t.setAttribute("aria-expanded", "false");
-    });
+//     // Cerrar otros submenús
+//     document.querySelectorAll(".has-submenu.open").forEach((n) => {
+//       if (n !== parent) n.classList.remove("open");
+//       const t = n.querySelector(".submenu-toggle");
+//       if (t) t.setAttribute("aria-expanded", "false");
+//     });
 
-    // Toggle actual
-    parent.classList.toggle("open", !isOpen);
-    btn.setAttribute("aria-expanded", String(!isOpen));
-  });
-});
+//     // Toggle actual
+//     parent.classList.toggle("open", !isOpen);
+//     btn.setAttribute("aria-expanded", String(!isOpen));
+//   });
+// });
 
-// Cerrar submenú si se hace click fuera
-document.addEventListener("click", (e) => {
-  const anyOpen = document.querySelector(".has-submenu.open");
-  if (!anyOpen) return;
-  const inside = anyOpen.contains(e.target);
-  if (!inside) {
-    anyOpen.classList.remove("open");
-    const t = anyOpen.querySelector(".submenu-toggle");
-    if (t) t.setAttribute("aria-expanded", "false");
-  }
-});
+// // Cerrar submenú si se hace click fuera
+// document.addEventListener("click", (e) => {
+//   const anyOpen = document.querySelector(".has-submenu.open");
+//   if (!anyOpen) return;
+//   const inside = anyOpen.contains(e.target);
+//   if (!inside) {
+//     anyOpen.classList.remove("open");
+//     const t = anyOpen.querySelector(".submenu-toggle");
+//     if (t) t.setAttribute("aria-expanded", "false");
+//   }
+// });
 
 /* ===== Glosario: filtro en vivo ===== */
 (function () {

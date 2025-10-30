@@ -46,26 +46,15 @@ footer {
   display: block;
 }
 
-/* ===== HEADER + NAV (Desktop-first) ===== */
-
-.site-header {
-  position: relative; /* clave para que el nav absoluto se ancle al header */
-  padding: 0.75rem 1rem;
+/* --- Navbar + Brand (encima de Bootstrap) --- */
+.site-header .navbar {
   background: var(--header-bg);
-  border-bottom: 1px solid var(--edge-line);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.02);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+}
+.site-header .navbar,
+.site-header .navbar * {
+  box-sizing: border-box;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  min-width: 0;
-}
 .brand-logo {
   width: 56px;
   height: 56px;
@@ -74,129 +63,56 @@ footer {
   background: #fff;
   padding: 2px;
 }
+
 .brand-title {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.2rem;
   font-weight: 700;
   color: #5a0d1b;
-  text-decoration: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 1.05rem;
 }
 .brand-title:hover {
   text-decoration: underline;
 }
 
-/* Mostrar/ocultar versión completa vs. corta del título */
-.brand-title .brand-full {
-  display: inline;
-}
-.brand-title .brand-short {
-  display: none;
-}
-
-.primary-nav {
-  display: flex;
-  flex-direction: row;
-  gap: 0.25rem;
-}
-.primary-nav a {
-  text-decoration: none;
+/* Links del navbar */
+.navbar .nav-link {
   color: var(--ink);
   font-weight: 600;
+  border-radius: 0.5rem;
   padding: 0.45rem 0.6rem;
-  border-radius: 6px;
 }
-.primary-nav a:hover {
+.navbar .nav-link:hover {
   background: #fff;
   color: var(--tinto);
   outline: 1px solid var(--edge-line);
 }
-.primary-nav a.active {
+.navbar .nav-link.active {
   background: var(--tinto);
   color: #fff;
 }
 
-/*boton hamburguesa*/
-.nav-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* Dropdown */
+.dropdown-menu {
   border: 1px solid var(--edge-line);
-  background: #fff;
-  color: var(--ink);
-  padding: 0.4rem;
-  border-radius: 8px;
-  cursor: pointer;
-  display: none;
+  border-radius: 0.6rem;
 }
-.nav-toggle i {
-  font-size: 28px;
-  line-height: 1;
+.dropdown-item {
+  padding: 0.45rem 0.75rem;
 }
-.nav-toggle:hover {
-  background: #fff;
-  color: var(--tinto);
-  outline: 1px solid var(--edge-line);
-}
-.nav-toggle:focus-visible {
-  outline: 2px solid var(--tinto);
-  outline-offset: 2px;
-}
-
-/* ===== Submenú Uvas ===== */
-.nav-item {
-  position: relative;
-}
-
-.submenu-toggle {
-  background: none;
-  border: none;
-  padding: 0.45rem 0.6rem;
-  border-radius: 6px;
-  font: inherit;
-  font-weight: 600;
-  color: var(--ink);
-  cursor: pointer;
-}
-.submenu-toggle:hover {
-  background: #fff;
-  color: var(--tinto);
-  outline: 1px solid var(--edge-line);
-}
-
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 180px;
-  margin: 0.25rem 0 0;
-  padding: 0.4rem;
-  list-style: none;
-  background: #fff;
-  border: 1px solid var(--edge-line);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  z-index: 1001;
-}
-.submenu li a {
-  display: block;
-  padding: 0.45rem 0.6rem;
-  border-radius: 6px;
-  color: var(--ink);
-  text-decoration: none;
-}
-.submenu li a:hover {
+.dropdown-item:hover {
   background: #f9f5f5;
   color: var(--tinto);
 }
 
-/* Mostrar por hover en desktop */
-.has-submenu:hover .submenu {
-  display: block;
+/* Toggler (hamburguesa) con icono por defecto de BS */
+.navbar-toggler {
+  border-color: var(--edge-line);
 }
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
+}
+
+/* Marca larga vs corta ya controladas con d-none/d-md-inline en HTML */
 
 /* --- Contenido --- */
 main {
