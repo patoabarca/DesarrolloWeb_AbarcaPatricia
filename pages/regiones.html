@@ -6,204 +6,265 @@
     <title>Guía de Vinos | Regiones</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Regiones argentinas: estilos y notas generales.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Font Awesome para íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <!-- Mi css para  sobrescribir estilos -->
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="../assets/js/site.js" defer></script>
 </head>
 
-<body>
-    <!-- HEADER: Brand + Menú hamburguesa -->
-    <header class="site-header">
-        <div class="brand">
-            <img class="brand-logo" src="../assets/img/imag_menu.png" alt="Logo Guía de Vinos">
-            <a class="brand-title" href="../index.html" aria-label="Guía de Vinos para Principiantes">
-                <span class="brand-full">Guía de Vinos para Principiantes</span>
-                <span class="brand-short">Guía de Vinos</span>
-            </a>
-            <!-- boton hamburguesa-->
-            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
-                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-                    <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" />
-                </svg>
-            </button>
 
-            <!--Navegación principal -->
-            <nav id="primary-nav" class="primary-nav">
-                <a href="../index.html">Inicio</a>
-                <div class="nav-item has-submenu">
-                    <button class="submenu-toggle" aria-haspopup="true" aria-expanded="false">
-                        Uvas
-                    </button>
-                    <ul class="submenu" aria-label="Submenú Uvas">
-                        <li><a href="uvas_tintas.html">Uvas tintas</a></li>
-                        <li><a href="uvas_blancas.html">Uvas blancas</a></li>
+<body>
+    <!-- HEADER: Bootstrap Navbar -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg"
+            style="background: var(--header-bg); border-bottom:1px solid var(--edge-line);">
+            <div class="container-fluid">
+                <!-- Brand -->
+                <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html"
+                    aria-label="Guía de Vinos para Principiantes">
+                    <img class="brand-logo" src="../assets/img/imag_menu.png" alt="Logo Guía de Vinos">
+                    <span class="brand-title">
+                        <span class="brand-full d-none d-md-inline">Guía de Vinos para Principiantes</span>
+                        <span class="brand-short d-inline d-md-none">Guía de Vinos</span>
+                    </span>
+                </a>
+
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav"
+                    aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Nav -->
+                <div class="collapse navbar-collapse" id="primary-nav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+
+                        <!-- Dropdown Uvas -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Uvas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./uvas_tintas.html">Uvas tintas</a></li>
+                                <li><a class="dropdown-item" href="./uvas_blancas.html">Uvas blancas</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item"><a class="nav-link active" href="./regiones.html">Regiones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./maridajes.html">Maridajes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./glosario.html">Glosario</a></li>
                     </ul>
                 </div>
-                <a href="regiones.html" class="active">Regiones</a>
-                <a href="maridajes.html">Maridajes</a>
-                <a href="glosario.html">Glosario</a>
-            </nav>
+            </div>
+        </nav>
     </header>
 
     <!-- ===== MAIN: contenido principal de Regiones ===== -->
-    <main class="contenido">
-
+    <main class="container my-4">
         <!-- título de página -->
         <h1 class="page-title">Regiones</h1>
 
-        <!-- sección en grilla 3→2→1 (reuso cards-grid del index) -->
-        <section class="bg-wash cards-grid">
-            <h2>Zonas principales</h2>
+        <!-- Zonas principales -->
+        <section class="bg-wash border rounded-3 p-3 p-md-4">
+            <h2 class="mb-3">Zonas principales</h2>
 
-            <!-- card: Valle de Uco -->
-            <article class="card">
-                <h3>Valle de Uco (Mendoza)</h3>
-                <img class="region-img" src="../assets/img/imag-uco.png" alt="Viñedos en Valle de Uco" loading="lazy">
-                <p><strong>Clima/Altitud:</strong> andino, seco; 900–1.500 m s. n. m.</p>
-                <p><strong>Perfil:</strong> Malbec vibrante, fruta negra/violeta, buena acidez; blancos tensos y
-                    minerales.</p>
-                <p><strong>Bodegas:</strong></p>
-                <ul class="bodegas">
-                    <li>Salentein</li>
-                    <li>Andeluna</li>
-                    <li>Domaine Bousquet</li>
-                    <li>Zuccardi Valle de Uco</li>
-                </ul>
-            </article>
+            <!-- Grid responsive: 1→2→3 columnas -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
 
-            <!-- card: Luján de Cuyo -->
-            <article class="card">
-                <h3>Luján de Cuyo (Mendoza)</h3>
-                <img class="region-img" src="../assets/img/imag-lujandecuyo.png" alt="Viñedos en Luján de Cuyo"
-                    loading="lazy">
-                <p><strong>Clima/Altitud:</strong> templado-seco; 900–1.100 m s. n. m.</p>
-                <p><strong>Perfil:</strong> Malbec redondo, fruta madura, taninos dulces; estilos clásicos.</p>
-                <p><strong>Bodegas:</strong></p>
-                <ul class="bodegas">
-                    <li>Budeguer</li>
-                    <li>Luigi Bosca</li>
-                    <li>Norton</li>
-                </ul>
-            </article>
+                <!-- Valle de Uco -->
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="../assets/img/imag-uco.png" class="w-100 h-100" alt="Viñedos en Valle de Uco"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Valle de Uco (Mendoza)</h3>
+                            <p class="mb-1"><strong>Clima/Altitud:</strong> andino, seco; 900–1.500 m s. n. m.</p>
+                            <p class="mb-1"><strong>Perfil:</strong> Malbec vibrante, fruta negra/violeta, buena acidez;
+                                blancos tensos y minerales.</p>
+                            <p class="mb-1"><strong>Bodegas:</strong></p>
+                            <ul class="bodegas mb-0">
+                                <li>Salentein</li>
+                                <li>Andeluna</li>
+                                <li>Domaine Bousquet</li>
+                                <li>Zuccardi Valle de Uco</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
 
-            <!-- card: Cafayate -->
-            <article class="card">
-                <h3>Cafayate (Valles Calchaquíes, Salta)</h3>
-                <img class="region-img" src="../assets/img/imag-cafayate.png" alt="Viñedos en Cafayate" loading="lazy">
-                <p><strong>Clima/Altitud:</strong> gran amplitud térmica; 1.600–2.000+ m s. n. m.</p>
-                <p><strong>Perfil:</strong> Torrontés muy aromático y fresco; tintos con nervio.</p>
-                <p><strong>Bodegas:</strong></p>
-                <ul class="bodegas">
-                    <li>El Esteco</li>
-                    <li>Etchart</li>
-                    <li>Piattelli</li>
-                    <li>Domingo Hermanos</li>
-                </ul>
-            </article>
+                <!-- Luján de Cuyo -->
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="../assets/img/imag-lujandecuyo.png" class="w-100 h-100"
+                                alt="Viñedos en Luján de Cuyo" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Luján de Cuyo (Mendoza)</h3>
+                            <p class="mb-1"><strong>Clima/Altitud:</strong> templado-seco; 900–1.100 m s. n. m.</p>
+                            <p class="mb-1"><strong>Perfil:</strong> Malbec redondo, fruta madura, taninos dulces;
+                                estilos clásicos.</p>
+                            <p class="mb-1"><strong>Bodegas:</strong></p>
+                            <ul class="bodegas mb-0">
+                                <li>Budeguer</li>
+                                <li>Luigi Bosca</li>
+                                <li>Norton</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
 
-            <!-- card: Molinos -->
-            <article class="card">
-                <h3>Molinos (Valles Calchaquíes, Salta)</h3>
-                <img class="region-img" src="../assets/img/imag-molinos.png" alt="Viñedos de altura en Molinos, Salta"
-                    loading="lazy">
-                <p><strong>Clima/Altitud:</strong> extremo de altura; 2.200–3.000+ m s. n. m.</p>
-                <p><strong>Perfil:</strong> tintos intensos, especiados, acidez firme; carácter de altura.</p>
-                <p><strong>Bodegas:</strong></p>
-                <ul class="bodegas">
-                    <li>Colomé</li>
-                    <li>Tacuil</li>
-                </ul>
-            </article>
+                <!-- Cafayate -->
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="../assets/img/imag-cafayate.png" class="w-100 h-100" alt="Viñedos en Cafayate"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Cafayate (Valles Calchaquíes, Salta)</h3>
+                            <p class="mb-1"><strong>Clima/Altitud:</strong> gran amplitud térmica; 1.600–2.000+ m s. n.
+                                m.</p>
+                            <p class="mb-1"><strong>Perfil:</strong> Torrontés muy aromático y fresco; tintos con
+                                nervio.</p>
+                            <p class="mb-1"><strong>Bodegas:</strong></p>
+                            <ul class="bodegas mb-0">
+                                <li>El Esteco</li>
+                                <li>Etchart</li>
+                                <li>Piattelli</li>
+                                <li>Domingo Hermanos</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
 
-            <!-- card: Alto Valle -->
-            <article class="card">
-                <h3>Alto Valle del Río Negro (Patagonia)</h3>
-                <img class="region-img" src="../assets/img/imag-altovalle.png" alt="Viñedos en Alto Valle del Río Negro"
-                    loading="lazy">
-                <p><strong>Clima/Altitud:</strong> frío y ventoso; altitud baja-media.</p>
-                <p><strong>Perfil:</strong> Pinot Noir y Merlot ligeros; Chardonnay nítido.</p>
-                <p><strong>Bodegas:</strong></p>
-                <ul class="bodegas">
-                    <li>Humberto Canale</li>
-                    <li>Aniello</li>
-                    <li>Miras</li>
-                </ul>
-            </article>
+                <!-- Molinos -->
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="../assets/img/imag-molinos.png" class="w-100 h-100"
+                                alt="Viñedos de altura en Molinos, Salta" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Molinos (Valles Calchaquíes, Salta)</h3>
+                            <p class="mb-1"><strong>Clima/Altitud:</strong> extremo de altura; 2.200–3.000+ m s. n. m.
+                            </p>
+                            <p class="mb-1"><strong>Perfil:</strong> tintos intensos, especiados, acidez firme; carácter
+                                de altura.</p>
+                            <p class="mb-1"><strong>Bodegas:</strong></p>
+                            <ul class="bodegas mb-0">
+                                <li>Colomé</li>
+                                <li>Tacuil</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
 
-            <!-- card: S. P. del Chañar -->
-            <article class="card">
-                <h3>San Patricio del Chañar (Neuquén)</h3>
-                <img class="region-img" src="../assets/img/imag-sanpatricio.png"
-                    alt="Viñedos en San Patricio del Chañar" loading="lazy">
-                <p><strong>Clima/Altitud:</strong> patagónico, seco y ventoso; meseta.</p>
-                <p><strong>Perfil:</strong> tintos prolijos con buena frescura; blancos expresivos.</p>
-                <p><strong>Bodegas:</strong></p>
-                <ul class="bodegas">
-                    <li>Familia Schroeder (Saurus)</li>
-                    <li>Del Fin del Mundo</li>
-                    <li>Malma</li>
-                </ul>
-            </article>
+                <!-- Alto Valle del Río Negro -->
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="../assets/img/imag-altovalle.png" class="w-100 h-100"
+                                alt="Viñedos en Alto Valle del Río Negro" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Alto Valle del Río Negro (Patagonia)</h3>
+                            <p class="mb-1"><strong>Clima/Altitud:</strong> frío y ventoso; altitud baja-media.</p>
+                            <p class="mb-1"><strong>Perfil:</strong> Pinot Noir y Merlot ligeros; Chardonnay nítido.</p>
+                            <p class="mb-1"><strong>Bodegas:</strong></p>
+                            <ul class="bodegas mb-0">
+                                <li>Humberto Canale</li>
+                                <li>Aniello</li>
+                                <li>Miras</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- San Patricio del Chañar -->
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="../assets/img/imag-sanpatricio.png" class="w-100 h-100"
+                                alt="Viñedos en San Patricio del Chañar" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">San Patricio del Chañar (Neuquén)</h3>
+                            <p class="mb-1"><strong>Clima/Altitud:</strong> patagónico, seco y ventoso; meseta.</p>
+                            <p class="mb-1"><strong>Perfil:</strong> tintos prolijos con buena frescura; blancos
+                                expresivos.</p>
+                            <p class="mb-1"><strong>Bodegas:</strong></p>
+                            <ul class="bodegas mb-0">
+                                <li>Familia Schroeder (Saurus)</li>
+                                <li>Del Fin del Mundo</li>
+                                <li>Malma</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
         </section>
-
     </main>
-    <!-- /MAIN -->
 
 
-    <!--FOOTER: créditos + contacto + redes - Desktop: 3 columnas (grid) - Tablet/Mobile: se apila-->
-    <footer class="site-footer">
-        <div class="footer-inner">
+    <!-- Footer -->
 
-            <!-- Footer Créditos / legal -->
-            <section class="footer-legal">
-                <p>© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
-            </section>
+    <footer class="site-footer py-3 mt-4" style="background: var(--footer-bg); border-top:1px solid var(--edge-line);">
+        <div class="container">
+            <div class="row gy-3 align-items-start">
+                <!-- Créditos / legal -->
+                <div class="col-12 col-md-5">
+                    <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
+                </div>
 
-            <!-- Footer Contacto (address semántico + iconos + texto visible) -->
-            <address class="footer-contact">
-                <p><strong>Contacto</strong></p>
+                <!-- Contacto -->
+                <div class="col-12 col-md-4">
+                    <address class="mb-0">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-phone text-tinto"></i>
+                            <a class="link-underline-opacity-0" href="tel:+5491123456789"
+                                style="color: var(--tinto);">+54 9 11 2345-6789</a>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mt-1">
+                            <i class="fa-solid fa-envelope text-tinto"></i>
+                            <a class="link-underline-opacity-0" href="mailto:patoabarca07@gmail.com"
+                                style="color: var(--tinto);">patoabarca07@gmail.com</a>
+                        </div>
+                    </address>
+                </div>
 
-                <!-- Teléfono: icono + link tel: -->
-                <p>
-                    <i class="fa-solid fa-phone contact-icon" aria-hidden="true"></i>
-                    <a href="tel:+5491123456789">+54 9 11 2345-6789</a>
-                </p>
-
-                <!-- Correo: icono + link mailto: -->
-                <p>
-                    <i class="fa-regular fa-envelope contact-icon" aria-hidden="true"></i>
-                    <a href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a>
-                </p>
-            </address>
-
-            <!-- Footer Redes sociales (Font Awesome) -->
-            <nav class="footer-social" aria-label="Redes sociales">
-                <ul class="social-list">
-                    <li>
-                        <a class="btn-social github" href="https://github.com/patoabarca" target="_blank"
-                            rel="noopener noreferrer" aria-label="GitHub de Patricia Abarca">
-                            <!-- Icono GitHub -->
-                            <i class="fa-brands fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
+                <!-- Redes -->
+                <div class="col-12 col-md-3">
+                    <div class="d-flex gap-2 justify-content-md-end">
+                        <a class="btn btn-light rounded-circle border" href="https://github.com/patoabarca"
+                            target="_blank" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
                         </a>
-                    </li>
-
-                    <li>
-                        <a class="btn-social linkedin" href="https://www.linkedin.com/in/patricia-abarca-3b6720136/"
-                            target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Patricia Abarca">
-                            <!-- Icono LinkedIn -->
-                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                            <span class="sr-only">LinkedIn</span>
+                        <a class="btn btn-light rounded-circle border"
+                            href="https://www.linkedin.com/in/patricia-abarca-3b6720136/" target="_blank"
+                            aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                    </li>
-                </ul>
-            </nav>
-
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+    <!-- Bootstrap 5.3.8 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

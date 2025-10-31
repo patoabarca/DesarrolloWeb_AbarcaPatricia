@@ -1,25 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;600;700&display=swap");
 
-/* --- Paleta y tipografía base --- */
+/* ===============================
+   Paleta + base tipográfica
+   =============================== */
 :root {
-  --bg: #ede2e0; /* fondo general */
-  --ink: #2b2b2b; /* texto principal */
-  --muted: #6b6b6b; /* texto secundario */
-  --tinto: #6d0f20; /* acento */
-  --rose: #b55a6a; /* acento */
-  --line: #e7dadd; /* líneas/bordes suaves */
-  --card: #fff7f4; /* superficies cards */
-  --wash: #f7f1f2; /* fondo suave para secciones destacadas */
+  --bg: #ede2e0;
+  --ink: #2b2b2b;
+  --muted: #6b6b6b;
+  --tinto: #6d0f20;
+  --rose: #b55a6a;
+  --line: #e7dadd;
+  --card: #fff7f4;
+  --wash: #f7f1f2;
   --header-bg: #e1d2d0;
   --footer-bg: #e1d2d0;
-  --edge-line: #d7c5c4; /* línea separadora*/
+  --edge-line: #d7c5c4;
 }
 
 html {
   font-size: 18px;
-}
-/* ===== Ajustes anti-pisadas y ancho fluido ===== */
-html {
   box-sizing: border-box;
 }
 *,
@@ -30,29 +29,18 @@ html {
 
 body {
   margin: 0;
-  padding-inline: 32px;
+  /* Usá .container en HTML para márgenes laterales */
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   color: var(--ink);
   background: var(--bg);
   line-height: 1.6;
 }
 
-header,
-nav,
-main,
-section,
-article,
-footer {
-  display: block;
-}
-
-/* --- Navbar + Brand (encima de Bootstrap) --- */
+/* ===============================
+   Navbar (Bootstrap 5.3 tune)
+   =============================== */
 .site-header .navbar {
   background: var(--header-bg);
-}
-.site-header .navbar,
-.site-header .navbar * {
-  box-sizing: border-box;
 }
 
 .brand-logo {
@@ -63,7 +51,6 @@ footer {
   background: #fff;
   padding: 2px;
 }
-
 .brand-title {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
@@ -74,7 +61,6 @@ footer {
   text-decoration: underline;
 }
 
-/* Links del navbar */
 .navbar .nav-link {
   color: var(--ink);
   font-weight: 600;
@@ -85,13 +71,13 @@ footer {
   background: #fff;
   color: var(--tinto);
   outline: 1px solid var(--edge-line);
+  text-decoration: none;
 }
 .navbar .nav-link.active {
   background: var(--tinto);
   color: #fff;
 }
 
-/* Dropdown */
 .dropdown-menu {
   border: 1px solid var(--edge-line);
   border-radius: 0.6rem;
@@ -104,7 +90,6 @@ footer {
   color: var(--tinto);
 }
 
-/* Toggler (hamburguesa) con icono por defecto de BS */
 .navbar-toggler {
   border-color: var(--edge-line);
 }
@@ -112,12 +97,12 @@ footer {
   box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
 }
 
-/* Marca larga vs corta ya controladas con d-none/d-md-inline en HTML */
-
-/* --- Contenido --- */
+/* ===============================
+Tipografía y bloques
+   =============================== */
 main {
-  padding: 1rem;
-}
+  padding: 1rem 0;
+} /* el lateral lo da .container */
 h2 {
   margin: 1rem 0 0.5rem;
   font-size: 1.3rem;
@@ -132,17 +117,6 @@ p {
   margin: 0.5rem 0;
 }
 
-/*INDEX: Intro*/
-.intro {
-  /* separa y da aire al bloque de bienvenida */
-  background: #ffffffaa;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-  max-width: none;
-}
-
-/* Título de página */
 .page-title {
   font-family: "Lora", Georgia, "Times New Roman", serif;
   font-size: 1.9rem;
@@ -150,7 +124,6 @@ p {
   margin: 0.4rem 0 1rem;
 }
 
-/* Enlaces generales */
 a {
   color: var(--rose);
 }
@@ -158,102 +131,54 @@ a:hover {
   color: var(--tinto);
   text-decoration: underline;
 }
-/* Section */
+
 .bg-wash {
-  max-width: none;
   background: var(--wash);
   border: 1px solid var(--line);
 }
-
 .section-sep {
   border-top: 1px solid var(--line);
   padding-top: 0.75rem;
 }
 
-/* --- Tarjetas (desktop) --- */
-
-/* Grid general (Index / Regiones / Maridajes) */
-.cards-grid > h2 {
-  grid-column: 1 / -1;
-  margin: 0 0 0.5rem;
-}
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  padding: 0.75rem 1rem;
+/* Intro (home) */
+.intro {
+  background: #ffffffaa;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--wash);
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
-}
-.cards-grid .card {
-  margin: 0;
-  max-width: none;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.cards-grid .card a {
-  align-self: flex-start;
-  margin-top: auto;
-  font-weight: 600;
+  padding: 0.75rem 1rem;
 }
 
-/* Card base */
+/* ===============================
+Cards (unificado sobre BS)
+   =============================== */
 .card {
   background: var(--card);
   border: 1px solid var(--line);
-  max-width: 1080px;
-  box-shadow: 0 0 0 1px var(--line) inset;
-  padding: 0.75rem;
-  margin: 1rem 0;
+  box-shadow: inset 0 0 0 1px var(--line);
 }
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+.card .card-title {
+  color: var(--tinto);
 }
 .card figure {
   margin: 0 0 0.6rem;
 }
 
-/* Imágenes */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
-/* Regiones */
-.cards-grid .region-img {
-  width: 100%;
-  aspect-ratio: 4/3;
+.object-fit-cover {
   object-fit: cover;
-  border: 1px solid var(--line);
-  background: #fff;
-}
-.cards-grid .bodegas {
-  margin-top: 0.25rem;
-}
-.cards-grid .card h3 {
-  min-height: 2.2em;
 }
 
-/* Maridajes */
-.cards-grid .pair-img {
-  width: 100%;
-  aspect-ratio: 4/3;
+/* Imágenes dentro de .ratio (BS) */
+.ratio > img {
   object-fit: cover;
-  border: 1px solid var(--line);
-  background: #fff;
-}
-.maridajes .card p {
-  margin: 0.35rem 0;
 }
 
-/* Glosario */
+/* Glosario (cards pequeñas) */
 .g-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -269,80 +194,9 @@ img {
   color: var(--tinto);
 }
 
-/* Bloques dentro de bg-wash */
-.bg-wash .row + h2 {
-  margin-top: 1.25rem;
-}
-.bg-wash {
-  padding-bottom: 0.5rem;
-}
-
-/* Uvas: imágenes y caption */
-.thumb {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border: 0;
-  margin: 0;
-}
-.card figure figcaption {
-  display: block;
-  margin-top: 0.375rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-/* Uvas: grilla de 2 columnas + layout lateral */
-.cards-grid.cards-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-/* anula flex para permitir float */
-.cards-grid.cards-2 .card {
-  display: block;
-  margin: 0;
-  height: 100%;
-}
-.cards-grid.cards-2 .card.media figure {
-  float: left;
-  width: 44%;
-  margin: 0 1rem 0.6rem 0;
-}
-.cards-grid.cards-2 .card.media .thumb {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.cards-grid.cards-2 .card.media .card-body {
-  overflow: hidden;
-}
-.cards-grid.cards-2 .card.media::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* --- Listas --- */
-ul {
-  padding-left: 1.2rem;
-}
-li + li {
-  margin-top: 0.25rem;
-}
-
-/* Lista de bodegas por región */
-.bodegas {
-  margin: 0.25rem 0 0.5rem;
-  padding-left: 1.2rem;
-  font-size: 0.95rem;
-}
-.bodegas li {
-  margin: 0.1rem 0;
-}
-/*===== FOOTER =====*/
+/* ===============================
+  Footer 
+   =============================== */
 .site-footer .btn i {
   line-height: 1;
 }
@@ -358,38 +212,10 @@ li + li {
   color: var(--tinto) !important;
 }
 
-/* ===== Tablet (≤991px)*/
-
-@media (max-width: 991px) {
-  /* Grillas generales */
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  /* Uvas: mantener 1 columna con layout lateral (imagen izq., texto der.) */
-  .cards-grid.cards-2 {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .cards-grid.cards-2 .card.media figure {
-    float: left;
-    width: 44%;
-    margin: 0 0.9rem 0.6rem 0;
-  }
-  .cards-grid.cards-2 .card.media .thumb {
-    aspect-ratio: 4 / 3;
-  }
-
-  /* (Opcional) Tipografía/espaciado */
-  .intro {
-    padding: 0.6rem 0.9rem;
-  }
-}
-
-/* ===== Mobile (≤480px)===== */
+/* ===============================
+  Responsive 
+   =============================== */
 @media (max-width: 480px) {
-  /* Microtune de marca (o usá utilidades Bootstrap y borrá esto) */
   .brand-logo {
     width: 48px;
     height: 48px;
@@ -397,25 +223,5 @@ li + li {
   .brand-title {
     font-size: 1.05rem;
     white-space: nowrap;
-  }
-
-  /* Menos padding lateral global */
-  body {
-    padding-inline: 16px;
-  }
-
-  /* Grillas: 1 columna */
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Uvas: apilado clásico (imagen arriba, texto abajo) */
-  .cards-grid.cards-2 .card.media figure {
-    float: none;
-    width: 100%;
-    margin: 0 0 0.6rem 0;
-  }
-  .cards-grid.cards-2 .card.media .thumb {
-    aspect-ratio: 16 / 9;
   }
 }
