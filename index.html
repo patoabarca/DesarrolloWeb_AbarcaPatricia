@@ -15,47 +15,51 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"> <!--footer al fondo con min-vh-100 -->
     <!-- HEADER: Bootstrap Navbar -->
     <header class="site-header">
-        <nav class=" navbar navbar-expand-lg">
-            <div class="container-xxl">
+        <nav class=" navbar navbar-expand-lg"> <!-- navbar que se expande a partir de lg -->
+            <div class="container-xxl"> <!-- contenedor ancho extra -->
                 <!-- Brand -->
                 <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html"
                     aria-label="Guía de Vinos para Principiantes">
                     <img class="brand-logo" src="../assets/img/imag_menu.png" alt="Logo Guía de Vinos">
+                    <!-- logo con alt -->
                     <span class="brand-title">
                         <span class="brand-full d-none d-md-inline">Guía de Vinos para Principiantes</span>
+                        <!-- texto completo en ≥ md -->
                         <span class="brand-short d-inline d-md-none">Guía de Vinos</span>
+                        <!-- versión corta en mobile -->
                     </span>
                 </a>
 
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav"
                     aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
-                    <span class="navbar-toggler-icon"></span>
+                    <!-- control colapsable-->
+                    <span class="navbar-toggler-icon"></span> <!-- icono Bootstrap -->
                 </button>
 
                 <!-- Nav -->
-                <div class="collapse navbar-collapse" id="primary-nav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                <div class="collapse navbar-collapse" id="primary-nav"> <!-- contenedor colapsable -->
+                    <ul class="navbar-nav ms-auto align-items-lg-center"> <!-- items alineados a derecha -->
                         <li class="nav-item">
-                            <a class="nav-link active" href="../index.html">Inicio</a>
+                            <a class="nav-link active" href="../index.html">Inicio</a> <!-- estado activo -->
                         </li>
 
                         <!-- Dropdown Uvas -->
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown"> <!-- menú desplegable -->
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Uvas
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu"> <!-- lista de opciones del dropdown -->
                                 <li><a class="dropdown-item" href="pages/uvas_tintas.html">Uvas tintas</a></li>
                                 <li><a class="dropdown-item" href="pages/uvas_blancas.html">Uvas blancas</a></li>
                             </ul>
                         </li>
 
-
+                        <!-- links principales -->
                         <li class="nav-item"><a class="nav-link" href="../pages/regiones.html">Regiones</a></li>
                         <li class="nav-item"><a class="nav-link" href="../pages/maridajes.html">Maridajes</a></li>
                         <li class="nav-item"><a class="nav-link" href="../pages/glosario.html">Glosario</a></li>
@@ -65,39 +69,37 @@
         </nav>
     </header>
 
-
     <!-- MAIN: contenido principal de la home -->
-    <main class="contenido container py-3 py-md-4 flex-grow-1">
+    <main class="contenido container py-3 py-md-4 flex-grow-1"> <!-- padding responsive + empuja footer -->
 
         <!-- Título -->
-        <h1 class="page-title">Bienvenida</h1>
+        <h1 class="page-title">Bienvenida</h1> <!-- H1 único por página -->
 
         <!-- Intro -->
-        <section class="intro mb-4">
+        <section class="intro mb-4"> <!-- párrafo introductorio -->
             <p class="mb-0">
                 Aprendé lo esencial: uvas típicas, regiones argentinas y maridajes fáciles para empezar.
             </p>
         </section>
 
         <!-- Destacados -->
-        <section class="bg-wash section-sep p-3 p-md-4 rounded-3 border">
-            <h2 class="h4 mb-3">Destacados</h2>
+        <section class="bg-wash section-sep p-3 p-md-4 rounded-3 border"> <!-- bloque con fondo suave y borde -->
+            <h2 class="h4 mb-3">Destacados</h2> <!-- subtítulo -->
 
             <!-- Grilla Bootstrap: 1col (mobile) → 2col (md) → 3col (lg) -->
-            <div class="row g-3 g-md-4">
+            <div class="row g-3 g-md-4"> <!-- separación entre cards -->
 
                 <!-- Card 1 -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <article class="card h-100">
+                <div class="col-12 col-md-6 col-lg-4"> <!-- columna responsiva -->
+                    <article class="card h-100"> <!-- card alto completo para igualar alturas -->
                         <div class="card-body">
                             <h3 class="h5">Conocé las uvas</h3>
-
                             <!-- Imagen 4:3 con recorte -->
                             <div class="ratio ratio-4x3 mb-2">
                                 <img src="assets/img/imag_uvas.png" alt="Ilustración de uvas"
                                     class="w-100 h-100 object-fit-cover rounded-2 border">
+                                <!-- cover evita deformación -->
                             </div>
-
                             <p class="mb-3">Malbec, Cabernet Sauvignon, Torrontés, Pinot Noir y más.</p>
                             <a href="pages/uvas.html" class="btn btn-outline-secondary btn-sm">Ir a Uvas</a>
                         </div>
@@ -109,13 +111,11 @@
                     <article class="card h-100">
                         <div class="card-body">
                             <h3 class="h5">Explorá regiones</h3>
-
                             <div class="ratio ratio-4x3 mb-2">
                                 <img src="assets/img/imag-regiones.jpg"
                                     alt="Mapa artístico de regiones vitivinícolas argentinas"
                                     class="w-100 h-100 object-fit-cover rounded-2 border">
                             </div>
-
                             <p class="mb-3">Diferentes climas y estilos de vinos.</p>
                             <a href="pages/regiones.html" class="btn btn-outline-secondary btn-sm">Ir a Regiones</a>
                         </div>
@@ -127,12 +127,10 @@
                     <article class="card h-100">
                         <div class="card-body">
                             <h3 class="h5">Probá maridajes simples</h3>
-
                             <div class="ratio ratio-4x3 mb-2">
                                 <img src="assets/img/imag_maridaje.png" alt="Plato y copa de vino para maridaje"
                                     class="w-100 h-100 object-fit-cover rounded-2 border">
                             </div>
-
                             <p class="mb-3">Binomios clásicos para no fallar.</p>
                             <a href="pages/maridajes.html" class="btn btn-outline-secondary btn-sm">Ir a Maridajes</a>
                         </div>
@@ -143,31 +141,30 @@
         </section>
     </main>
 
-    <!-- /MAIN -->
-
+    <!-- Cierre Main -->
 
     <!-- Footer -->
-
-    <footer class="site-footer py-3 mt-4">
+    <footer class="site-footer py-3 mt-4"> <!-- separación del contenido -->
         <div class="container">
-            <div class="row gy-3 align-items-start">
+            <div class="row gy-3 align-items-start"> <!-- gutter vertical entre columnas -->
                 <!-- Créditos / legal -->
                 <div class="col-12 col-md-5">
                     <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
+                    <!-- leyenda legal -->
                 </div>
 
                 <!-- Contacto -->
                 <div class="col-12 col-md-4">
-                    <address class="mb-0">
+                    <address class="mb-0"> <!-- etiqueta semántica para contacto -->
                         <div class="d-flex align-items-center gap-2">
-                            <i class="fa-solid fa-phone text-tinto"></i>
+                            <i class="fa-solid fa-phone text-tinto"></i> <!-- icono tel -->
                             <a class="link-underline-opacity-0" href="tel:+5491123456789"
-                                style="color: var(--tinto);">+54 9 11 2345-6789</a>
+                                style="color: var(--tinto);">+54 9 11 2345-6789</a> <!-- tel clickeable -->
                         </div>
                         <div class="d-flex align-items-center gap-2 mt-1">
-                            <i class="fa-solid fa-envelope text-tinto"></i>
+                            <i class="fa-solid fa-envelope text-tinto"></i> <!-- icono mail -->
                             <a class="link-underline-opacity-0" href="mailto:patoabarca07@gmail.com"
-                                style="color: var(--tinto);">patoabarca07@gmail.com</a>
+                                style="color: var(--tinto);">patoabarca07@gmail.com</a> <!-- mail clickeable -->
                         </div>
                     </address>
                 </div>
@@ -175,8 +172,9 @@
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">
+                        <!-- botones sociales alineados a derecha en md -->
                         <a class="btn btn-light rounded-circle border" href="https://github.com/patoabarca"
-                            target="_blank" aria-label="GitHub">
+                            target="_blank" aria-label="GitHub"> <!-- abre en nueva pestaña -->
                             <i class="fa-brands fa-github"></i>
                         </a>
                         <a class="btn btn-light rounded-circle border"
@@ -193,7 +191,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
