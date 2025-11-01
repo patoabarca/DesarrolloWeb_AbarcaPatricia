@@ -37,10 +37,11 @@ body {
 }
 
 /* ===============================
-   Navbar (Bootstrap 5.3 tune)
+Navbar (Bootstrap 5.3 tune)
    =============================== */
 .site-header .navbar {
   background: var(--header-bg);
+  border-bottom: 1px solid var(--edge-line);
 }
 
 .brand-logo {
@@ -197,6 +198,12 @@ img {
 /* ===============================
   Footer 
    =============================== */
+/* styles.css */
+.site-footer {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--edge-line);
+}
+
 .site-footer .btn i {
   line-height: 1;
 }
@@ -212,9 +219,7 @@ img {
   color: var(--tinto) !important;
 }
 
-/* ===============================
-  Responsive 
-   =============================== */
+/* ====Responsive =============================== */
 @media (max-width: 480px) {
   .brand-logo {
     width: 48px;

@@ -15,12 +15,11 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- HEADER: Bootstrap Navbar -->
     <header class="site-header">
-        <nav class="navbar navbar-expand-lg"
-            style="background: var(--header-bg); border-bottom:1px solid var(--edge-line);">
-            <div class="container-fluid">
+        <nav class=" navbar navbar-expand-lg">
+            <div class="container-xxl">
                 <!-- Brand -->
                 <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html"
                     aria-label="Guía de Vinos para Principiantes">
@@ -66,8 +65,8 @@
         </nav>
     </header>
 
-    <!-- ===== MAIN con grid de Bootstrap + buscador ===== -->
-    <main class="contenido">
+    <!-- MAIN: contenido principal de la home -->
+    <main class="contenido container py-3 py-md-4 flex-grow-1">
         <!-- título de página -->
         <h1 class="page-title">Glosario</h1>
 
@@ -358,6 +357,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="../assets/js/site.js"></script>
 </body>
 
 </html>
