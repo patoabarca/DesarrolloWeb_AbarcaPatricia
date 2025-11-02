@@ -9,53 +9,58 @@
     <!-- Bootstrap 5.3.8 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CDN con SRI -->
     <!-- Font Awesome para íconos -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <!-- Mi css para  sobrescribir estilos -->
     <link rel="stylesheet" href="../assets/css/styles.css">
+
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"> <!-- aseguro footer al fondo -->
     <!-- HEADER: Bootstrap Navbar -->
-    <header class="site-header">
+    <header class="site-header"> <!-- contenedor del nav -->
         <nav class="navbar navbar-expand-lg">
-            <div class="container-xxl">
+            <div class="container-xxl"> <!-- ancho cómodo en desktop -->
                 <!-- Brand -->
                 <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html"
-                    aria-label="Guía de Vinos para Principiantes">
+                    aria-label="Guía de Vinos para Principiantes"> <!-- aria-label para lectores -->
                     <img class="brand-logo" src="../assets/img/imag_menu.png" alt="Logo Guía de Vinos">
                     <span class="brand-title">
                         <span class="brand-full d-none d-md-inline">Guía de Vinos para Principiantes</span>
+                        <!-- texto largo en md+ -->
                         <span class="brand-short d-inline d-md-none">Guía de Vinos</span>
+                        <!-- versión corta en mobile -->
                     </span>
                 </a>
 
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav"
                     aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
-                    <span class="navbar-toggler-icon"></span>
+                    <!-- control colapsable -->
+                    <span class="navbar-toggler-icon"></span> <!-- icono de Bootstrap -->
                 </button>
 
                 <!-- Nav -->
-                <div class="collapse navbar-collapse" id="primary-nav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                <div class="collapse navbar-collapse" id="primary-nav"> <!-- contenedor del menú -->
+                    <ul class="navbar-nav ms-auto align-items-lg-center"> <!-- items a la derecha -->
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Inicio</a>
                         </li>
 
                         <!-- Dropdown Uvas -->
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown"> <!-- menú desplegable -->
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Uvas
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu"> <!-- opciones del dropdown -->
                                 <li><a class="dropdown-item active" href="./uvas_tintas.html">Uvas tintas</a></li>
+                                <!-- seccion activa -->
                                 <li><a class="dropdown-item" href="./uvas_blancas.html">Uvas blancas</a></li>
                             </ul>
                         </li>
-
-
+                        <!-- enlaces principales -->
                         <li class="nav-item"><a class="nav-link" href="./regiones.html">Regiones</a></li>
                         <li class="nav-item"><a class="nav-link" href="./maridajes.html">Maridajes</a></li>
                         <li class="nav-item"><a class="nav-link" href="./glosario.html">Glosario</a></li>
@@ -65,29 +70,29 @@
         </nav>
     </header>
 
-    <main class="container my-4 flex-grow-1">
-        <h1 class="page-title">Uvas tintas</h1>
+    <main class="container my-4 flex-grow-1"> <!-- margen vertical + empuja footer -->
+        <h1 class="page-title">Uvas tintas</h1> <!-- H1 único -->
 
-        <section class="section intro mb-3">
+        <section class="section intro mb-3"> <!-- introducción breve -->
             <p>Seis tintas clave y sus rasgos más reconocibles: color, aromas, cuerpo y textura de taninos. Un
                 pantallazo rápido para identificarlas.</p>
         </section>
 
         <section class="bg-wash border rounded-3 p-3 p-md-4">
-            <h2 class="mb-3">Fichas</h2>
+            <h2 class="mb-3">Fichas</h2> <!-- subtítulo de sección -->
 
-            <div class="row row-cols-1 row-cols-lg-2 g-3">
+            <div class="row row-cols-1 row-cols-lg-2 g-3"> <!-- 1 col en mobile, 2 en lg -->
 
                 <!-- Malbec -->
-                <div class="col">
-                    <article class="card h-100 p-2">
+                <div class="col"> <!-- columna responsiva -->
+                    <article class="card h-100 p-2"> <!-- card con alto completo -->
                         <div class="row g-3 align-items-start">
                             <div class="col-12 col-md-5">
                                 <div class="ratio ratio-4x3">
                                     <img src="../assets/img/malbec.png" alt="Copa de Malbec color violáceo"
-                                        class="w-100 h-100" loading="lazy">
+                                        class="w-100 h-100" loading="lazy"> <!-- lazy: mejora performance -->
                                 </div>
-                                <div class="small text-muted mt-1">Jugoso</div>
+                                <div class="small text-muted mt-1">Jugoso</div> <!-- descripcion  corta -->
                             </div>
                             <div class="col-12 col-md-7">
                                 <div class="card-body p-0">
@@ -108,7 +113,7 @@
                                 <div class="ratio ratio-4x3">
                                     <img src="../assets/img/imag-cabernetsauvignon.png"
                                         alt="Copa de Cabernet Sauvignon rubí profundo" class="w-100 h-100"
-                                        loading="lazy">
+                                        loading="lazy"> <!-- recurso pesado: lazy ayuda -->
                                 </div>
                                 <div class="small text-muted mt-1">Estructurado</div>
                             </div>
@@ -215,16 +220,15 @@
         </section>
     </main>
 
-
-
     <!-- Footer -->
-
     <footer class="site-footer py-3 mt-4" style="background: var(--footer-bg); border-top:1px solid var(--edge-line);">
+        <!-- estilos inline del footer -->
         <div class="container">
-            <div class="row gy-3 align-items-start">
+            <div class="row gy-3 align-items-start"> <!-- gutter vertical entre columnas -->
                 <!-- Créditos / legal -->
                 <div class="col-12 col-md-5">
                     <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
+                    <!-- leyenda legal -->
                 </div>
 
                 <!-- Contacto -->
@@ -232,22 +236,24 @@
                     <address class="mb-0">
                         <div class="d-flex align-items-center gap-2">
                             <i class="fa-solid fa-phone text-tinto"></i>
-                            <a class="link-underline-opacity-0" href="tel:+5491123456789"
-                                style="color: var(--tinto);">+54 9 11 2345-6789</a>
+                            <a class="contact-link link-underline-opacity-0" href="tel:+5491123456789">+54 9 11
+                                2345-6789</a>
                         </div>
                         <div class="d-flex align-items-center gap-2 mt-1">
                             <i class="fa-solid fa-envelope text-tinto"></i>
-                            <a class="link-underline-opacity-0" href="mailto:patoabarca07@gmail.com"
-                                style="color: var(--tinto);">patoabarca07@gmail.com</a>
+                            <a class="contact-link link-underline-opacity-0"
+                                href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a>
                         </div>
                     </address>
                 </div>
 
+
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">
+                        <!-- botones sociales alineados a derecha -->
                         <a class="btn btn-light rounded-circle border" href="https://github.com/patoabarca"
-                            target="_blank" aria-label="GitHub">
+                            target="_blank" aria-label="GitHub"> <!-- abre en nueva pestaña -->
                             <i class="fa-brands fa-github"></i>
                         </a>
                         <a class="btn btn-light rounded-circle border"
@@ -263,7 +269,7 @@
     <!-- Bootstrap 5.3.8 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> <!-- incluye Popper + componentes -->
 </body>
 
 </html>

@@ -218,6 +218,16 @@ img {
 .text-tinto {
   color: var(--tinto) !important;
 }
+/* Links de contacto (footer) */
+.contact-link {
+  color: var(--tinto);
+  text-decoration: none;
+}
+.contact-link:hover,
+.contact-link:focus {
+  text-decoration: underline;
+  outline: none;
+}
 
 /* ====Responsive =============================== */
 @media (max-width: 480px) {
