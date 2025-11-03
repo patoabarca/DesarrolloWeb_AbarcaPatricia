@@ -15,50 +15,54 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"> <!-- layout: asegura footer al fondo -->
     <!-- HEADER: Bootstrap Navbar -->
-    <header class="site-header">
-        <nav class=" navbar navbar-expand-lg">
-            <div class="container-xxl">
+    <header class="site-header"> <!-- contenedor semántico del nav -->
+        <nav class=" navbar navbar-expand-lg"> <!-- se expande desde lg -->
+            <div class="container-xxl"> <!-- ancho cómodo en desktop -->
                 <!-- Brand -->
                 <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html"
-                    aria-label="Guía de Vinos para Principiantes">
+                    aria-label="Guía de Vinos para Principiantes"> <!-- aria-label mejora accesibilidad -->
                     <img class="brand-logo" src="../assets/img/imag_menu.png" alt="Logo Guía de Vinos">
+                    <!-- alt descriptivo -->
                     <span class="brand-title">
                         <span class="brand-full d-none d-md-inline">Guía de Vinos para Principiantes</span>
+                        <!-- texto largo en md+ -->
                         <span class="brand-short d-inline d-md-none">Guía de Vinos</span>
+                        <!-- versión corta en mobile -->
                     </span>
                 </a>
 
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav"
                     aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
-                    <span class="navbar-toggler-icon"></span>
+                    <!-- control colapsable -->
+                    <span class="navbar-toggler-icon"></span> <!-- icono default Bootstrap -->
                 </button>
 
                 <!-- Nav -->
-                <div class="collapse navbar-collapse" id="primary-nav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                <div class="collapse navbar-collapse" id="primary-nav"> <!-- contenedor del menú -->
+                    <ul class="navbar-nav ms-auto align-items-lg-center"> <!-- items a la derecha -->
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
+                            <a class="nav-link" href="../index.html">Inicio</a> <!-- sin active aquí -->
                         </li>
 
                         <!-- Dropdown Uvas -->
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown"> <!-- menú desplegable -->
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Uvas
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu"> <!-- opciones del dropdown -->
                                 <li><a class="dropdown-item" href="./uvas_tintas.html">Uvas tintas</a></li>
                                 <li><a class="dropdown-item" href="./uvas_blancas.html">Uvas blancas</a></li>
                             </ul>
                         </li>
 
-
                         <li class="nav-item"><a class="nav-link" href="./regiones.html">Regiones</a></li>
                         <li class="nav-item"><a class="nav-link" href="./maridajes.html">Maridajes</a></li>
                         <li class="nav-item"><a class="nav-link active" href="./glosario.html">Glosario</a></li>
+                        <!-- activa esta vista -->
                     </ul>
                 </div>
             </div>
@@ -66,33 +70,35 @@
     </header>
 
     <!-- MAIN: contenido principal de la home -->
-    <main class="contenido container py-3 py-md-4 flex-grow-1">
+    <main class="contenido container py-3 py-md-4 flex-grow-1"> <!-- padding responsive + empuja footer -->
         <!-- título de página -->
-        <h1 class="page-title">Glosario</h1>
+        <h1 class="page-title">Glosario</h1> <!-- H1 único -->
 
         <!-- ===== Buscador: input + contador + botón limpiar ===== -->
-        <section class="bg-wash py-3 py-md-4">
+        <section class="bg-wash py-3 py-md-4"> <!-- bloque buscador -->
             <div class="container px-3 px-md-4"><!-- container del buscador -->
                 <div class="row g-2 align-items-center"><!-- fila del formulario -->
                     <div class="col-12 col-md-8 col-lg-6"><!-- columna: input -->
                         <label for="glossary-search" class="form-label mb-1">Buscar término</label>
+                        <!-- etiqueta asociada -->
                         <input id="glossary-search" type="search" class="form-control"
-                            placeholder="Escribí: acidez, taninos, barrica, etc.">
-                        <div class="form-text">Filtra en tiempo real por palabra clave.</div>
+                            placeholder="Escribí: acidez, taninos, barrica, etc."> <!-- control de búsqueda -->
+                        <div class="form-text">Filtra en tiempo real por palabra clave.</div> <!-- ayuda -->
                     </div>
                     <div class="col-12 col-md-4 col-lg-6 d-flex gap-2 mt-2 mt-md-4"><!-- columna: contador + limpiar -->
                         <span id="glossary-count" class="badge text-bg-secondary align-self-start">0 / 0</span>
+                        <!-- contador dinámico -->
                         <button id="glossary-clear" type="button"
                             class="btn btn-outline-secondary btn-sm align-self-start">
                             Limpiar
-                        </button>
+                        </button> <!-- botón para resetear -->
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== Aromas ===== -->
-        <section class="bg-wash py-3 py-md-4">
+        <section class="bg-wash py-3 py-md-4"> <!-- bloque de categoría -->
             <div class="container px-3 px-md-4"><!-- container de sección -->
                 <h2 class="h4 mb-3">Aromas</h2>
                 <div class="row g-3"><!-- grid: 1→2→3 -->
@@ -246,7 +252,7 @@
                         </article>
                     </div>
                     <!-- IG / DO / DOC (Argentina) -->
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4"> <!-- ítems de origen regulado -->
                         <article class="g-card">
                             <h3 class="h6 mb-2">IG / DO / DOC</h3>
                             <p class="mb-0">
@@ -310,27 +316,29 @@
     </main>
 
     <!-- Footer -->
-
     <footer class="site-footer py-3 mt-4" style="background: var(--footer-bg); border-top:1px solid var(--edge-line);">
+        <!-- estilos inline del footer -->
         <div class="container">
-            <div class="row gy-3 align-items-start">
+            <div class="row gy-3 align-items-start"> <!-- gutter vertical entre columnas -->
                 <!-- Créditos / legal -->
                 <div class="col-12 col-md-5">
                     <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
+                    <!-- leyenda legal -->
                 </div>
 
                 <!-- Contacto -->
                 <div class="col-12 col-md-4">
-                    <address class="mb-0">
+                    <address class="mb-0"> <!-- etiqueta semántica de contacto -->
                         <div class="d-flex align-items-center gap-2">
-                            <i class="fa-solid fa-phone text-tinto"></i>
+                            <i class="fa-solid fa-phone text-tinto"></i> <!-- icono teléfono -->
                             <a class="contact-link link-underline-opacity-0" href="tel:+5491123456789">+54 9 11
-                                2345-6789</a>
+                                2345-6789</a> <!-- clic para llamar -->
                         </div>
                         <div class="d-flex align-items-center gap-2 mt-1">
-                            <i class="fa-solid fa-envelope text-tinto"></i>
+                            <i class="fa-solid fa-envelope text-tinto"></i> <!-- icono correo -->
                             <a class="contact-link link-underline-opacity-0"
                                 href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a>
+                            <!-- clic para enviar mail -->
                         </div>
                     </address>
                 </div>
@@ -338,8 +346,9 @@
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">
+                        <!-- botones sociales alineados a derecha en md+ -->
                         <a class="btn btn-light rounded-circle border" href="https://github.com/patoabarca"
-                            target="_blank" aria-label="GitHub">
+                            target="_blank" aria-label="GitHub"> <!-- abre en nueva pestaña -->
                             <i class="fa-brands fa-github"></i>
                         </a>
                         <a class="btn btn-light rounded-circle border"
@@ -356,8 +365,8 @@
     <!-- Bootstrap 5.3.8 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script src="../assets/js/site.js"></script>
+        crossorigin="anonymous"></script> <!-- incluye Popper + componentes -->
+    <script src="../assets/js/site.js"></script> <!-- script propio: buscador/contador del glosario -->
 </body>
 
 </html>

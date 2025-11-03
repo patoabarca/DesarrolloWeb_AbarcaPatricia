@@ -16,48 +16,52 @@
 </head>
 
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"> <!-- layout: asegura footer al fondo -->
     <!-- HEADER: Bootstrap Navbar -->
-    <header class="site-header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-xxl">
+    <header class="site-header"> <!-- contenedor semántico del nav -->
+        <nav class="navbar navbar-expand-lg"> <!-- se expande desde lg -->
+            <div class="container-xxl"> <!-- ancho cómodo en desktop -->
                 <!-- Brand -->
                 <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html"
-                    aria-label="Guía de Vinos para Principiantes">
+                    aria-label="Guía de Vinos para Principiantes"> <!-- aria-label para lectores -->
                     <img class="brand-logo" src="../assets/img/imag_menu.png" alt="Logo Guía de Vinos">
+                    <!-- alt descriptivo -->
                     <span class="brand-title">
                         <span class="brand-full d-none d-md-inline">Guía de Vinos para Principiantes</span>
+                        <!-- texto largo en md+ -->
                         <span class="brand-short d-inline d-md-none">Guía de Vinos</span>
+                        <!-- versión corta en mobile -->
                     </span>
                 </a>
 
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav"
                     aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
-                    <span class="navbar-toggler-icon"></span>
+                    <!-- control colapsable -->
+                    <span class="navbar-toggler-icon"></span> <!-- icono default Bootstrap -->
                 </button>
 
                 <!-- Nav -->
-                <div class="collapse navbar-collapse" id="primary-nav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                <div class="collapse navbar-collapse" id="primary-nav"> <!-- contenedor del menú -->
+                    <ul class="navbar-nav ms-auto align-items-lg-center"> <!-- items a la derecha -->
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
+                            <a class="nav-link" href="../index.html">Inicio</a> <!-- sin active aquí -->
                         </li>
 
                         <!-- Dropdown Uvas -->
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown"> <!-- menú desplegable -->
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Uvas
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu"> <!-- opciones del dropdown -->
                                 <li><a class="dropdown-item" href="./uvas_tintas.html">Uvas tintas</a></li>
                                 <li><a class="dropdown-item" href="./uvas_blancas.html">Uvas blancas</a></li>
                             </ul>
                         </li>
 
-
                         <li class="nav-item"><a class="nav-link active" href="./regiones.html">Regiones</a></li>
+                        <!-- activa esta vista -->
                         <li class="nav-item"><a class="nav-link" href="./maridajes.html">Maridajes</a></li>
                         <li class="nav-item"><a class="nav-link" href="./glosario.html">Glosario</a></li>
                     </ul>
@@ -67,23 +71,23 @@
     </header>
 
     <!-- ===== MAIN: contenido principal de Regiones ===== -->
-    <main class="container my-4 flex-grow-1">
+    <main class="container my-4 flex-grow-1"> <!-- margen vertical + empuja footer -->
         <!-- título de página -->
-        <h1 class="page-title">Regiones</h1>
+        <h1 class="page-title">Regiones</h1> <!-- H1 único -->
 
         <!-- Zonas principales -->
-        <section class="bg-wash border rounded-3 p-3 p-md-4">
-            <h2 class="mb-3">Zonas principales</h2>
+        <section class="bg-wash border rounded-3 p-3 p-md-4"> <!-- bloque con fondo suave -->
+            <h2 class="mb-3">Zonas principales</h2> <!-- subtítulo -->
 
             <!-- Grid responsive: 1→2→3 columnas -->
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"> <!-- grilla adaptable -->
 
                 <!-- Valle de Uco -->
                 <div class="col">
-                    <article class="card h-100">
-                        <div class="ratio ratio-4x3">
+                    <article class="card h-100"> <!-- card alto completo -->
+                        <div class="ratio ratio-4x3"> <!-- mantiene 4:3 -->
                             <img src="../assets/img/imag-uco.png" class="w-100 h-100" alt="Viñedos en Valle de Uco"
-                                loading="lazy">
+                                loading="lazy"> <!-- lazy: mejora performance -->
                         </div>
                         <div class="card-body">
                             <h3 class="card-title h5">Valle de Uco (Mendoza)</h3>
@@ -91,7 +95,7 @@
                             <p class="mb-1"><strong>Perfil:</strong> Malbec vibrante, fruta negra/violeta, buena acidez;
                                 blancos tensos y minerales.</p>
                             <p class="mb-1"><strong>Bodegas:</strong></p>
-                            <ul class="bodegas mb-0">
+                            <ul class="bodegas mb-0"> <!-- lista breve de referentes -->
                                 <li>Salentein</li>
                                 <li>Andeluna</li>
                                 <li>Domaine Bousquet</li>
@@ -216,29 +220,30 @@
         </section>
     </main>
 
-
     <!-- Footer -->
-
     <footer class="site-footer py-3 mt-4" style="background: var(--footer-bg); border-top:1px solid var(--edge-line);">
+        <!-- estilos inline del footer -->
         <div class="container">
-            <div class="row gy-3 align-items-start">
+            <div class="row gy-3 align-items-start"> <!-- gutter vertical entre columnas -->
                 <!-- Créditos / legal -->
                 <div class="col-12 col-md-5">
                     <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
+                    <!-- leyenda legal -->
                 </div>
 
                 <!-- Contacto -->
                 <div class="col-12 col-md-4">
-                    <address class="mb-0">
+                    <address class="mb-0"> <!-- etiqueta semántica de contacto -->
                         <div class="d-flex align-items-center gap-2">
-                            <i class="fa-solid fa-phone text-tinto"></i>
+                            <i class="fa-solid fa-phone text-tinto"></i> <!-- icono teléfono -->
                             <a class="contact-link link-underline-opacity-0" href="tel:+5491123456789">+54 9 11
-                                2345-6789</a>
+                                2345-6789</a> <!-- clic para llamar -->
                         </div>
                         <div class="d-flex align-items-center gap-2 mt-1">
-                            <i class="fa-solid fa-envelope text-tinto"></i>
+                            <i class="fa-solid fa-envelope text-tinto"></i> <!-- icono correo -->
                             <a class="contact-link link-underline-opacity-0"
                                 href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a>
+                            <!-- clic para enviar mail -->
                         </div>
                     </address>
                 </div>
@@ -246,8 +251,9 @@
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">
+                        <!-- botones sociales alineados a derecha en md+ -->
                         <a class="btn btn-light rounded-circle border" href="https://github.com/patoabarca"
-                            target="_blank" aria-label="GitHub">
+                            target="_blank" aria-label="GitHub"> <!-- abre en nueva pestaña -->
                             <i class="fa-brands fa-github"></i>
                         </a>
                         <a class="btn btn-light rounded-circle border"
@@ -263,7 +269,7 @@
     <!-- Bootstrap 5.3.8 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> <!-- incluye Popper + componentes -->
 </body>
 
 </html>
