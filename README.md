@@ -40,7 +40,7 @@ Implementado como framework principal para:
 - **Botones sociales**: `btn`, `rounded-circle`, `border`.
 - **Proporción de imágenes**: `ratio ratio-4x3`.
 
-### 💠 **CSS Grid**
+### **CSS Grid**
 
 Usado manualmente en **Uvas tintas/blancas**:
 
