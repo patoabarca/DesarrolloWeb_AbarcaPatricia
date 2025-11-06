@@ -1,7 +1,4 @@
-# Node y dependencias (por si usás herramientas)
-node_modules/
-dist/
-.build/
+Wireframes/
 
 # SO / editor
 .DS_Store
