@@ -70,156 +70,145 @@
         </nav>
     </header>
 
-    <main class="container my-4 flex-grow-1"> <!-- margen vertical + empuja footer -->
-        <h1 class="page-title">Uvas tintas</h1> <!-- H1 único -->
+    <!-- ===== MAIN ===== -->
+    <main class="container my-4 flex-grow-1"><!-- FLEX (Bootstrap): ocupa espacio -->
+        <h1 class="page-title">Uvas tintas</h1>
 
-        <section class="section intro mb-3"> <!-- introducción breve -->
+        <section class="section intro mb-3">
             <p>Seis tintas clave y sus rasgos más reconocibles: color, aromas, cuerpo y textura de taninos. Un
                 pantallazo rápido para identificarlas.</p>
         </section>
 
         <section class="bg-wash border rounded-3 p-3 p-md-4">
-            <h2 class="mb-3">Fichas</h2> <!-- subtítulo de sección -->
+            <h2 class="mb-3">Fichas</h2>
 
-            <div class="row row-cols-1 row-cols-lg-2 g-3"> <!-- 1 col en mobile, 2 en lg -->
+            <!-- GRID EXTERNO: cuadrícula de fichas (1 col → 2 col ≥768px → 3 col ≥992px) -->
+            <div class="fichas-grid">
 
-                <!-- Malbec -->
-                <div class="col"> <!-- columna responsiva -->
-                    <article class="card h-100 p-2"> <!-- card con alto completo -->
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/malbec.png" alt="Copa de Malbec color violáceo"
-                                        class="w-100 h-100" loading="lazy"> <!-- lazy: mejora performance -->
-                                </div>
-                                <div class="small text-muted mt-1">Jugoso</div> <!-- descripcion  corta -->
+                <!-- ================= CARD · Malbec ================= -->
+                <article class="card h-100 p-2">
+                    <!-- GRID INTERNO: imagen + texto -->
+                    <div class="ficha-grid">
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/malbec.png" alt="Copa de Malbec color violáceo"
+                                    class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Malbec</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> fruta negra madura (ciruela, mora) y
-                                        violeta; taninos amables, cuerpo medio-alto, final envolvente.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Jugoso</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Malbec</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> fruta negra madura (ciruela, mora) y
+                                    violeta; taninos amables, cuerpo medio-alto, final envolvente.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Cabernet Sauvignon -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/imag-cabernetsauvignon.png"
-                                        alt="Copa de Cabernet Sauvignon rubí profundo" class="w-100 h-100"
-                                        loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Estructurado</div>
+                <!-- ================= CARD · Cabernet Sauvignon ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/imag-cabernetsauvignon.png"
+                                    alt="Copa de Cabernet Sauvignon rubí profundo" class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Cabernet Sauvignon</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> cassis, pimiento, especias; taninos
-                                        firmes, acidez media-alta, gran potencial de guarda.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Estructurado</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Cabernet Sauvignon</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> cassis, pimiento, especias; taninos
+                                    firmes, acidez media-alta, gran potencial de guarda.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Cabernet Franc -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/imag-cabernetfranc.png" alt="Copa de Cabernet Franc rubí"
-                                        class="w-100 h-100" loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Herbáceo</div>
+                <!-- ================= CARD · Cabernet Franc ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/imag-cabernetfranc.png" alt="Copa de Cabernet Franc rubí"
+                                    class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Cabernet Franc</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> frambuesa, hierbas frescas y
-                                        pimiento dulce; tanino medio, perfil aromático y ágil.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Herbáceo</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Cabernet Franc</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> frambuesa, hierbas frescas y pimiento
+                                    dulce; tanino medio, perfil aromático y ágil.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Pinot Noir -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/pinot-noir.png" alt="Copa de Pinot Noir rubí claro"
-                                        class="w-100 h-100" loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Delicado</div>
+                <!-- ================= CARD · Pinot Noir ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/pinot-noir.png" alt="Copa de Pinot Noir rubí claro"
+                                    class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Pinot Noir</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> cereza y frambuesa, flores y
-                                        sotobosque; cuerpo ligero-medio, tanino fino, final elegante.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Delicado</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Pinot Noir</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> cereza y frambuesa, flores y sotobosque;
+                                    cuerpo ligero-medio, tanino fino, final elegante.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Merlot -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/imag-merlot.png" alt="Copa de Merlot rubí"
-                                        class="w-100 h-100" loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Suave</div>
+                <!-- ================= CARD · Merlot ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/imag-merlot.png" alt="Copa de Merlot rubí" class="w-100 h-100"
+                                    loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Merlot</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> ciruela, fruta roja madura y
-                                        chocolate; taninos redondos, textura sedosa, perfil amable.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Suave</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Merlot</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> ciruela, fruta roja madura y chocolate;
+                                    taninos redondos, textura sedosa, perfil amable.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Petit Verdot -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/imag-petitverdot.png"
-                                        alt="Copa de Petit Verdot violáceo intenso" class="w-100 h-100" loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Intenso</div>
+                <!-- ================= CARD · Petit Verdot ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/imag-petitverdot.png"
+                                    alt="Copa de Petit Verdot violáceo intenso" class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Petit Verdot</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> fruta negra, violeta y especias;
-                                        color profundo, tanino firme, acidez marcada; gran aporte en cortes.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Intenso</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Petit Verdot</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> fruta negra, violeta y especias; color
+                                    profundo, tanino firme, acidez marcada; gran aporte en cortes.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-            </div>
+            </div><!-- /fichas-grid -->
         </section>
     </main>
-
     <!-- Footer -->
     <footer class="site-footer py-3 mt-4"> <!-- separación del contenido -->
         <div class="container">

@@ -3,85 +3,83 @@
 
 /* =========  Paleta + base tipográfica  =========== */
 :root {
-  --bg: #ede2e0; /* fondo general */
-  --ink: #2b2b2b; /* texto principal */
-  --muted: #6b6b6b; /* texto secundario */
-  --tinto: #6d0f20; /* color marca (vino tinto) */
-  --rose: #b55a6a; /* acento */
-  --line: #e7dadd; /* líneas suaves */
-  --card: #fff7f4; /* fondo de tarjetas */
-  --wash: #f7f1f2; /* bloques aclarados */
-  --header-bg: #e1d2d0; /* fondo header */
-  --footer-bg: #e1d2d0; /* fondo footer */
-  --edge-line: #d7c5c4; /* borde header/footer */
+  --bg: #ede2e0;
+  --ink: #2b2b2b;
+  --muted: #6b6b6b;
+  --tinto: #6d0f20;
+  --rose: #b55a6a;
+  --line: #e7dadd;
+  --card: #fff7f4;
+  --wash: #f7f1f2;
+  --header-bg: #e1d2d0;
+  --footer-bg: #e1d2d0;
+  --edge-line: #d7c5c4;
 }
 
-/* —— Reset —— */
+/* =========  Reset  =========== */
 html {
   font-size: 18px;
   box-sizing: border-box;
-} /* base accesible */
+}
 *,
 *::before,
 *::after {
   box-sizing: inherit;
-} /* hereda box-sizing */
+}
 
-/* —— Base del documento —— */
+/* =========  Base del documento  =========== */
 body {
-  margin: 0; /* márgenes por defecto fuera */
+  margin: 0;
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   color: var(--ink);
   background: var(--bg);
-  line-height: 1.6; /* legibilidad */
+  line-height: 1.6;
 }
 
-/* =========  Navbar (ajustes a boostrap)  =========== */
+/* =========  Navbar (ajustes Bootstrap)  =========== */
 .site-header .navbar {
   background: var(--header-bg);
   border-bottom: 1px solid var(--edge-line);
-} /* separador */
+}
 
-/* —— Marca (logo + título) —— */
+/* Marca */
 .brand-logo {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  object-fit: cover; /* evita deformación */
+  object-fit: cover;
   background: #fff;
-  padding: 2px; /* filo blanco */
+  padding: 2px;
 }
 .brand-title {
-  font-family: Georgia, "Times New Roman", serif; /* fuente para el brand-title*/
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
   color: #5a0d1b;
-  font-size: 1.05rem; /* control fino */
+  font-size: 1.05rem;
 }
 .brand-title:hover {
   text-decoration: underline;
-} /* feedback accesible */
+}
 
-/* —— Ítems de navegación —— */
+/* Ítems de navegación */
 .navbar .nav-link {
   color: var(--ink);
   font-weight: 600;
   border-radius: 0.5rem;
-  padding: 0.45rem 0.6rem; /* hit area cómoda */
+  padding: 0.45rem 0.6rem;
 }
 .navbar .nav-link:hover {
   background: #fff;
   color: var(--tinto);
-  outline: 1px solid var(--edge-line); /* foco visible */
+  outline: 1px solid var(--edge-line);
   text-decoration: none;
 }
-
-/* estado activo */
 .navbar .nav-link.active {
   background: var(--tinto);
   color: #fff;
 }
 
-/* —— Dropdown (apertura de Uvas) —— */
+/* Dropdown */
 .dropdown-menu {
   border: 1px solid var(--edge-line);
   border-radius: 0.6rem;
@@ -94,30 +92,24 @@ body {
   color: var(--tinto);
 }
 
-/* —— Botón hamburguesa —— */
+/* Hamburguesa (foco visible) */
 .navbar-toggler {
   border-color: var(--edge-line);
 }
 .navbar-toggler:focus {
   box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
-} /* halo accesible */
+}
 
-/* =========  Tipografía y bloques de contenido  =========== */
-/* —— Espaciado vertical del main —— */
+/* =========  Tipografía y bloques  =========== */
 main {
   padding: 1rem 0;
-} /* lateral lo da .container */
-
-/* —— Jerarquía de títulos —— */
-
-/* Título de página  */
+} /* margen vertical general */
 .page-title {
-  font-family: "Lora", Georgia, "Times New Roman", serif; /* título con mas carácter */
+  font-family: "Lora", Georgia, "Times New Roman", serif;
   font-size: 1.9rem;
   color: var(--tinto);
   margin: 0.4rem 0 1rem;
 }
-
 h2 {
   margin: 1rem 0 0.5rem;
   font-size: 1.3rem;
@@ -130,9 +122,9 @@ h3 {
 }
 p {
   margin: 0.5rem 0;
-} /* respiración de párrafos */
+}
 
-/* —— Enlaces globales —— */
+/* Enlaces */
 a {
   color: var(--rose);
 }
@@ -141,54 +133,49 @@ a:hover {
   text-decoration: underline;
 }
 
-/* —— Bloques con “bg-wash” (fondos suaves) —— */
+/* Bloques suaves + separadores */
 .bg-wash {
   background: var(--wash);
   border: 1px solid var(--line);
 }
-/* separación visual */
 .section-sep {
   border-top: 1px solid var(--line);
   padding-top: 0.75rem;
 }
 
-/* —— Intro (home) —— */
+/* Intro (home) */
 .intro {
-  background: #ffffffaa; /* blanco translúcido */
+  background: #ffffffaa;
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0.75rem 1rem;
 }
 
-/* =========  Cards (unificadas)  =========== */
-/* —— Apariencia de tarjeta —— */
+/* =========  Cards  =========== */
 .card {
   background: var(--card);
   border: 1px solid var(--line);
-  box-shadow: inset 0 0 0 1px var(--line); /* filo interno sutil */
+  box-shadow: inset 0 0 0 1px var(--line);
 }
 .card .card-title {
   color: var(--tinto);
 }
 .card figure {
   margin: 0 0 0.6rem;
-} /* separación imagen-título */
+}
 
-/* —— Imágenes base —— */
+/* Imágenes */
 img {
   max-width: 100%;
   height: auto;
   display: block;
-} /* evita espacios inline */
-
+}
 .object-fit-cover {
   object-fit: cover;
-} /* recorte */
-
-/* —— Imágenes dentro de .ratio (mantener 4:3) —— */
+}
 .ratio > img {
   object-fit: cover;
-} /* sin distorsión */
+}
 
 /* =========  Glosario (cards pequeñas)  =========== */
 .g-card {
@@ -200,42 +187,31 @@ img {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem; /* columnas igualadas */
+  gap: 0.25rem; /* FLEX interno para apilar contenido */
 }
-
-/* títulos de glosario */
 .g-card h3 {
   color: var(--tinto);
 }
 
 /* =========  Footer  =========== */
-/* —— Contenedor de pie —— */
 .site-footer {
   background: var(--footer-bg);
   border-top: 1px solid var(--edge-line);
 }
-
-/* —— Botones de redes —— */
 .site-footer .btn i {
   line-height: 1;
-} /* centra ícono */
-
+}
 .site-footer .btn:hover {
   border-color: var(--tinto);
   color: var(--tinto);
 }
-
-/* —— Texto y address —— */
 .site-footer p,
 .site-footer address {
   font-size: 0.95rem;
-} /* compacto */
-
+}
 .text-tinto {
   color: var(--tinto);
-} /* utilidad para iconos */
-
-/* —— Links de contacto —— */
+}
 .contact-link {
   color: var(--tinto);
   text-decoration: none;
@@ -244,18 +220,303 @@ img {
 .contact-link:focus {
   text-decoration: underline;
   outline: none;
-} /* foco simple */
+}
 
-/* =========  Responsive (≤480px)  =========== */
+/* fuentes: títulos (Lora) y cuerpo (Roboto) */
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;600;700&display=swap");
 
-/* —— Ajustes de marca en mobile —— */
+/* =========  Paleta + base tipográfica  =========== */
+:root {
+  --bg: #ede2e0;
+  --ink: #2b2b2b;
+  --muted: #6b6b6b;
+  --tinto: #6d0f20;
+  --rose: #b55a6a;
+  --line: #e7dadd;
+  --card: #fff7f4;
+  --wash: #f7f1f2;
+  --header-bg: #e1d2d0;
+  --footer-bg: #e1d2d0;
+  --edge-line: #d7c5c4;
+}
+
+/* —— Reset —— */
+html {
+  font-size: 18px;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* —— Base del documento —— */
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* =========  Navbar (ajustes a Bootstrap)  =========== */
+.site-header .navbar {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--edge-line);
+}
+
+/* —— Marca (logo + texto) —— */
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 2px;
+}
+.brand-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: #5a0d1b;
+  font-size: 1.05rem;
+}
+.brand-title:hover {
+  text-decoration: underline;
+}
+
+/* —— Ítems de navegación —— */
+.navbar .nav-link {
+  color: var(--ink);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.6rem;
+}
+.navbar .nav-link:hover {
+  background: #fff;
+  color: var(--tinto);
+  outline: 1px solid var(--edge-line);
+  text-decoration: none;
+}
+.navbar .nav-link.active {
+  background: var(--tinto);
+  color: #fff;
+}
+
+/* —— Dropdown —— */
+.dropdown-menu {
+  border: 1px solid var(--edge-line);
+  border-radius: 0.6rem;
+}
+.dropdown-item {
+  padding: 0.45rem 0.75rem;
+}
+.dropdown-item:hover {
+  background: #f9f5f5;
+  color: var(--tinto);
+}
+
+/* —— Hamburguesa —— */
+.navbar-toggler {
+  border-color: var(--edge-line);
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
+}
+
+/* =========  Tipografía y bloques  =========== */
+main {
+  padding: 1rem 0;
+} /* el lateral lo aporta .container */
+.page-title {
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  font-size: 1.9rem;
+  color: var(--tinto);
+  margin: 0.4rem 0 1rem;
+}
+h2 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.3rem;
+  color: var(--tinto);
+}
+h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.1rem;
+  color: var(--tinto);
+}
+p {
+  margin: 0.5rem 0;
+}
+
+/* —— Enlaces —— */
+a {
+  color: var(--rose);
+}
+a:hover {
+  color: var(--tinto);
+  text-decoration: underline;
+}
+
+/* —— Bloques “wash” —— */
+.bg-wash {
+  background: var(--wash);
+  border: 1px solid var(--line);
+}
+.section-sep {
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+
+/* —— Intro —— */
+.intro {
+  background: #ffffffaa;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+/* =========  Cards  =========== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.card .card-title {
+  color: var(--tinto);
+}
+.card figure {
+  margin: 0 0 0.6rem;
+}
+
+/* —— Imágenes —— */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.object-fit-cover {
+  object-fit: cover;
+}
+.ratio > img {
+  object-fit: cover;
+}
+
+/* =========  Glosario (cards pequeñas)  =========== */
+.g-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  box-shadow: inset 0 0 0 1px var(--line);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* === FLEX: columna de contenido en la card === */
+}
+.g-card h3 {
+  color: var(--tinto);
+}
+
+/* =========  Footer  =========== */
+.site-footer {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--edge-line);
+}
+.site-footer .btn i {
+  line-height: 1;
+}
+.site-footer .btn:hover {
+  border-color: var(--tinto);
+  color: var(--tinto);
+}
+.site-footer p,
+.site-footer address {
+  font-size: 0.95rem;
+}
+.text-tinto {
+  color: var(--tinto);
+}
+.contact-link {
+  color: var(--tinto);
+  text-decoration: none;
+}
+.contact-link:hover,
+.contact-link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ==============================================
+   BREAKPOINTS USADOS
+   - Base (Desktop): ≥992px
+   - Tablet: 768px–991px  (primero)
+   - Mobile: 360px–480px  (después)
+   Nota: evitamos repetir reglas ya cubiertas por ranges mayores
+   ============================================== */
+
+/* ======== BASE (Desktop ≥992px) ======== */
+/* GRID externo: 3 columnas en desktop */
+.fichas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* GRID interno: 2 columnas media|texto */
+.ficha-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 1rem;
+  align-items: start;
+}
+.ficha-media .ratio {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ficha-texto .card-body {
+  padding: 0;
+}
+
+/* FLEX en card-body (por si luego agregás botones de acción) */
+.card.h-100 .card-body {
+  display: flex;
+  flex-direction: column;
+}
+.card.h-100 .card-body .btn {
+  margin-top: auto;
+}
+
+/* ======== TABLET (≤991px) ======== */
+@media (max-width: 991px) {
+  /* GRID externo: 2 columnas en tablet */
+  .fichas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* GRID interno: se mantiene 5/7 (no repetir si no hace falta) */
+  /* .ficha-grid { grid-template-columns: 5fr 7fr; } */
+}
+
+/* ======== MOBILE (≤480px) ======== */
 @media (max-width: 480px) {
+  /* GRID externo: 1 columna en mobile */
+  .fichas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* GRID interno: apilado en mobile */
+  .ficha-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Marca compacta */
   .brand-logo {
     width: 48px;
     height: 48px;
-  } /* logo más chico */
+  }
   .brand-title {
     font-size: 1.05rem;
     white-space: nowrap;
-  } /* evita corte de marca */
+  } /* evita corte del brand */
 }

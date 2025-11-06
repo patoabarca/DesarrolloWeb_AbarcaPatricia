@@ -68,158 +68,145 @@
         </nav>
     </header>
 
-    <main class="container my-4 flex-grow-1"> <!-- margen vertical + empuja footer -->
-        <h1 class="page-title">Uvas blancas</h1> <!-- H1 único -->
+    <!-- ===== MAIN ===== -->
+    <main class="container my-4 flex-grow-1"><!-- FLEX (Bootstrap): hace crecer el main -->
+        <h1 class="page-title">Uvas blancas</h1>
 
-        <section class="section intro mb-3"> <!-- introducción breve -->
+        <section class="section intro mb-3">
             <p>Seis blancas clave y sus rasgos: aromas, textura y nivel de acidez. Un vistazo rápido para ubicarlas por
                 estilo.</p>
         </section>
 
-        <section class="bg-wash border rounded-3 p-3 p-md-4"> <!-- bloque con fondo suave -->
-            <h2 class="mb-3">Fichas</h2> <!-- subtítulo de sección -->
+        <section class="bg-wash border rounded-3 p-3 p-md-4">
+            <h2 class="mb-3">Fichas</h2>
 
-            <!-- Grid 1→2 -->
-            <div class="row row-cols-1 row-cols-lg-2 g-3"> <!-- 1 col en mobile, 2 en lg -->
+            <!-- GRID EXTERNO: define la cuadrícula de fichas (1 col → 2/3 col en breakpoints) -->
+            <div class="fichas-grid">
 
-                <!-- Chardonnay -->
-                <div class="col"> <!-- columna responsiva -->
-                    <article class="card h-100 p-2"> <!-- card con alto completo -->
-                        <div class="row g-3 align-items-start"> <!-- layout interno -->
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3"> <!-- mantiene 4:3 -->
-                                    <img src="../assets/img/chardonnay.png" alt="Copa de Chardonnay dorado pálido"
-                                        class="w-100 h-100" loading="lazy"> <!-- lazy: mejora performance -->
-                                </div>
-                                <div class="small text-muted mt-1">Cremoso</div> <!-- descriptor corto bajo imagen-->
+                <!-- ================= CARD · Chardonnay ================= -->
+                <article class="card h-100 p-2"><!-- Card “blanca” -->
+                    <!-- GRID INTERNO: imagen (col 1) + texto (col 2) -->
+                    <div class="ficha-grid">
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/chardonnay.png" alt="Copa de Chardonnay dorado pálido"
+                                    class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Chardonnay</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> manzana, pera y cítricos; con roble
-                                        puede sumar vainilla y manteca. Volumen medio, acidez media-alta según el
-                                        estilo; textura amplia.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Cremoso</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Chardonnay</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> manzana, pera y cítricos; con roble
+                                    puede sumar vainilla y manteca. Volumen medio, acidez media-alta según el estilo;
+                                    textura amplia.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Sauvignon Blanc -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/imag-savignonblanc.png"
-                                        alt="Copa de Sauvignon Blanc amarillo verdoso" class="w-100 h-100"
-                                        loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Herbal</div>
+                <!-- ================= CARD · Sauvignon Blanc ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/imag-savignonblanc.png"
+                                    alt="Copa de Sauvignon Blanc amarillo verdoso" class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Sauvignon Blanc</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> lima, pomelo, maracuyá y hierbas
-                                        (pasto cortado). Acidez alta, muy fresco, final seco y nítido.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Herbal</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Sauvignon Blanc</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> lima, pomelo, maracuyá y hierbas (pasto
+                                    cortado). Acidez alta, muy fresco, final seco y nítido.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Torrontés -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/torrontes.png" alt="Copa de Torrontés amarillo pálido"
-                                        class="w-100 h-100" loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Aromático</div>
+                <!-- ================= CARD · Torrontés ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/torrontes.png" alt="Copa de Torrontés amarillo pálido"
+                                    class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Torrontés</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> flores blancas (jazmín, azahar), uva
-                                        y cítricos. Boca muy fresca, acidez marcada; final seco con recuerdo perfumado.
-                                    </p>
-                                </div>
+                            <div class="small text-muted mt-1">Aromático</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Torrontés</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> flores blancas (jazmín, azahar), uva y
+                                    cítricos. Boca muy fresca, acidez marcada; final seco con recuerdo perfumado.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Semillón -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/imag-semillon.png" alt="Copa de Semillón amarillo dorado"
-                                        class="w-100 h-100" loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Meloso</div>
+                <!-- ================= CARD · Semillón ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/imag-semillon.png" alt="Copa de Semillón amarillo dorado"
+                                    class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Semillón</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> miel, cera, manzana madura y flores.
-                                        Textura untuosa, acidez media; gran evolución en botella y afinidad con crianza.
-                                    </p>
-                                </div>
+                            <div class="small text-muted mt-1">Meloso</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Semillón</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> miel, cera, manzana madura y flores.
+                                    Textura untuosa, acidez media; gran evolución en botella y afinidad con crianza.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Viognier -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/imag-viognier.png" alt="Copa de Viognier amarillo brillante"
-                                        class="w-100 h-100" loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Fragante</div>
+                <!-- ================= CARD · Viognier ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/imag-viognier.png" alt="Copa de Viognier amarillo brillante"
+                                    class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Viognier</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> durazno, damasco y flores blancas;
-                                        toque especiado suave. Boca amplia, acidez moderada, sensación untuosa.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Fragante</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Viognier</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> durazno, damasco y flores blancas; toque
+                                    especiado suave. Boca amplia, acidez moderada, sensación untuosa.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-                <!-- Riesling -->
-                <div class="col">
-                    <article class="card h-100 p-2">
-                        <div class="row g-3 align-items-start">
-                            <div class="col-12 col-md-5">
-                                <div class="ratio ratio-4x3">
-                                    <img src="../assets/img/imag-riesling.png" alt="Copa de Riesling amarillo verdoso"
-                                        class="w-100 h-100" loading="lazy">
-                                </div>
-                                <div class="small text-muted mt-1">Vibrante</div>
+                <!-- ================= CARD · Riesling ================= -->
+                <article class="card h-100 p-2">
+                    <div class="ficha-grid"><!-- GRID INTERNO -->
+                        <div class="ficha-media">
+                            <div class="ratio ratio-4x3">
+                                <img src="../assets/img/imag-riesling.png" alt="Copa de Riesling amarillo verdoso"
+                                    class="w-100 h-100" loading="lazy">
                             </div>
-                            <div class="col-12 col-md-7">
-                                <div class="card-body p-0">
-                                    <h3 class="card-title h5 mb-2">Riesling</h3>
-                                    <p class="mb-0"><strong>Notas rápidas:</strong> lima, manzana verde; con evolución
-                                        puede aparecer toque mineral/hidrocarburo. Acidez alta, perfil tenso; de seco a
-                                        off-dry según región.</p>
-                                </div>
+                            <div class="small text-muted mt-1">Vibrante</div>
+                        </div>
+                        <div class="ficha-texto">
+                            <div class="card-body p-0">
+                                <h3 class="card-title h5 mb-2">Riesling</h3>
+                                <p class="mb-0"><strong>Notas rápidas:</strong> lima, manzana verde; con evolución puede
+                                    aparecer toque mineral/hidrocarburo. Acidez alta, perfil tenso; de seco a off-dry
+                                    según región.</p>
                             </div>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
-            </div>
+            </div><!-- /fichas-grid -->
         </section>
     </main>
 
