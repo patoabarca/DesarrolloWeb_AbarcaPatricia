@@ -55,8 +55,8 @@
                                 Uvas
                             </a>
                             <ul class="dropdown-menu"> <!-- opciones del dropdown -->
+                                <!-- pagina activa -->
                                 <li><a class="dropdown-item active" href="./uvas_tintas.html">Uvas tintas</a></li>
-                                <!-- seccion activa -->
                                 <li><a class="dropdown-item" href="./uvas_blancas.html">Uvas blancas</a></li>
                             </ul>
                         </li>
@@ -113,7 +113,7 @@
                                 <div class="ratio ratio-4x3">
                                     <img src="../assets/img/imag-cabernetsauvignon.png"
                                         alt="Copa de Cabernet Sauvignon rubí profundo" class="w-100 h-100"
-                                        loading="lazy"> <!-- recurso pesado: lazy ayuda -->
+                                        loading="lazy">
                                 </div>
                                 <div class="small text-muted mt-1">Estructurado</div>
                             </div>
@@ -221,10 +221,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer py-3 mt-4" style="background: var(--footer-bg); border-top:1px solid var(--edge-line);">
-        <!-- estilos inline del footer -->
+    <footer class="site-footer py-3 mt-4"> <!-- separación del contenido -->
         <div class="container">
-            <div class="row gy-3 align-items-start"> <!-- gutter vertical entre columnas -->
+            <div class="row gy-3 align-items-start"> <!-- separacion vertical entre columnas -->
                 <!-- Créditos / legal -->
                 <div class="col-12 col-md-5">
                     <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
@@ -233,16 +232,17 @@
 
                 <!-- Contacto -->
                 <div class="col-12 col-md-4">
-                    <address class="mb-0">
+                    <address class="mb-0"> <!-- bloque semántico de datos de contacto -->
                         <div class="d-flex align-items-center gap-2">
                             <i class="fa-solid fa-phone text-tinto"></i>
+                            <!-- ícono decorativo-->
                             <a class="contact-link link-underline-opacity-0" href="tel:+5491123456789">+54 9 11
-                                2345-6789</a>
+                                2345-6789</a> <!-- clickleable -->
                         </div>
                         <div class="d-flex align-items-center gap-2 mt-1">
-                            <i class="fa-solid fa-envelope text-tinto"></i>
+                            <i class="fa-solid fa-envelope text-tinto"></i> <!-- ícono decorativo -->
                             <a class="contact-link link-underline-opacity-0"
-                                href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a>
+                                href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a> <!-- click-to-email -->
                         </div>
                     </address>
                 </div>
@@ -251,7 +251,7 @@
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">
-                        <!-- botones sociales alineados a derecha -->
+                        <!-- botones sociales alineados a derecha en md -->
                         <a class="btn btn-light rounded-circle border" href="https://github.com/patoabarca"
                             target="_blank" aria-label="GitHub"> <!-- abre en nueva pestaña -->
                             <i class="fa-brands fa-github"></i>

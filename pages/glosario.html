@@ -316,10 +316,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer py-3 mt-4" style="background: var(--footer-bg); border-top:1px solid var(--edge-line);">
-        <!-- estilos inline del footer -->
+    <footer class="site-footer py-3 mt-4"> <!-- separación del contenido -->
         <div class="container">
-            <div class="row gy-3 align-items-start"> <!-- gutter vertical entre columnas -->
+            <div class="row gy-3 align-items-start"> <!-- separacion vertical entre columnas -->
                 <!-- Créditos / legal -->
                 <div class="col-12 col-md-5">
                     <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
@@ -328,32 +327,33 @@
 
                 <!-- Contacto -->
                 <div class="col-12 col-md-4">
-                    <address class="mb-0"> <!-- etiqueta semántica de contacto -->
+                    <address class="mb-0"> <!-- bloque semántico de datos de contacto -->
                         <div class="d-flex align-items-center gap-2">
-                            <i class="fa-solid fa-phone text-tinto"></i> <!-- icono teléfono -->
+                            <i class="fa-solid fa-phone text-tinto"></i>
+                            <!-- ícono decorativo-->
                             <a class="contact-link link-underline-opacity-0" href="tel:+5491123456789">+54 9 11
-                                2345-6789</a> <!-- clic para llamar -->
+                                2345-6789</a> <!-- clickleable -->
                         </div>
                         <div class="d-flex align-items-center gap-2 mt-1">
-                            <i class="fa-solid fa-envelope text-tinto"></i> <!-- icono correo -->
+                            <i class="fa-solid fa-envelope text-tinto"></i> <!-- ícono decorativo -->
                             <a class="contact-link link-underline-opacity-0"
-                                href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a>
-                            <!-- clic para enviar mail -->
+                                href="mailto:patoabarca07@gmail.com">patoabarca07@gmail.com</a> <!-- click-to-email -->
                         </div>
                     </address>
                 </div>
 
+
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">
-                        <!-- botones sociales alineados a derecha en md+ -->
+                        <!-- botones sociales alineados a derecha en md -->
                         <a class="btn btn-light rounded-circle border" href="https://github.com/patoabarca"
                             target="_blank" aria-label="GitHub"> <!-- abre en nueva pestaña -->
                             <i class="fa-brands fa-github"></i>
                         </a>
                         <a class="btn btn-light rounded-circle border"
                             href="https://www.linkedin.com/in/patricia-abarca-3b6720136/" target="_blank"
-                            aria-label="LinkedIn">
+                            aria-label="LinkedIn"><!-- abre en nueva pestaña -->
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -361,7 +361,6 @@
             </div>
         </div>
     </footer>
-
     <!-- Bootstrap 5.3.8 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;600;700&display=swap"); /* fuentes: títulos (Lora) y cuerpo (Roboto) */
+/* fuentes: títulos (Lora) y cuerpo (Roboto) */
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;600;700&display=swap");
 
 /* =========  Paleta + base tipográfica  =========== */
 :root {
@@ -15,7 +16,7 @@
   --edge-line: #d7c5c4; /* borde header/footer */
 }
 
-/* —— Reset mínimo y caja consistente —— */
+/* —— Reset —— */
 html {
   font-size: 18px;
   box-sizing: border-box;
@@ -29,18 +30,17 @@ html {
 /* —— Base del documento —— */
 body {
   margin: 0; /* márgenes por defecto fuera */
-  /* Usá .container en HTML para márgenes laterales */
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   color: var(--ink);
   background: var(--bg);
   line-height: 1.6; /* legibilidad */
 }
 
-/* =========  Navbar (ajustes Bootstrap 5.3)  =========== */
+/* =========  Navbar (ajustes a boostrap)  =========== */
 .site-header .navbar {
   background: var(--header-bg);
   border-bottom: 1px solid var(--edge-line);
-} /* separador sutil */
+} /* separador */
 
 /* —— Marca (logo + título) —— */
 .brand-logo {
@@ -52,7 +52,7 @@ body {
   padding: 2px; /* filo blanco */
 }
 .brand-title {
-  font-family: Georgia, "Times New Roman", serif; /* look editorial */
+  font-family: Georgia, "Times New Roman", serif; /* fuente para el brand-title*/
   font-weight: 700;
   color: #5a0d1b;
   font-size: 1.05rem; /* control fino */
@@ -74,10 +74,12 @@ body {
   outline: 1px solid var(--edge-line); /* foco visible */
   text-decoration: none;
 }
+
+/* estado activo */
 .navbar .nav-link.active {
   background: var(--tinto);
   color: #fff;
-} /* estado activo */
+}
 
 /* —— Dropdown (apertura de Uvas) —— */
 .dropdown-menu {
@@ -95,7 +97,7 @@ body {
 /* —— Botón hamburguesa —— */
 .navbar-toggler {
   border-color: var(--edge-line);
-} /* integra con paleta */
+}
 .navbar-toggler:focus {
   box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
 } /* halo accesible */
@@ -107,6 +109,15 @@ main {
 } /* lateral lo da .container */
 
 /* —— Jerarquía de títulos —— */
+
+/* Título de página  */
+.page-title {
+  font-family: "Lora", Georgia, "Times New Roman", serif; /* título con mas carácter */
+  font-size: 1.9rem;
+  color: var(--tinto);
+  margin: 0.4rem 0 1rem;
+}
+
 h2 {
   margin: 1rem 0 0.5rem;
   font-size: 1.3rem;
@@ -121,14 +132,6 @@ p {
   margin: 0.5rem 0;
 } /* respiración de párrafos */
 
-/* —— Título de página —— */
-.page-title {
-  font-family: "Lora", Georgia, "Times New Roman", serif; /* título con mas carácter */
-  font-size: 1.9rem;
-  color: var(--tinto);
-  margin: 0.4rem 0 1rem;
-}
-
 /* —— Enlaces globales —— */
 a {
   color: var(--rose);
@@ -138,15 +141,16 @@ a:hover {
   text-decoration: underline;
 }
 
-/* —— Bloques con “wash” (fondos suaves) —— */
+/* —— Bloques con “bg-wash” (fondos suaves) —— */
 .bg-wash {
   background: var(--wash);
   border: 1px solid var(--line);
 }
+/* separación visual */
 .section-sep {
   border-top: 1px solid var(--line);
   padding-top: 0.75rem;
-} /* separación visual */
+}
 
 /* —— Intro (home) —— */
 .intro {
@@ -176,9 +180,10 @@ img {
   height: auto;
   display: block;
 } /* evita espacios inline */
+
 .object-fit-cover {
   object-fit: cover;
-} /* recorte estético */
+} /* recorte */
 
 /* —— Imágenes dentro de .ratio (mantener 4:3) —— */
 .ratio > img {
@@ -197,9 +202,11 @@ img {
   flex-direction: column;
   gap: 0.25rem; /* columnas igualadas */
 }
+
+/* títulos de glosario */
 .g-card h3 {
   color: var(--tinto);
-} /* títulos de glosario */
+}
 
 /* =========  Footer  =========== */
 /* —— Contenedor de pie —— */
@@ -212,6 +219,7 @@ img {
 .site-footer .btn i {
   line-height: 1;
 } /* centra ícono */
+
 .site-footer .btn:hover {
   border-color: var(--tinto);
   color: var(--tinto);
@@ -222,8 +230,9 @@ img {
 .site-footer address {
   font-size: 0.95rem;
 } /* compacto */
+
 .text-tinto {
-  color: var(--tinto) !important;
+  color: var(--tinto);
 } /* utilidad para iconos */
 
 /* —— Links de contacto —— */
@@ -238,6 +247,7 @@ img {
 } /* foco simple */
 
 /* =========  Responsive (≤480px)  =========== */
+
 /* —— Ajustes de marca en mobile —— */
 @media (max-width: 480px) {
   .brand-logo {
