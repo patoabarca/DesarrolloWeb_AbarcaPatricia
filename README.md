@@ -1,76 +1,110 @@
-# 🍷 **Guía de Vinos para Principiantes**  
-**Proyecto:** PreEntrega1_Abarca
+# 🍷 **Guía de Vinos para Principiantes**
+
+**Proyecto:** PreEntrega2_Abarca  
+🔗 **Demo online:** [patoabarca.github.io/DesarrolloWeb_AbarcaPatricia](https://patoabarca.github.io/DesarrolloWeb_AbarcaPatricia/)
 
 ---
 
 ## **Descripción**
-Este proyecto corresponde a la **Pre-Entrega 1** del curso **Desarrollo Web (Coderhouse)**.  
-El sitio es una **guía introductoria al mundo del vino argentino**, pensada para quienes desean conocer sus principales variedades, regiones productoras y características.
 
-El objetivo de esta primera entrega fue **prototipar, maquetar y dar estilo básico** a una web utilizando **HTML y CSS**.
+Este proyecto corresponde a la **Pre-Entrega 2** del curso **Desarrollo Web (Coderhouse)**.  
+Se avanza a una **estructura avanzada**, **diseño responsive** y **aplicación de Bootstrap**.
+
+**Objetivo:** maquetar, estilizar y optimizar la web usando **Bootstrap 5**, **Grid CSS**, **Flexbox** y **CSS personalizado**.
 
 ---
 
 ## **Estructura general**
-El sitio incluye las siguientes secciones:
 
-- **Inicio:** presentación general y navegación principal.  
-- **Uvas destacadas:** fichas informativas sobre cepas argentinas (Malbec, Torrontés, etc.).  
-- **Regiones:** descripción de zonas vitivinícolas del país (Mendoza, Salta, Patagonia…).  
-- **Maridajes:** Combinaciones de ocmidas y vino
-- **Glosario:** Terminos relacionados con el vino, para aprender el lenguaje
+Secciones del sitio:
 
----
+- **Inicio:** presentación y acceso a todas las páginas.
+- **Uvas tintas** y **Uvas blancas:** fichas (imagen + texto + descriptor).
+- **Regiones:** zonas vitivinícolas argentinas.
+- **Maridajes:** combinaciones sugeridas.
+- **Glosario:** términos básicos del vino.
 
-##  **Contenidos incluidos**
-
-###  **Wireframe / Prototipo**
-- Creado en **Figma** en versiones **desktop y mobile**.  
-- Exportado como **imagen/PDF** mostrando la disposición y tamaño de los elementos principales.  
-
-
-###  **Maquetado en HTML**
-- Uso de **etiquetas semánticas de HTML5**: `header`, `nav`, `main`, `section`, `article`, `footer`.  
-- Incorporación de **contenido multimedia y textual**: `img`, `figure`, `p`, `h1–h3`, `a`, `ul/li`.  
-- Código limpio, con tabulación.  
-- Enlaces internos e imágenes con rutas relativas
-
-###  **Estilo inicial en CSS**
-- Archivo externo `style.css` correctamente linkeado.  
-- Aplicación de propiedades básicas: tipografía, color, fondo, imágenes.  
-- Diseño coherente con la temática del vino.  
-- Sin uso aún de **Box Model ni Flexbox** 
+Toda página sigue una estructura semántica con `header`, `nav`, `main`, `section`, `article`, `footer`.
 
 ---
 
-##  **Próximos pasos**
-En futuras entregas se sumarán:
+## **Uso de tecnologías y frameworks**
 
-1. **Box Model y Flexbox** para alinear y distribuir contenido.  
-2. **Diseño responsive completo**.  
-3. **Uso de Grid y Bootstrap.**  
-4. **Animaciones y transiciones CSS.**  
-5. **Publicación del sitio en GitHub Pages o Vercel.**  
+### **Bootstrap 5.3.8**
 
+Implementado como framework principal para:
+
+- **Navbar** responsive (`.navbar-expand-lg` + botón hamburguesa).
+- **Grillas utilitarias**: `.container`, `.row`, `.col-*`, `.g-*`.
+- **Utilidades de espaciado y alineación**: `my-4`, `p-3`, `gap-2`, `align-items-center`, `ms-auto`.
+- **Botones sociales**: `btn`, `rounded-circle`, `border`.
+- **Proporción de imágenes**: `ratio ratio-4x3`.
+
+### 💠 **CSS Grid**
+
+Usado manualmente en **Uvas tintas/blancas**:
+
+- **Layout externo** (`.fichas-grid`):
+  - **Desktop (≥992px):** `grid-template-columns: repeat(3, 1fr);`
+  - **Tablet (≤991px):** `repeat(2, 1fr)`
+  - **Mobile (≤480px):** `1fr`
+- **Layout interno por ficha** (`.ficha-grid`):
+  - **Desktop/Tablet:** `grid-template-columns: 5fr 7fr` (imagen | texto)
+  - **Mobile:** `1fr` (apilado)
+
+### **Flexbox**
+
+- **Estructura vertical de página**: `body.d-flex.flex-column.min-vh-100` (footer pegado abajo).
+- **Brand en navbar**: `.d-flex.align-items-center.gap-2` (logo + título).
+- **Footer**: filas de iconos/contacto con `.d-flex` y `gap-2`.
+- **Dentro de `.card-body`** (CSS propio): `display:flex; flex-direction:column;` para empujar acciones al final.
+
+### **CSS personalizado** (`/assets/css/styles.css`)
+
+- **Paleta** con variables: `--tinto`, `--rose`, `--card`, `--wash`.
+- **Tipografía**: _Lora_ (títulos) + _Roboto_ (cuerpo).
+- **Ajustes visuales de Bootstrap** (hover, bordes, foco accesible).
+- **Breakpoints por rango**
+  - Tablet: `@media (max-width: 991px)`
+  - Mobile: `@media (max-width: 480px)`
 
 ---
 
-## **Tecnologías utilizadas**
-- **HTML5** → estructura semántica.  
-- **CSS3** → estilos básicos y selectores.  
-- **Figma** → diseño de wireframes y prototipos.  
-- **Visual Studio Code** → entorno de desarrollo.  
-- **Git / GitHub** → control de versiones y publicación.
+## **Diseño responsive**
 
+El sitio se adapta a distintos dispositivos manteniendo coherencia visual y legibilidad:
+
+- **Desktop (≥992 px):**  
+  En las secciones generales (Inicio, Regiones, Maridajes, Glosario) el contenido se distribuye con grillas y contenedores amplios.  
+  En **Uvas tintas y blancas**, se muestran **2 fichas por fila**, con disposición horizontal (imagen | texto).
+
+- **Tablet (481–991 px):**  
+  El layout ajusta márgenes y tipografías para mantener equilibrio.  
+  En las páginas de **Uvas**, se muestra **1 ficha por fila** con estructura interna de dos columnas (imagen a la izquierda, texto a la derecha).
+
+- **Mobile (≤480 px):**  
+  Todos los contenidos se apilan verticalmente para favorecer la lectura.  
+  En **Uvas**, cada ficha muestra **imagen sobre texto**, mientras que la marca del encabezado se compacta.
+
+Además, las imágenes implementan `loading="lazy"` y `object-fit: cover` para optimizar el rendimiento y mantener proporciones correctas.
 
 ---
 
-##  **Autoría**
-**Patricia Abarca**  
-Curso: *Desarrollo Web 3.0 – Coderhouse*  
-Entrega: *PreEntrega1 – Wireframe + HTML + CSS Inicial*  
+## **Tecnologías**
 
+- **HTML5**, **CSS3** (variables + media queries).
+- **Bootstrap 5**, **Flexbox**, **CSS Grid**.
+- **Font Awesome 6**.
+- **VS Code**, **Git/GitHub**.
+- **JavaScript** (buscador en Glosario)
 
+Función: filtro en vivo de términos del glosario.
 
+---
 
+## **Autoría**
 
+👩‍💻 **Patricia Abarca**  
+Curso: _Desarrollo Web – Coderhouse_  
+Entrega: _PreEntrega 2 — Estructura avanzada + Bootstrap + Grid + Flexbox_  
+Año: 2025

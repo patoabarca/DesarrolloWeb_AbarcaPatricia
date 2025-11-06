@@ -82,7 +82,7 @@
         <section class="bg-wash border rounded-3 p-3 p-md-4">
             <h2 class="mb-3">Fichas</h2>
 
-            <!-- GRID EXTERNO: cuadrícula de fichas (1 col → 2 col ≥768px → 3 col ≥992px) -->
+            <!-- GRID EXTERNO: cuadrícula de fichas -->
             <div class="fichas-grid">
 
                 <!-- ================= CARD · Malbec ================= -->
@@ -90,20 +90,25 @@
                     <!-- GRID INTERNO: imagen + texto -->
                     <div class="ficha-grid">
                         <div class="ficha-media">
-                            <div class="ratio ratio-4x3">
+                            <div class="ratio ratio-4x3"><!-- fija proporción 4:3, evita saltos -->
                                 <img src="../assets/img/malbec.png" alt="Copa de Malbec color violáceo"
-                                    class="w-100 h-100" loading="lazy">
+                                    class="w-100 h-100" loading="lazy"><!-- lazy:carga diferida -->
                             </div>
-                            <div class="small text-muted mt-1">Jugoso</div>
+                            <div class="small text-muted mt-1">Jugoso</div><!-- descriptor breve -->
                         </div>
+
                         <div class="ficha-texto">
                             <div class="card-body p-0">
                                 <h3 class="card-title h5 mb-2">Malbec</h3>
-                                <p class="mb-0"><strong>Notas rápidas:</strong> fruta negra madura (ciruela, mora) y
-                                    violeta; taninos amables, cuerpo medio-alto, final envolvente.</p>
+                                <p class="mb-0">
+                                    <strong>Notas rápidas:</strong>
+                                    fruta negra madura (ciruela, mora) y violeta; taninos amables, cuerpo medio-alto,
+                                    final envolvente.
+                                </p>
                             </div>
                         </div>
                     </div>
+
                 </article>
 
                 <!-- ================= CARD · Cabernet Sauvignon ================= -->
