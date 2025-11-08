@@ -33,21 +33,18 @@
                         <!-- versión corta en mobile -->
                     </span>
                 </a>
-
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav"
                     aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
                     <!-- control colapsable -->
                     <span class="navbar-toggler-icon"></span> <!-- icono default Bootstrap -->
                 </button>
-
                 <!-- Nav -->
                 <div class="collapse navbar-collapse" id="primary-nav"> <!-- contenedor del menú -->
                     <ul class="navbar-nav ms-auto align-items-lg-center"> <!-- items a la derecha -->
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Inicio</a>
                         </li>
-
                         <!-- Dropdown Uvas -->
                         <li class="nav-item dropdown"> <!-- menú desplegable -->
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
@@ -59,7 +56,6 @@
                                 <li><a class="dropdown-item" href="./uvas_blancas.html">Uvas blancas</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item"><a class="nav-link active" href="./regiones.html">Regiones</a></li>
                         <!-- activa esta vista -->
                         <li class="nav-item"><a class="nav-link" href="./maridajes.html">Maridajes</a></li>
@@ -74,28 +70,28 @@
     <main class="container my-4 flex-grow-1"> <!-- margen vertical + empuja footer -->
         <!-- título de página -->
         <h1 class="page-title">Regiones</h1> <!-- H1 único -->
-
         <!-- Zonas principales -->
         <section class="bg-wash border rounded-3 p-3 p-md-4"> <!-- bloque con fondo suave -->
             <h2 class="mb-3">Zonas principales</h2> <!-- subtítulo -->
-
             <!-- Grid responsive: 1→2→3 columnas -->
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"> <!-- grilla adaptable -->
-
-                <!-- Valle de Uco -->
+                <!-- ===== Card: Valle de Uco ===== -->
                 <div class="col">
-                    <article class="card h-100"> <!-- card alto completo -->
-                        <div class="ratio ratio-4x3"> <!-- mantiene 4:3 -->
-                            <img src="../assets/img/imag-uco.png" class="w-100 h-100" alt="Viñedos en Valle de Uco"
-                                loading="lazy"> <!-- lazy: mejora performance -->
+                    <article class="card h-100"><!-- alto completo para igualar columnas -->
+                        <!-- Media (imagen) -->
+                        <div class="ratio ratio-4x3"><!-- contenedor mantiene 4:3 -->
+                            <img src="../assets/img/imag-uco.png" alt="Viñedos en Valle de Uco" class="w-100 h-100"
+                                loading="lazy">
                         </div>
+                        <!-- Contenido textual -->
                         <div class="card-body">
                             <h3 class="card-title h5">Valle de Uco (Mendoza)</h3>
                             <p class="mb-1"><strong>Clima/Altitud:</strong> andino, seco; 900–1.500 m s. n. m.</p>
                             <p class="mb-1"><strong>Perfil:</strong> Malbec vibrante, fruta negra/violeta, buena acidez;
                                 blancos tensos y minerales.</p>
+                            <!-- Lista breve de bodegas (referentes) -->
                             <p class="mb-1"><strong>Bodegas:</strong></p>
-                            <ul class="bodegas mb-0"> <!-- lista breve de referentes -->
+                            <ul class="bodegas mb-0">
                                 <li>Salentein</li>
                                 <li>Andeluna</li>
                                 <li>Domaine Bousquet</li>
@@ -104,8 +100,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- Luján de Cuyo -->
+                <!-- Card: Luján de Cuyo -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -126,8 +121,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- Cafayate -->
+                <!--Card: Cafayate-->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -150,8 +144,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- Molinos -->
+                <!-- Card: Molinos -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -172,8 +165,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- Alto Valle del Río Negro -->
+                <!-- Card: Alto Valle del Río Negro -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -193,8 +185,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- San Patricio del Chañar -->
+                <!-- Card: San Patricio del Chañar -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -229,7 +220,6 @@
                     <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
                     <!-- leyenda legal -->
                 </div>
-
                 <!-- Contacto -->
                 <div class="col-12 col-md-4">
                     <address class="mb-0"> <!-- bloque semántico de datos de contacto -->
@@ -246,8 +236,6 @@
                         </div>
                     </address>
                 </div>
-
-
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">

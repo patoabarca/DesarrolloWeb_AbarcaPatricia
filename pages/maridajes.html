@@ -32,21 +32,18 @@
                         <!-- versión corta en mobile -->
                     </span>
                 </a>
-
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav"
                     aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
                     <!-- control colapsable -->
                     <span class="navbar-toggler-icon"></span> <!-- icono default Bootstrap -->
                 </button>
-
                 <!-- Nav -->
                 <div class="collapse navbar-collapse" id="primary-nav"> <!-- contenedor del menú -->
                     <ul class="navbar-nav ms-auto align-items-lg-center"> <!-- items a la derecha -->
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">Inicio</a>
                         </li>
-
                         <!-- Dropdown Uvas -->
                         <li class="nav-item dropdown"> <!-- menú desplegable -->
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
@@ -58,7 +55,6 @@
                                 <li><a class="dropdown-item" href="./uvas_blancas.html">Uvas blancas</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item"><a class="nav-link" href="./regiones.html">Regiones</a></li>
                         <li class="nav-item"><a class="nav-link active" href="./maridajes.html">Maridajes</a></li>
                         <!-- activa esta vista -->
@@ -71,36 +67,34 @@
 
     <!-- ===== MAIN: contenido principal de Maridajes ===== -->
     <main class="container my-4  flex-grow-1"> <!-- margen vertical + empuja footer -->
-
         <!-- título de página -->
         <h1 class="page-title">Maridajes</h1> <!-- H1 único -->
-
         <!-- Parejas clásicas -->
         <section class="bg-wash border rounded-3 p-3 p-md-4"> <!-- bloque con fondo suave -->
             <h2 class="mb-3">Parejas clásicas</h2>
-
             <!-- Grid responsive: 1→2→3 columnas -->
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"> <!-- grilla adaptable -->
-
-                <!-- card -->
+                <!-- ===== Card: Malbec + Asado ===== -->
                 <div class="col">
-                    <article class="card h-100"> <!-- card alto completo -->
-                        <div class="ratio ratio-4x3"> <!-- mantiene 4:3 -->
-                            <img src="../assets/img/imag-asado.png" class="w-100 h-100" alt="Asado y copa de Malbec"
-                                loading="lazy"> <!-- lazy: mejora performance -->
+                    <article class="card h-100"><!-- alto completo para igualar columnas -->
+                        <!-- Media: imagen con relación fija 4:3 -->
+                        <div class="ratio ratio-4x3"><!-- mantiene 4:3 y evita saltos -->
+                            <img src="../assets/img/imag-asado.png" alt="Asado con copa de Malbec al lado"
+                                class="w-100 h-100" loading="lazy">
                         </div>
+                        <!-- Contenido textual -->
                         <div class="card-body">
                             <h3 class="card-title h5">Malbec + Asado</h3>
                             <p class="mb-1"><strong>Intensidad:</strong> media–alta</p>
                             <p class="mb-1"><strong>Salsas/condimentos:</strong> chimichurri, pimienta</p>
                             <p class="mb-1"><strong>Temperatura:</strong> 16–18 °C</p>
-                            <p class="mb-0 text-muted"><strong>Extra:</strong> si hay mucho ahumado, elegí Malbec más
-                                estructurado.</p> <!-- tip de ajuste según cocción -->
+                            <p class="mb-0 text-muted">
+                                <strong>Extra:</strong> si hay mucho ahumado, elegí Malbec más estructurado.
+                            </p>
                         </div>
                     </article>
                 </div>
-
-                <!-- card -->
+                <!-- ===== Card: Cabernet Sauvignon + Estofados ===== -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -117,8 +111,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- card -->
+                <!-- ===== Card: Torrontés + Empanadas salteñas ===== -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -135,8 +128,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- card -->
+                <!-- ===== Card: Pinot Noir + Aves y hongos ===== -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -153,8 +145,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- card -->
+                <!-- ===== Card: Chardonnay + Pastas con crema ===== -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -171,8 +162,7 @@
                         </div>
                     </article>
                 </div>
-
-                <!-- card -->
+                <!-- ===== Card: Sauvignon Blanc + Ensaladas ===== -->
                 <div class="col">
                     <article class="card h-100">
                         <div class="ratio ratio-4x3">
@@ -188,22 +178,22 @@
                         </div>
                     </article>
                 </div>
-
             </div>
         </section>
-
-        <!-- Guía rápida -->
+        <!-- ===== Sección: Guía rápida ===== -->
         <section class="mt-4">
             <h2>Guía rápida</h2>
+            <!-- Lista de principios de maridaje -->
             <ul>
                 <li><strong>Equilibrio:</strong> igualá intensidades (plato potente ↔ vino con estructura).</li>
                 <li><strong>Acidez:</strong> corta grasa y realza frescura.</li>
                 <li><strong>Piquant:</strong> picante sube con alcohol; preferí vinos frescos.</li>
-
             </ul>
-            <p>¿Duda con algún término? Visitá el <a href="glosario.html">glosario</a>.</p> <!-- enlace interno-->
+            <!-- Enlace de apoyo -->
+            <p>¿Duda con algún término? Visitá el
+                <a href="glosario.html">glosario</a>.
+            </p>
         </section>
-
     </main>
 
     <!-- Footer -->
@@ -232,8 +222,6 @@
                         </div>
                     </address>
                 </div>
-
-
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">

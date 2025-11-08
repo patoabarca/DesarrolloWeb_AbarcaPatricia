@@ -32,14 +32,12 @@
                         <!-- versión corta en mobile -->
                     </span>
                 </a>
-
                 <!-- Botón hamburguesa -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav"
                     aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
                     <!-- control colapsable -->
                     <span class="navbar-toggler-icon"></span> <!-- icono de Bootstrap -->
                 </button>
-
                 <!-- Nav -->
                 <div class="collapse navbar-collapse" id="primary-nav"> <!-- contenedor del menú -->
                     <ul class="navbar-nav ms-auto align-items-lg-center"> <!-- items a la derecha -->
@@ -67,32 +65,27 @@
             </div>
         </nav>
     </header>
-
     <!-- ===== MAIN ===== -->
     <main class="container my-4 flex-grow-1"><!-- FLEX (Bootstrap): hace crecer el main -->
         <h1 class="page-title">Uvas blancas</h1>
-
         <section class="section intro mb-3">
             <p>Seis blancas clave y sus rasgos: aromas, textura y nivel de acidez. Un vistazo rápido para ubicarlas por
                 estilo.</p>
         </section>
-
         <section class="bg-wash border rounded-3 p-3 p-md-4">
             <h2 class="mb-3">Fichas</h2>
-
             <!-- GRID EXTERNO: define la cuadrícula de fichas  -->
             <div class="fichas-grid">
-
                 <!-- ================= CARD · Chardonnay ================= -->
                 <article class="card h-100 p-2"><!-- Card “blanca” -->
-                    <!-- GRID INTERNO -->
+                    <!-- GRID INTERNO: imagen + texto -->
                     <div class="ficha-grid">
                         <div class="ficha-media">
-                            <div class="ratio ratio-4x3">
+                            <div class="ratio ratio-4x3"> <!-- fija proporción 4:3, evita saltos -->
                                 <img src="../assets/img/chardonnay.png" alt="Copa de Chardonnay dorado pálido"
-                                    class="w-100 h-100" loading="lazy">
+                                    class="w-100 h-100" loading="lazy"> <!-- lazy:carga diferida -->
                             </div>
-                            <div class="small text-muted mt-1">Cremoso</div>
+                            <div class="small text-muted mt-1">Cremoso</div> <!-- descriptor breve -->
                         </div>
                         <div class="ficha-texto">
                             <div class="card-body p-0">
@@ -104,7 +97,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- ================= CARD · Sauvignon Blanc ================= -->
                 <article class="card h-100 p-2">
                     <div class="ficha-grid"><!-- GRID INTERNO -->
@@ -124,7 +116,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- ================= CARD · Torrontés ================= -->
                 <article class="card h-100 p-2">
                     <div class="ficha-grid"><!-- GRID INTERNO -->
@@ -144,7 +135,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- ================= CARD · Semillón ================= -->
                 <article class="card h-100 p-2">
                     <div class="ficha-grid"><!-- GRID INTERNO -->
@@ -164,7 +154,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- ================= CARD · Viognier ================= -->
                 <article class="card h-100 p-2">
                     <div class="ficha-grid"><!-- GRID INTERNO -->
@@ -184,7 +173,6 @@
                         </div>
                     </div>
                 </article>
-
                 <!-- ================= CARD · Riesling ================= -->
                 <article class="card h-100 p-2">
                     <div class="ficha-grid"><!-- GRID INTERNO -->
@@ -205,7 +193,6 @@
                         </div>
                     </div>
                 </article>
-
             </div><!-- /fichas-grid -->
         </section>
     </main>
@@ -219,7 +206,6 @@
                     <p class="mb-0 text-muted">© 2025 · Proyecto académico — Desarrollo Web · Abarca Patricia</p>
                     <!-- leyenda legal -->
                 </div>
-
                 <!-- Contacto -->
                 <div class="col-12 col-md-4">
                     <address class="mb-0"> <!-- bloque semántico de datos de contacto -->
@@ -236,8 +222,6 @@
                         </div>
                     </address>
                 </div>
-
-
                 <!-- Redes -->
                 <div class="col-12 col-md-3">
                     <div class="d-flex gap-2 justify-content-md-end">
