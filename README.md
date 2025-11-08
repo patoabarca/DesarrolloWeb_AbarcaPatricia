@@ -98,8 +98,6 @@ Además, las imágenes implementan `loading="lazy"` y `object-fit: cover` para o
 - **VS Code**, **Git/GitHub**.
 - **JavaScript** (buscador en Glosario)
 
-Función: filtro en vivo de términos del glosario.
-
 ---
 
 ## **Autoría**
