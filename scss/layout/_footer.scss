@@ -1,0 +1,34 @@
+/* =========  Footer  =========== */
+.site-footer {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--edge-line);
+}
+
+.site-footer .btn i {
+  line-height: 1;
+}
+
+.site-footer .btn:hover {
+  border-color: var(--tinto);
+  color: var(--tinto);
+}
+
+.site-footer p,
+.site-footer address {
+  font-size: 0.95rem;
+}
+
+.text-tinto {
+  color: var(--tinto);
+}
+
+.contact-link {
+  color: var(--tinto);
+  text-decoration: none;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  text-decoration: underline;
+  outline: none;
+}

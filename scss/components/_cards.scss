@@ -1,0 +1,14 @@
+/* =========  Cards  =========== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.card .card-title {
+  color: var(--tinto);
+}
+
+.card figure {
+  margin: 0 0 0.6rem;
+}

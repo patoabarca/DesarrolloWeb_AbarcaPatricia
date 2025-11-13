@@ -1,0 +1,14 @@
+@use "abstracts/_variables";
+
+@use "base/_reset";
+@use "base/_base";
+@use "base/_fonts";
+
+@use "layout/_header";
+@use "layout/_footer";
+
+@use "components/_cards";
+
+/* Páginas */
+@use "pages/_uvas";
+@use "pages/_glosario";

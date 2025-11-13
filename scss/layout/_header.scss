@@ -1,0 +1,84 @@
+/* =========  Navbar (ajustes Bootstrap)  =========== */
+.site-header .navbar {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--edge-line);
+}
+
+/* Marca */
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background: #fff;
+  padding: 2px;
+}
+
+.brand-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: #5a0d1b;
+  font-size: 1.05rem;
+}
+
+.brand-title:hover {
+  text-decoration: underline;
+}
+
+/* Ítems de navegación */
+.navbar .nav-link {
+  color: var(--ink);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.6rem;
+}
+
+.navbar .nav-link:hover {
+  background: #fff;
+  color: var(--tinto);
+  outline: 1px solid var(--edge-line);
+  text-decoration: none;
+}
+
+.navbar .nav-link.active {
+  background: var(--tinto);
+  color: #fff;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  border: 1px solid var(--edge-line);
+  border-radius: 0.6rem;
+}
+
+.dropdown-item {
+  padding: 0.45rem 0.75rem;
+}
+
+.dropdown-item:hover {
+  background: #f9f5f5;
+  color: var(--tinto);
+}
+
+/* Hamburguesa (foco visible) */
+.navbar-toggler {
+  border-color: var(--edge-line);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
+}
+
+/* ======== MOBILE (≤480px) — ajustes del brand ======== */
+@media (max-width: 480px) {
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+    white-space: nowrap;
+  } /* evita corte del brand */
+}

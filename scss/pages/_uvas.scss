@@ -1,0 +1,48 @@
+/* =========  Fichas de Uvas  =========== */
+
+/* GRID externo Uvas: 2 cards por fila */
+.fichas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* GRID interno de cada ficha: 5/7 (imagen|texto) */
+.ficha-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.ficha-media .ratio {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ficha-texto .card-body {
+  padding: 0;
+}
+
+/* FLEX en card-body  */
+.card.h-100 .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======== TABLET (≤991px) ======== */
+@media (max-width: 991px) {
+  /* En tablet  1 card ancha por fila*/
+  .fichas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======== MOBILE (≤480px) ======== */
+@media (max-width: 480px) {
+  /* En mobile 1 card por fila y contenido apilado dentro de la card */
+  .ficha-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  } /* apila imagen y texto */
+}
