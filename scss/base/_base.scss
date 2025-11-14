@@ -48,12 +48,40 @@ body {
       padding-top: 0.75rem;
     }
 
-    // Intro (home)
     .intro {
       background: rgba(255, 255, 255, 0.6666666667);
       border: 1px solid map.get(vars.$colors, line);
       border-radius: 10px;
       padding: 0.75rem 1rem;
+
+      .intro-text {
+        p {
+          margin: 0;
+        }
+      }
+
+      .intro-media {
+        display: flex;
+        justify-content: center;
+      }
+
+      .intro-figure {
+        max-width: 220px;
+        margin: 0;
+        border-radius: 999px;
+        overflow: hidden;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+          // animación de “flotar”
+          animation: float-wine 8s ease-in-out infinite alternate;
+        }
+      }
     }
 
     // Imágenes (dentro del main)
@@ -82,5 +110,17 @@ body {
       color: map.get(vars.$colors, tinto);
       text-decoration: underline;
     }
+  }
+}
+
+@keyframes float-wine {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
   }
 }
