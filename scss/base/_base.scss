@@ -2,7 +2,7 @@
 @use "sass:map";
 @use "../abstracts/variables" as vars;
 
-/* =========  Base del documento  =========== */
+// =========  Base del documento  ===========
 body {
   margin: 0;
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -10,9 +10,9 @@ body {
   background: map.get(vars.$colors, bg);
   line-height: 1.6;
 
-  /* CONTENIDO PRINCIPAL */
+  // CONTENIDO PRINCIPAL
   main {
-    padding: 1rem 0; /* margen vertical general */
+    padding: 1rem 0; // margen vertical general
 
     .page-title {
       font-family: "Lora", Georgia, "Times New Roman", serif;
@@ -37,7 +37,7 @@ body {
       margin: 0.5rem 0;
     }
 
-    /* Bloques suaves + separadores */
+    // Bloques suaves + separadores
     .bg-wash {
       background: map.get(vars.$colors, wash);
       border: 1px solid map.get(vars.$colors, line);
@@ -48,7 +48,7 @@ body {
       padding-top: 0.75rem;
     }
 
-    /* Intro (home) */
+    // Intro (home)
     .intro {
       background: rgba(255, 255, 255, 0.6666666667);
       border: 1px solid map.get(vars.$colors, line);
@@ -56,7 +56,7 @@ body {
       padding: 0.75rem 1rem;
     }
 
-    /* Imágenes (dentro del main) */
+    // Imágenes (dentro del main)
     img {
       max-width: 100%;
       height: auto;
@@ -74,7 +74,7 @@ body {
     }
   }
 
-  /* Enlaces (globales dentro del body) */
+  // Enlaces (globales dentro del body)
   a {
     color: map.get(vars.$colors, rose);
 

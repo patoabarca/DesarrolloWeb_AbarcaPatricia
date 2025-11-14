@@ -15,21 +15,15 @@ html {
 }
 
 /* base/_base.scss */
-/* =========  Base del documento  =========== */
 body {
   margin: 0;
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   color: #2b2b2b;
   background: #ede2e0;
   line-height: 1.6;
-  /* CONTENIDO PRINCIPAL */
-  /* Enlaces (globales dentro del body) */
 }
 body main {
-  padding: 1rem 0; /* margen vertical general */
-  /* Bloques suaves + separadores */
-  /* Intro (home) */
-  /* Imágenes (dentro del main) */
+  padding: 1rem 0;
 }
 body main .page-title {
   font-family: "Lora", Georgia, "Times New Roman", serif;
@@ -70,11 +64,9 @@ body main img {
   display: block;
 }
 body main .object-fit-cover {
-  -o-object-fit: cover;
   object-fit: cover;
 }
 body main .ratio > img {
-  -o-object-fit: cover;
   object-fit: cover;
 }
 body a {
@@ -85,24 +77,17 @@ body a:hover {
   text-decoration: underline;
 }
 
-/* layout/_header.scss */
 /* abstracts/_mixins.scss */
 /* Transición suave reutilizable */
 /* Flex en columna con gap (ideal para tarjetas tipo glosario) */
-/* =========  Navbar (ajustes Bootstrap)  =========== */
 .site-header .navbar {
   background: #e1d2d0;
   border-bottom: 1px solid #d7c5c4;
-  /* Marca */
-  /* Ítems de navegación */
-  /* Dropdown */
-  /* Hamburguesa (foco visible) */
 }
 .site-header .navbar .brand-logo {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
   background: #ffffff;
   padding: 2px;
@@ -121,7 +106,7 @@ body a:hover {
   font-weight: 600;
   border-radius: 0.5rem;
   padding: 0.45rem 0.6rem;
-  transition: color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .site-header .navbar .nav-link:hover {
   background: #ffffff;
@@ -151,7 +136,6 @@ body a:hover {
   box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
 }
 
-/* ======== MOBILE (≤480px) ======== */
 @media (max-width: 480px) {
   .site-header .navbar .brand-logo {
     width: 48px;
@@ -168,12 +152,16 @@ body a:hover {
   background: #e1d2d0;
   border-top: 1px solid #d7c5c4;
 }
+.site-footer .btn {
+  transition: all 0.2s ease-in-out;
+}
 .site-footer .btn i {
   line-height: 1;
 }
 .site-footer .btn:hover {
   border-color: #6d0f20;
   color: #6d0f20;
+  background-color: #ffffff;
 }
 .site-footer p,
 .site-footer address {
@@ -187,28 +175,42 @@ body a:hover {
 .contact-link {
   color: #6d0f20;
   text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
-.contact-link:hover,
-.contact-link:focus {
+.contact-link:hover, .contact-link:focus {
   text-decoration: underline;
   outline: none;
+  color: #6d0f20;
 }
 
+/* components/_cards.scss */
 /* scss/abstracts/_placeholders.scss */
 /* Base para tarjetas (card, g-card, etc.) */
-.g-card,
-.card {
+.g-card, .card {
   background: #fff7f4;
   border: 1px solid #e7dadd;
   box-shadow: inset 0 0 0 1px #e7dadd;
 }
 
-/* =========  Cards  =========== */
+.card {
+  transition: all 0.25s ease-in-out;
+}
 .card .card-title {
   color: #6d0f20;
 }
 .card figure {
   margin: 0 0 0.6rem;
+  overflow: hidden;
+}
+.card figure img {
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+.card:hover figure img {
+  transform: scale(1.03);
 }
 
 /* Páginas */
@@ -257,16 +259,21 @@ body a:hover {
     gap: 0.75rem;
   }
 }
-/* pages/_glosario.scss */
-/* =========  Glosario (cards pequeñas)  =========== */
 .g-card {
   border-radius: 10px;
   padding: 0.75rem 0.9rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  height: 100%;
+  transition: all 0.25s ease-in-out;
 }
 .g-card h3 {
   color: #6d0f20;
-} /*# sourceMappingURL=style.css.map */
+}
+.g-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/*# sourceMappingURL=style.css.map */

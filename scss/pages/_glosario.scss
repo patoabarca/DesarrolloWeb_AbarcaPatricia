@@ -1,26 +1,29 @@
-/* pages/_glosario.scss */
+// pages/_glosario.scss
 @use "sass:map";
 @use "../abstracts/placeholders" as *;
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as vars;
 
-/* =========  Glosario (cards pequeñas)  =========== */
+// =========  Glosario (cards pequeñas)  ==========
 .g-card {
   @extend %card-base;
   border-radius: 10px;
   padding: 0.75rem 0.9rem;
   height: 100%;
 
+  // Layout interno
   @include flex-col(0.25rem);
-  @include smooth-transition(all, 0.2s);
+
+  // Transición suave
+  @include smooth-transition(all, 0.25s);
 
   h3 {
     color: map.get(vars.$colors, tinto);
   }
 
-  /* Hover más sutil que la card grande */
+  // Hover (más sutil que las cards grandes)
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(map.get(vars.$colors, tinto), 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
   }
 }

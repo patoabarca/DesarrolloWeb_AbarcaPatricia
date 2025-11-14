@@ -1,9 +1,9 @@
 @use "sass:map";
-/* layout/_header.scss */
+// layout/_header.scss
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as vars;
 
-/* =========  Navbar (ajustes Bootstrap)  =========== */
+// =========  Navbar (ajustes Bootstrap)  ==========
 .site-header {
   .navbar {
     background: map.get(vars.$colors, header-bg);
@@ -29,14 +29,14 @@
       }
     }
 
-    /* Ítems de navegación */
+    // Ítems de navegación
     .nav-link {
       color: map.get(vars.$colors, ink);
       font-weight: 600;
       border-radius: 0.5rem;
       padding: 0.45rem 0.6rem;
 
-      /* transición en color, fondo, borde, etc. */
+      // transición en color, fondo, borde, etc.
       @include smooth-transition(all, 0.2s);
 
       &:hover {
