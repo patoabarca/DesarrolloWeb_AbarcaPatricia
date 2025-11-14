@@ -1,21 +1,7 @@
 @charset "UTF-8";
 /* fuentes: títulos (Lora) y cuerpo (Roboto) */
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;600;700&display=swap");
-/* =========  Paleta + base tipográfica  =========== */
-:root {
-  --bg: #ede2e0;
-  --ink: #2b2b2b;
-  --muted: #6b6b6b;
-  --tinto: #6d0f20;
-  --rose: #b55a6a;
-  --line: #e7dadd;
-  --card: #fff7f4;
-  --wash: #f7f1f2;
-  --header-bg: #e1d2d0;
-  --footer-bg: #e1d2d0;
-  --edge-line: #d7c5c4;
-}
-
+/* scss/abstracts/_variables.scss */
 /* =========  Reset  =========== */
 html {
   font-size: 18px;
@@ -28,221 +14,214 @@ html {
   box-sizing: inherit;
 }
 
+/* base/_base.scss */
 /* =========  Base del documento  =========== */
 body {
   margin: 0;
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  color: var(--ink);
-  background: var(--bg);
+  color: #2b2b2b;
+  background: #ede2e0;
   line-height: 1.6;
+  /* CONTENIDO PRINCIPAL */
 }
-
-main {
-  padding: 1rem 0;
-} /* margen vertical general */
-.page-title {
+body main {
+  padding: 1rem 0; /* margen vertical general */
+}
+body main .page-title {
   font-family: "Lora", Georgia, "Times New Roman", serif;
   font-size: 1.9rem;
-  color: var(--tinto);
+  color: #6d0f20;
   margin: 0.4rem 0 1rem;
 }
-
-h2 {
+body main h2 {
   margin: 1rem 0 0.5rem;
   font-size: 1.3rem;
-  color: var(--tinto);
+  color: #6d0f20;
 }
-
-h3 {
+body main h3 {
   margin: 0.75rem 0 0.25rem;
   font-size: 1.1rem;
-  color: var(--tinto);
+  color: #6d0f20;
 }
-
-p {
+body main p {
   margin: 0.5rem 0;
 }
-
-/* Enlaces */
-a {
-  color: var(--rose);
+body main {
+  /* Bloques suaves + separadores */
 }
-
-a:hover {
-  color: var(--tinto);
-  text-decoration: underline;
+body main .bg-wash {
+  background: #f7f1f2;
+  border: 1px solid #e7dadd;
 }
-
-/* Bloques suaves + separadores */
-.bg-wash {
-  background: var(--wash);
-  border: 1px solid var(--line);
-}
-
-.section-sep {
-  border-top: 1px solid var(--line);
+body main .section-sep {
+  border-top: 1px solid #e7dadd;
   padding-top: 0.75rem;
 }
-
-/* Intro (home) */
-.intro {
+body main {
+  /* Intro (home) */
+}
+body main .intro {
   background: rgba(255, 255, 255, 0.6666666667);
-  border: 1px solid var(--line);
+  border: 1px solid #e7dadd;
   border-radius: 10px;
   padding: 0.75rem 1rem;
 }
-
-/* Imágenes */
-img {
+body main {
+  /* Imágenes (dentro del main) */
+}
+body main img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
-.object-fit-cover {
-  -o-object-fit: cover;
+body main .object-fit-cover {
   object-fit: cover;
 }
-
-.ratio > img {
-  -o-object-fit: cover;
+body main .ratio > img {
   object-fit: cover;
 }
+body {
+  /* Enlaces (globales dentro del body) */
+}
+body a {
+  color: #b55a6a;
+}
+body a:hover {
+  color: #6d0f20;
+  text-decoration: underline;
+}
 
+/* layout/_header.scss */
+/* abstracts/_mixins.scss */
+/* Transición suave reutilizable */
+/* Flex en columna con gap (ideal para tarjetas tipo glosario) */
 /* =========  Navbar (ajustes Bootstrap)  =========== */
 .site-header .navbar {
-  background: var(--header-bg);
-  border-bottom: 1px solid var(--edge-line);
+  background: #e1d2d0;
+  border-bottom: 1px solid #d7c5c4;
+  /* Marca */
 }
-
-/* Marca */
-.brand-logo {
+.site-header .navbar .brand-logo {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
-  background: #fff;
+  background: #ffffff;
   padding: 2px;
 }
-
-.brand-title {
+.site-header .navbar .brand-title {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
   color: #5a0d1b;
   font-size: 1.05rem;
 }
-
-.brand-title:hover {
+.site-header .navbar .brand-title:hover {
   text-decoration: underline;
 }
-
-/* Ítems de navegación */
-.navbar .nav-link {
-  color: var(--ink);
+.site-header .navbar {
+  /* Ítems de navegación */
+}
+.site-header .navbar .nav-link {
+  color: #2b2b2b;
   font-weight: 600;
   border-radius: 0.5rem;
   padding: 0.45rem 0.6rem;
+  transition: color 0.2s ease-in-out;
 }
-
-.navbar .nav-link:hover {
-  background: #fff;
-  color: var(--tinto);
-  outline: 1px solid var(--edge-line);
+.site-header .navbar .nav-link:hover {
+  background: #ffffff;
+  color: #6d0f20;
+  outline: 1px solid #d7c5c4;
   text-decoration: none;
 }
-
-.navbar .nav-link.active {
-  background: var(--tinto);
-  color: #fff;
+.site-header .navbar .nav-link.active {
+  background: #6d0f20;
+  color: #ffffff;
 }
-
-/* Dropdown */
-.dropdown-menu {
-  border: 1px solid var(--edge-line);
+.site-header .navbar {
+  /* Dropdown */
+}
+.site-header .navbar .dropdown-menu {
+  border: 1px solid #d7c5c4;
   border-radius: 0.6rem;
 }
-
-.dropdown-item {
+.site-header .navbar .dropdown-menu .dropdown-item {
   padding: 0.45rem 0.75rem;
 }
-
-.dropdown-item:hover {
+.site-header .navbar .dropdown-menu .dropdown-item:hover {
   background: #f9f5f5;
-  color: var(--tinto);
+  color: #6d0f20;
 }
-
-/* Hamburguesa (foco visible) */
-.navbar-toggler {
-  border-color: var(--edge-line);
+.site-header .navbar {
+  /* Hamburguesa (foco visible) */
 }
-
-.navbar-toggler:focus {
+.site-header .navbar .navbar-toggler {
+  border-color: #d7c5c4;
+}
+.site-header .navbar .navbar-toggler:focus {
   box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
 }
 
-/* ======== MOBILE (≤480px) — ajustes del brand ======== */
+/* ======== MOBILE (≤480px) ======== */
 @media (max-width: 480px) {
-  .brand-logo {
+  .site-header .navbar .brand-logo {
     width: 48px;
     height: 48px;
   }
-  .brand-title {
+  .site-header .navbar .brand-title {
     font-size: 1.05rem;
     white-space: nowrap;
-  } /* evita corte del brand */
+  }
 }
+/* layout/_footer.scss */
 /* =========  Footer  =========== */
 .site-footer {
-  background: var(--footer-bg);
-  border-top: 1px solid var(--edge-line);
+  background: #e1d2d0;
+  border-top: 1px solid #d7c5c4;
 }
-
 .site-footer .btn i {
   line-height: 1;
 }
-
 .site-footer .btn:hover {
-  border-color: var(--tinto);
-  color: var(--tinto);
+  border-color: #6d0f20;
+  color: #6d0f20;
 }
-
 .site-footer p,
 .site-footer address {
   font-size: 0.95rem;
 }
 
 .text-tinto {
-  color: var(--tinto);
+  color: #6d0f20;
 }
 
 .contact-link {
-  color: var(--tinto);
+  color: #6d0f20;
   text-decoration: none;
 }
-
-.contact-link:hover,
-.contact-link:focus {
+.contact-link:hover, .contact-link:focus {
   text-decoration: underline;
   outline: none;
 }
 
+/* scss/abstracts/_placeholders.scss */
+/* Base para tarjetas (card, g-card, etc.) */
+.g-card, .card {
+  background: #fff7f4;
+  border: 1px solid #e7dadd;
+  box-shadow: inset 0 0 0 1px #e7dadd;
+}
+
 /* =========  Cards  =========== */
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  box-shadow: inset 0 0 0 1px var(--line);
-}
-
 .card .card-title {
-  color: var(--tinto);
+  color: #6d0f20;
 }
-
 .card figure {
   margin: 0 0 0.6rem;
 }
 
 /* Páginas */
+/* pages/_uvas.scss */
 /* =========  Fichas de Uvas  =========== */
 /* GRID externo Uvas: 2 cards por fila */
 .fichas-grid {
@@ -276,18 +255,29 @@ img {
 
 /* ======== TABLET (≤991px) ======== */
 @media (max-width: 991px) {
-  /* En tablet  1 card ancha por fila*/
   .fichas-grid {
     grid-template-columns: 1fr;
   }
 }
 /* ======== MOBILE (≤480px) ======== */
 @media (max-width: 480px) {
-  /* En mobile 1 card por fila y contenido apilado dentro de la card */
   .ficha-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
-  } /* apila imagen y texto */
+  }
+}
+/* pages/_glosario.scss */
+/* =========  Glosario (cards pequeñas)  =========== */
+.g-card {
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  height: 100%;
+}
+.g-card h3 {
+  color: #6d0f20;
 }
 
 /*# sourceMappingURL=style.css.map */

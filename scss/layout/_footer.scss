@@ -1,34 +1,38 @@
+/* layout/_footer.scss */
+@use "sass:map";
+@use "../abstracts/variables" as vars;
+
 /* =========  Footer  =========== */
 .site-footer {
-  background: var(--footer-bg);
-  border-top: 1px solid var(--edge-line);
-}
+  background: map.get(vars.$colors, footer-bg);
+  border-top: 1px solid map.get(vars.$colors, edge-line);
 
-.site-footer .btn i {
-  line-height: 1;
-}
+  .btn i {
+    line-height: 1;
+  }
 
-.site-footer .btn:hover {
-  border-color: var(--tinto);
-  color: var(--tinto);
-}
+  .btn:hover {
+    border-color: map.get(vars.$colors, tinto);
+    color: map.get(vars.$colors, tinto);
+  }
 
-.site-footer p,
-.site-footer address {
-  font-size: 0.95rem;
+  p,
+  address {
+    font-size: 0.95rem;
+  }
 }
 
 .text-tinto {
-  color: var(--tinto);
+  color: map.get(vars.$colors, tinto);
 }
 
 .contact-link {
-  color: var(--tinto);
+  color: map.get(vars.$colors, tinto);
   text-decoration: none;
-}
 
-.contact-link:hover,
-.contact-link:focus {
-  text-decoration: underline;
-  outline: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    outline: none;
+  }
 }

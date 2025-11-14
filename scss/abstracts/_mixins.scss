@@ -1,0 +1,13 @@
+/* abstracts/_mixins.scss */
+
+/* Transición suave reutilizable */
+@mixin smooth-transition($prop: all, $time: 0.2s, $ease: ease-in-out) {
+  transition: $prop $time $ease;
+}
+
+/* Flex en columna con gap (ideal para tarjetas tipo glosario) */
+@mixin flex-col($gap: 0.5rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}

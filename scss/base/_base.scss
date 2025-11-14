@@ -1,81 +1,86 @@
+/* base/_base.scss */
+@use "sass:map";
+@use "../abstracts/variables" as vars;
+
 /* =========  Base del documento  =========== */
 body {
   margin: 0;
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  color: var(--ink);
-  background: var(--bg);
+  color: map.get(vars.$colors, ink);
+  background: map.get(vars.$colors, bg);
   line-height: 1.6;
-}
 
-main {
-  padding: 1rem 0;
-} /* margen vertical general */
+  /* CONTENIDO PRINCIPAL */
+  main {
+    padding: 1rem 0; /* margen vertical general */
 
-.page-title {
-  font-family: "Lora", Georgia, "Times New Roman", serif;
-  font-size: 1.9rem;
-  color: var(--tinto);
-  margin: 0.4rem 0 1rem;
-}
+    .page-title {
+      font-family: "Lora", Georgia, "Times New Roman", serif;
+      font-size: 1.9rem;
+      color: map.get(vars.$colors, tinto);
+      margin: 0.4rem 0 1rem;
+    }
 
-h2 {
-  margin: 1rem 0 0.5rem;
-  font-size: 1.3rem;
-  color: var(--tinto);
-}
+    h2 {
+      margin: 1rem 0 0.5rem;
+      font-size: 1.3rem;
+      color: map.get(vars.$colors, tinto);
+    }
 
-h3 {
-  margin: 0.75rem 0 0.25rem;
-  font-size: 1.1rem;
-  color: var(--tinto);
-}
+    h3 {
+      margin: 0.75rem 0 0.25rem;
+      font-size: 1.1rem;
+      color: map.get(vars.$colors, tinto);
+    }
 
-p {
-  margin: 0.5rem 0;
-}
+    p {
+      margin: 0.5rem 0;
+    }
 
-/* Enlaces */
-a {
-  color: var(--rose);
-}
+    /* Bloques suaves + separadores */
+    .bg-wash {
+      background: map.get(vars.$colors, wash);
+      border: 1px solid map.get(vars.$colors, line);
+    }
 
-a:hover {
-  color: var(--tinto);
-  text-decoration: underline;
-}
+    .section-sep {
+      border-top: 1px solid map.get(vars.$colors, line);
+      padding-top: 0.75rem;
+    }
 
-/* Bloques suaves + separadores */
-.bg-wash {
-  background: var(--wash);
-  border: 1px solid var(--line);
-}
+    /* Intro (home) */
+    .intro {
+      background: rgba(255, 255, 255, 0.6666666667);
+      border: 1px solid map.get(vars.$colors, line);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+    }
 
-.section-sep {
-  border-top: 1px solid var(--line);
-  padding-top: 0.75rem;
-}
+    /* Imágenes (dentro del main) */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-/* Intro (home) */
-.intro {
-  background: rgba(255, 255, 255, 0.6666666667);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-}
+    .object-fit-cover {
+      object-fit: cover;
+    }
 
-/* Imágenes */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+    .ratio {
+      > img {
+        object-fit: cover;
+      }
+    }
+  }
 
-.object-fit-cover {
-  -o-object-fit: cover;
-  object-fit: cover;
-}
+  /* Enlaces (globales dentro del body) */
+  a {
+    color: map.get(vars.$colors, rose);
 
-.ratio > img {
-  -o-object-fit: cover;
-  object-fit: cover;
+    &:hover {
+      color: map.get(vars.$colors, tinto);
+      text-decoration: underline;
+    }
+  }
 }

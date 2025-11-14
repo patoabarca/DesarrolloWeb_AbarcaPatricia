@@ -1,84 +1,95 @@
+@use "sass:map";
+/* layout/_header.scss */
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as vars;
+
 /* =========  Navbar (ajustes Bootstrap)  =========== */
-.site-header .navbar {
-  background: var(--header-bg);
-  border-bottom: 1px solid var(--edge-line);
-}
+.site-header {
+  .navbar {
+    background: map.get(vars.$colors, header-bg);
+    border-bottom: 1px solid map.get(vars.$colors, edge-line);
 
-/* Marca */
-.brand-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  background: #fff;
-  padding: 2px;
-}
+    /* Marca */
+    .brand-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: map.get(vars.$colors, white);
+      padding: 2px;
+    }
 
-.brand-title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
-  color: #5a0d1b;
-  font-size: 1.05rem;
-}
+    .brand-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      color: map.get(vars.$colors, brand-title);
+      font-size: 1.05rem;
 
-.brand-title:hover {
-  text-decoration: underline;
-}
+      &:hover {
+        text-decoration: underline;
+      }
+    }
 
-/* Ítems de navegación */
-.navbar .nav-link {
-  color: var(--ink);
-  font-weight: 600;
-  border-radius: 0.5rem;
-  padding: 0.45rem 0.6rem;
-}
+    /* Ítems de navegación */
+    .nav-link {
+      color: map.get(vars.$colors, ink);
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.45rem 0.6rem;
+      @include smooth-transition(color, 0.2s);
 
-.navbar .nav-link:hover {
-  background: #fff;
-  color: var(--tinto);
-  outline: 1px solid var(--edge-line);
-  text-decoration: none;
-}
+      &:hover {
+        background: map.get(vars.$colors, white);
+        color: map.get(vars.$colors, tinto);
+        outline: 1px solid map.get(vars.$colors, edge-line);
+        text-decoration: none;
+      }
 
-.navbar .nav-link.active {
-  background: var(--tinto);
-  color: #fff;
-}
+      &.active {
+        background: map.get(vars.$colors, tinto);
+        color: map.get(vars.$colors, white);
+      }
+    }
 
-/* Dropdown */
-.dropdown-menu {
-  border: 1px solid var(--edge-line);
-  border-radius: 0.6rem;
-}
+    /* Dropdown */
+    .dropdown-menu {
+      border: 1px solid map.get(vars.$colors, edge-line);
+      border-radius: 0.6rem;
 
-.dropdown-item {
-  padding: 0.45rem 0.75rem;
-}
+      .dropdown-item {
+        padding: 0.45rem 0.75rem;
 
-.dropdown-item:hover {
-  background: #f9f5f5;
-  color: var(--tinto);
-}
+        &:hover {
+          background: map.get(vars.$colors, dropdown-hover-bg);
+          color: map.get(vars.$colors, tinto);
+        }
+      }
+    }
 
-/* Hamburguesa (foco visible) */
-.navbar-toggler {
-  border-color: var(--edge-line);
-}
+    /* Hamburguesa (foco visible) */
+    .navbar-toggler {
+      border-color: map.get(vars.$colors, edge-line);
 
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
-}
-
-/* ======== MOBILE (≤480px) — ajustes del brand ======== */
-@media (max-width: 480px) {
-  .brand-logo {
-    width: 48px;
-    height: 48px;
+      &:focus {
+        box-shadow: vars.$navbar-focus-shadow;
+      }
+    }
   }
+}
 
-  .brand-title {
-    font-size: 1.05rem;
-    white-space: nowrap;
-  } /* evita corte del brand */
+/* ======== MOBILE (≤480px) ======== */
+@media (max-width: 480px) {
+  .site-header {
+    .navbar {
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-title {
+        font-size: 1.05rem;
+        white-space: nowrap;
+      }
+    }
+  }
 }

@@ -1,0 +1,18 @@
+/* pages/_glosario.scss */
+@use "sass:map";
+@use "../abstracts/placeholders" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as vars;
+
+/* =========  Glosario (cards pequeñas)  =========== */
+.g-card {
+  @extend %card-base;
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  @include flex-col(0.25rem);
+  height: 100%;
+
+  h3 {
+    color: map.get(vars.$colors, tinto);
+  }
+}
