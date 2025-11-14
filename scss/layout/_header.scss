@@ -9,7 +9,6 @@
     background: map.get(vars.$colors, header-bg);
     border-bottom: 1px solid map.get(vars.$colors, edge-line);
 
-    /* Marca */
     .brand-logo {
       width: 56px;
       height: 56px;
@@ -36,7 +35,9 @@
       font-weight: 600;
       border-radius: 0.5rem;
       padding: 0.45rem 0.6rem;
-      @include smooth-transition(color, 0.2s);
+
+      /* transición en color, fondo, borde, etc. */
+      @include smooth-transition(all, 0.2s);
 
       &:hover {
         background: map.get(vars.$colors, white);
@@ -51,7 +52,6 @@
       }
     }
 
-    /* Dropdown */
     .dropdown-menu {
       border: 1px solid map.get(vars.$colors, edge-line);
       border-radius: 0.6rem;
@@ -66,7 +66,6 @@
       }
     }
 
-    /* Hamburguesa (foco visible) */
     .navbar-toggler {
       border-color: map.get(vars.$colors, edge-line);
 
@@ -77,7 +76,6 @@
   }
 }
 
-/* ======== MOBILE (≤480px) ======== */
 @media (max-width: 480px) {
   .site-header {
     .navbar {

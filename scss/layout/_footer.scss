@@ -1,19 +1,25 @@
 /* layout/_footer.scss */
 @use "sass:map";
 @use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
 
 /* =========  Footer  =========== */
 .site-footer {
   background: map.get(vars.$colors, footer-bg);
   border-top: 1px solid map.get(vars.$colors, edge-line);
 
-  .btn i {
-    line-height: 1;
-  }
+  .btn {
+    @include smooth-transition(all, 0.2s);
 
-  .btn:hover {
-    border-color: map.get(vars.$colors, tinto);
-    color: map.get(vars.$colors, tinto);
+    i {
+      line-height: 1;
+    }
+
+    &:hover {
+      border-color: map.get(vars.$colors, tinto);
+      color: map.get(vars.$colors, tinto);
+      background-color: map.get(vars.$colors, white);
+    }
   }
 
   p,
@@ -29,10 +35,12 @@
 .contact-link {
   color: map.get(vars.$colors, tinto);
   text-decoration: none;
+  @include smooth-transition(color, 0.2s);
 
   &:hover,
   &:focus {
     text-decoration: underline;
     outline: none;
+    color: map.get(vars.$colors, tinto);
   }
 }
