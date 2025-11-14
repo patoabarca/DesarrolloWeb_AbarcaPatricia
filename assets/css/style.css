@@ -23,9 +23,13 @@ body {
   background: #ede2e0;
   line-height: 1.6;
   /* CONTENIDO PRINCIPAL */
+  /* Enlaces (globales dentro del body) */
 }
 body main {
   padding: 1rem 0; /* margen vertical general */
+  /* Bloques suaves + separadores */
+  /* Intro (home) */
+  /* Imágenes (dentro del main) */
 }
 body main .page-title {
   font-family: "Lora", Georgia, "Times New Roman", serif;
@@ -46,9 +50,6 @@ body main h3 {
 body main p {
   margin: 0.5rem 0;
 }
-body main {
-  /* Bloques suaves + separadores */
-}
 body main .bg-wash {
   background: #f7f1f2;
   border: 1px solid #e7dadd;
@@ -57,17 +58,11 @@ body main .section-sep {
   border-top: 1px solid #e7dadd;
   padding-top: 0.75rem;
 }
-body main {
-  /* Intro (home) */
-}
 body main .intro {
   background: rgba(255, 255, 255, 0.6666666667);
   border: 1px solid #e7dadd;
   border-radius: 10px;
   padding: 0.75rem 1rem;
-}
-body main {
-  /* Imágenes (dentro del main) */
 }
 body main img {
   max-width: 100%;
@@ -75,13 +70,12 @@ body main img {
   display: block;
 }
 body main .object-fit-cover {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 body main .ratio > img {
-  object-fit: cover;
-}
-body {
-  /* Enlaces (globales dentro del body) */
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 body a {
   color: #b55a6a;
@@ -100,12 +94,16 @@ body a:hover {
   background: #e1d2d0;
   border-bottom: 1px solid #d7c5c4;
   /* Marca */
+  /* Ítems de navegación */
+  /* Dropdown */
+  /* Hamburguesa (foco visible) */
 }
 .site-header .navbar .brand-logo {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background: #ffffff;
   padding: 2px;
 }
@@ -117,9 +115,6 @@ body a:hover {
 }
 .site-header .navbar .brand-title:hover {
   text-decoration: underline;
-}
-.site-header .navbar {
-  /* Ítems de navegación */
 }
 .site-header .navbar .nav-link {
   color: #2b2b2b;
@@ -138,9 +133,6 @@ body a:hover {
   background: #6d0f20;
   color: #ffffff;
 }
-.site-header .navbar {
-  /* Dropdown */
-}
 .site-header .navbar .dropdown-menu {
   border: 1px solid #d7c5c4;
   border-radius: 0.6rem;
@@ -151,9 +143,6 @@ body a:hover {
 .site-header .navbar .dropdown-menu .dropdown-item:hover {
   background: #f9f5f5;
   color: #6d0f20;
-}
-.site-header .navbar {
-  /* Hamburguesa (foco visible) */
 }
 .site-header .navbar .navbar-toggler {
   border-color: #d7c5c4;
@@ -278,6 +267,4 @@ body a:hover {
 }
 .g-card h3 {
   color: #6d0f20;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
