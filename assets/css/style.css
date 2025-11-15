@@ -53,10 +53,11 @@ body main .section-sep {
   padding-top: 0.75rem;
 }
 body main .intro {
-  background: rgba(255, 255, 255, 0.6666666667);
-  border: 1px solid #e7dadd;
+  background: #e7dadd;
+  border: 1px solid #d7c5c4;
   border-radius: 10px;
   padding: 0.75rem 1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 body main .intro .intro-text p {
   margin: 0;
@@ -70,7 +71,9 @@ body main .intro .intro-figure {
   margin: 0;
   border-radius: 999px;
   overflow: hidden;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  background-color: #fff7f4;
+  border: 3px solid #d7c5c4;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.76), 0 12px 26px rgba(0, 0, 0, 0.22);
 }
 body main .intro .intro-figure img {
   display: block;
@@ -103,7 +106,7 @@ body a:hover {
     transform: translateY(0) scale(1);
   }
   50% {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-10px) scale(1.06);
   }
   100% {
     transform: translateY(0) scale(1);
@@ -218,7 +221,7 @@ body a:hover {
 /* components/_cards.scss */
 /* scss/abstracts/_placeholders.scss */
 /* Base para tarjetas (card, g-card, etc.) */
-.g-card, .card {
+.vendimia-main .vendimia-etapas .vendimia-etapa, .g-card, .card {
   background: #fff7f4;
   border: 1px solid #e7dadd;
   box-shadow: inset 0 0 0 1px #e7dadd;
@@ -306,6 +309,64 @@ body a:hover {
 .g-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.vendimia-main .vendimia-intro p {
+  margin-bottom: 0.75rem;
+}
+.vendimia-main .vendimia-intro .vendimia-etapas-lista {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+.vendimia-main .vendimia-intro .vendimia-etapas-lista li {
+  margin-bottom: 0.25rem;
+}
+.vendimia-main .vendimia-etapas .vendimia-etapas-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.vendimia-main .vendimia-etapas .vendimia-etapa {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 1rem;
+  align-items: center;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.25s ease-in-out;
+}
+.vendimia-main .vendimia-etapas .vendimia-etapa:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+.vendimia-main .vendimia-etapas .vendimia-etapa .vendimia-etapa-media img {
+  object-fit: cover;
+}
+.vendimia-main .vendimia-etapas .vendimia-etapa .vendimia-etapa-texto h3 {
+  margin-bottom: 0.4rem;
+  color: #6d0f20;
+}
+.vendimia-main .vendimia-etapas .vendimia-etapa .vendimia-etapa-texto p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* ======== TABLET (≤991px) ======== */
+@media (max-width: 991px) {
+  .vendimia-main .vendimia-etapas .vendimia-etapa {
+    grid-template-columns: 1fr;
+  }
+}
+/* ======== MOBILE (≤480px) ======== */
+@media (max-width: 480px) {
+  .vendimia-main .vendimia-etapas .vendimia-etapa {
+    gap: 0.75rem;
+  }
+  .vendimia-main .vendimia-etapas .vendimia-etapa .vendimia-etapa-texto p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

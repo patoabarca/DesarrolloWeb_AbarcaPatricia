@@ -1,0 +1,94 @@
+// pages/_vendimia.scss
+@use "sass:map";
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/placeholders" as *;
+
+// =========  Página Vendimia  ==========
+.vendimia-main {
+  .vendimia-intro {
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    .vendimia-etapas-lista {
+      padding-left: 1.25rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+
+      li {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
+  .vendimia-etapas {
+    .vendimia-etapas-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .vendimia-etapa {
+      @extend %card-base; // mismo estilo base que tus otras cards
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 1rem;
+      align-items: center;
+      border-radius: 0.75rem;
+      overflow: hidden;
+
+      @include smooth-transition(transform, 0.25s);
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .vendimia-etapa-media img {
+        object-fit: cover;
+      }
+
+      .vendimia-etapa-texto {
+        h3 {
+          margin-bottom: 0.4rem;
+          color: map.get(vars.$colors, tinto);
+        }
+
+        p {
+          margin-bottom: 0;
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
+
+/* ======== TABLET (≤991px) ======== */
+@media (max-width: 991px) {
+  .vendimia-main {
+    .vendimia-etapas {
+      .vendimia-etapa {
+        grid-template-columns: 1fr; // imagen arriba, texto abajo
+      }
+    }
+  }
+}
+
+/* ======== MOBILE (≤480px) ======== */
+@media (max-width: 480px) {
+  .vendimia-main {
+    .vendimia-etapas {
+      .vendimia-etapa {
+        gap: 0.75rem;
+
+        .vendimia-etapa-texto {
+          p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
+}
