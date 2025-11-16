@@ -1,108 +1,168 @@
-# 🍷 **Guía de Vinos para Principiantes**
+# 🍷 Guía de Vinos para Principiantes
 
-**Proyecto:** PreEntrega2_Abarca  
-🔗 **Demo online:** [patoabarca.github.io/DesarrolloWeb_AbarcaPatricia](https://patoabarca.github.io/DesarrolloWeb_AbarcaPatricia/)
+### 🧪 Pre-Entrega 3 — SASS + Responsive + Estructura final
 
----
-
-## **Descripción**
-
-Este proyecto corresponde a la **Pre-Entrega 2** del curso **Desarrollo Web (Coderhouse)**.  
-Se avanza a una **estructura avanzada**, **diseño responsive** y **aplicación de Bootstrap**.
-
-**Objetivo:** maquetar, estilizar y optimizar la web usando **Bootstrap 5**, **Grid CSS**, **Flexbox** y **CSS personalizado**.
+**Proyecto:** PreEntrega3_Abarca  
+**Demo online:** https://patoabarca.github.io/DesarrolloWeb_AbarcaPatricia/
 
 ---
 
-## **Estructura general**
+## Descripción
+
+Este proyecto forma parte de la **Pre-Entrega 3** del curso **Desarrollo Web – Coderhouse**.  
+En esta instancia se desarrolló:
+
+- La estructura final del sitio web.
+- El diseño responsive completo para mobile, tablet y desktop.
+- La implementación total de **SASS**: variables, mixins, extend, maps y nesting.
+- Transiciones y animaciones aplicadas a elementos destacados.
+- Optimización general.
+- Publicación en GitHub Pages.
+
+El sitio es una guía introductoria al mundo del vino, creada para principiantes.
+
+---
+
+## Estructura general
 
 Secciones del sitio:
 
-- **Inicio:** presentación y acceso a todas las páginas.
-- **Uvas tintas** y **Uvas blancas:** fichas (imagen + texto + descriptor).
-- **Regiones:** zonas vitivinícolas argentinas.
-- **Maridajes:** combinaciones sugeridas.
-- **Glosario:** términos básicos del vino.
+- **Inicio**
+- **Uvas tintas**
+- **Uvas blancas**
+- **Regiones argentinas**
+- **Maridajes**
+- **Glosario**
+- **Vendimia** (nueva sección en esta entrega)
 
-Toda página sigue una estructura semántica con `header`, `nav`, `main`, `section`, `article`, `footer`.
+Todas las páginas comparten una estructura semántica con:
 
----
-
-## **Uso de tecnologías y frameworks**
-
-### **Bootstrap 5.3.8**
-
-Implementado como framework principal para:
-
-- **Navbar** responsive (`.navbar-expand-lg` + botón hamburguesa).
-- **Grillas utilitarias**: `.container`, `.row`, `.col-*`, `.g-*`.
-- **Utilidades de espaciado y alineación**: `my-4`, `p-3`, `gap-2`, `align-items-center`, `ms-auto`.
-- **Botones sociales**: `btn`, `rounded-circle`, `border`.
-- **Proporción de imágenes**: `ratio ratio-4x3`.
-
-### **CSS Grid**
-
-Usado manualmente en **Uvas tintas/blancas**:
-
-- **Layout externo** (`.fichas-grid`):
-  - **Desktop (≥992px):** `grid-template-columns: repeat(3, 1fr);`
-  - **Tablet (≤991px):** `repeat(2, 1fr)`
-  - **Mobile (≤480px):** `1fr`
-- **Layout interno por ficha** (`.ficha-grid`):
-  - **Desktop/Tablet:** `grid-template-columns: 5fr 7fr` (imagen | texto)
-  - **Mobile:** `1fr` (apilado)
-
-### **Flexbox**
-
-- **Estructura vertical de página**: `body.d-flex.flex-column.min-vh-100` (footer pegado abajo).
-- **Brand en navbar**: `.d-flex.align-items-center.gap-2` (logo + título).
-- **Footer**: filas de iconos/contacto con `.d-flex` y `gap-2`.
-- **Dentro de `.card-body`** (CSS propio): `display:flex; flex-direction:column;` para empujar acciones al final.
-
-### **CSS personalizado** (`/assets/css/styles.css`)
-
-- **Paleta** con variables: `--tinto`, `--rose`, `--card`, `--wash`.
-- **Tipografía**: _Lora_ (títulos) + _Roboto_ (cuerpo).
-- **Ajustes visuales de Bootstrap** (hover, bordes, foco accesible).
-- **Breakpoints por rango**
-  - Tablet: `@media (max-width: 991px)`
-  - Mobile: `@media (max-width: 480px)`
+`header`, `nav`, `main`, `section`, `article`, `footer`.
 
 ---
 
-## **Diseño responsive**
+## SASS — Implementación completa
 
-El sitio se adapta a distintos dispositivos manteniendo coherencia visual y legibilidad:
+Todo el CSS fue migrado a una arquitectura SCSS modular:
 
-- **Desktop (≥992 px):**  
-  En las secciones generales (Inicio, Regiones, Maridajes, Glosario) el contenido se distribuye con grillas y contenedores amplios.  
-  En **Uvas tintas y blancas**, se muestran **2 fichas por fila**, con disposición horizontal (imagen | texto).
+```
+scss/
+│── abstracts/      → variables, mixins, placeholders, maps
+│── base/           → reset y estilos base
+│── layout/         → header, footer
+│── components/     → cards, botones, elementos reutilizables
+│── pages/          → estilos por página
+│── style.scss      → archivo principal que compila al CSS final
+```
 
-- **Tablet (481–991 px):**  
-  El layout ajusta márgenes y tipografías para mantener equilibrio.  
-  En las páginas de **Uvas**, se muestra **1 ficha por fila** con estructura interna de dos columnas (imagen a la izquierda, texto a la derecha).
+### Elementos de SASS utilizados
 
-- **Mobile (≤480 px):**  
-  Todos los contenidos se apilan verticalmente para favorecer la lectura.  
-  En **Uvas**, cada ficha muestra **imagen sobre texto**, mientras que la marca del encabezado se compacta.
-
-Además, las imágenes implementan `loading="lazy"` y `object-fit: cover` para optimizar el rendimiento y mantener proporciones correctas.
+- Variables: paleta de colores, sombras, tamaños.
+- Maps: uso de `map.get()` para colores globales.
+- Mixins personalizados:
+  - `smooth-transition`
+  - `flex-col`
+  - `object-cover`
+- Extend (%placeholders):
+  - `%card-base` para tarjetas reutilizables.
+- Nesting limpio para header, footer, main y páginas.
+- Media queries anidadas:
+  - Mobile (≤480px)
+  - Tablet (≤991px)
+- Transiciones y animaciones:
+  - Hover en cards
+  - Zoom leve en imágenes
 
 ---
 
-## **Tecnologías**
+## Responsive design
 
-- **HTML5**, **CSS3** (variables + media queries).
-- **Bootstrap 5**, **Flexbox**, **CSS Grid**.
-- **Font Awesome 6**.
-- **VS Code**, **Git/GitHub**.
-- **JavaScript** (buscador en Glosario)
+### Mobile (≤480px)
+
+- Cards apiladas en una sola columna.
+- Navbar compacta.
+- Textos reducidos.
+- Sección Vendimia en formato vertical.
+
+### Tablet (481–991px)
+
+- Grillas ajustadas.
+- Vendimia reorganizada para lectura fluida.
+- Adecuación de márgenes y tipografías.
+
+### Desktop (≥992px)
+
+- Grillas amplias.
+- Fichas de Uvas en 2 columnas.
+- Vendimia en tarjetas horizontales.
+- Layout limpio y espacioso.
 
 ---
 
-## **Autoría**
+## Nueva sección: Vendimia
 
-👩‍💻 **Patricia Abarca**  
-Curso: _Desarrollo Web – Coderhouse_  
-Entrega: _PreEntrega 2 — Estructura avanzada + Bootstrap + Grid + Flexbox_  
+En esta entrega se rediseñó completamente la vista:
+
+- Ahora utiliza **tarjetas responsivas**.
+- Cada etapa incluye:
+  - Imagen 16:9
+  - Texto claro
+  - Sombra + transición suave
+- Perfecta compatibilidad entre mobile/tablet/desktop.
+- Diseño accesible y uniforme con el resto del sitio.
+
+---
+
+## Uso de Bootstrap, Flex y Grid
+
+### Bootstrap
+
+- Navbar responsive (`navbar-expand-lg`)
+- Grillas (`row`, `col-*`)
+- Utilidades de espaciado
+- Proporciones de imágenes (`ratio`)
+
+### Grid
+
+- Fichas de uvas
+- Etapas de Vendimia
+
+### Flexbox
+
+- Header
+- Footer
+- Cards
+
+---
+
+## Optimización
+
+- Imágenes optimizadas y centradas con `object-fit: cover`.
+- Carga eficiente y coherencia visual.
+- Código SCSS ordenado y limpio.
+- CSS final compilado y minificado.
+
+---
+
+## Git y GitHub
+
+El repositorio incluye:
+
+- Todos los archivos necesarios para la visualización.
+- `.gitignore` correctamente configurado.
+- Historial de commits claro.
+- Publicación activa en GitHub Pages.
+- Arquitectura SCSS visible en `/scss`.
+
+### Repositorio
+
+https://github.com/patoabarca/DesarrolloWeb_AbarcaPatricia
+
+---
+
+## Autoría
+
+**Patricia Abarca**  
+Curso: Desarrollo Web – Coderhouse  
+Entrega: PreEntrega 3 — SASS + Responsive + Maquetado Final  
 Año: 2025
