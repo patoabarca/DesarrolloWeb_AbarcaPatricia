@@ -72,6 +72,9 @@ scss/
 - Transiciones y animaciones:
   - Hover en cards
   - Zoom leve en imágenes
+- Gradiente personalizado:
+  - Implementado en la sección **Intro** de la página de Inicio.
+  - Generado mediante `linear-gradient()` usando colores obtenidos desde el mapa global (`map.get(vars.$colors, ...)`), garantizando coherencia visual.
 
 ---
 
@@ -96,6 +99,33 @@ scss/
 - Fichas de Uvas en 2 columnas.
 - Vendimia en tarjetas horizontales.
 - Layout limpio y espacioso.
+
+---
+
+## Transiciones y animaciones aplicadas
+
+El proyecto incluye transiciones y animaciones sutiles para mejorar la experiencia visual:
+
+- **Cards**
+
+  - Elevación con `transform: translateY()`
+  - Sombras dinámicas
+  - Zoom suave de imágenes en el hover
+  - Transición unificada mediante el mixin `smooth-transition`
+
+- **Imagen animada del Intro (Home)**
+
+  - Animación personalizada `float-wine`
+  - Movimiento suave alternado con `@keyframes`
+  - Aplicada a `<img>` dentro de `.intro-figure`
+
+- **Navbar**
+
+  - Transición en color, fondo y borde de los links (`hover` y `active`)
+  - Implementada con `smooth-transition(all, .2s)`
+
+- **Botones y enlaces**
+  - Cambio de color y subrayado con transición suave
 
 ---
 

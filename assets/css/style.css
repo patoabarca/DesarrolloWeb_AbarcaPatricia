@@ -53,7 +53,7 @@ body main .section-sep {
   padding-top: 0.75rem;
 }
 body main .intro {
-  background: #e7dadd;
+  background: linear-gradient(135deg, #f7f1f2 0%, #fff7f4 45%, #e1d2d0 100%);
   border: 1px solid #d7c5c4;
   border-radius: 10px;
   padding: 0.75rem 1rem;

@@ -50,8 +50,15 @@ body {
 
     // Intro (home)
     .intro {
-      // más oscuro que la card para que contraste
-      background: map.get(vars.$colors, line);
+      // Fondo con gradiente suave usando la paleta del mapa de colores
+      background: linear-gradient(
+        135deg,
+        map.get(vars.$colors, wash) 0%,
+        // tono claro
+        map.get(vars.$colors, card) 45%,
+        // centro tipo "tarjeta"
+        map.get(vars.$colors, header-bg) 100% // un pelín más oscuro
+      );
       border: 1px solid map.get(vars.$colors, edge-line);
       border-radius: 10px;
       padding: 0.75rem 1rem;
@@ -77,7 +84,6 @@ body {
 
         // borde un poquito más presente
         border: 3px solid map.get(vars.$colors, edge-line);
-
         box-shadow: vars.$intro-figure-shadow;
 
         img {
