@@ -1,10 +1,13 @@
-/* scss/abstracts/_placeholders.scss */
-@use "sass:map";
-@use "variables" as vars; // 👈 SIN "abstracts/"
+// abstracts/_placeholders.scss
+// Placeholders reutilizables (para usar con @extend)
 
-/* Base para tarjetas (card, g-card, etc.) */
+@use "sass:map";
+@use "../abstracts/variables" as vars;
+
+// Estilo base de tarjeta (cards genéricas)
 %card-base {
   background: map.get(vars.$colors, card);
   border: 1px solid map.get(vars.$colors, line);
   box-shadow: inset 0 0 0 1px map.get(vars.$colors, line);
+  border-radius: 0.75rem;
 }

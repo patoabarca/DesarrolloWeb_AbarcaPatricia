@@ -10,7 +10,7 @@ body {
   background: map.get(vars.$colors, bg);
   line-height: 1.6;
 
-  // CONTENIDO PRINCIPAL
+  // =========  Contenido principal (main)  ===========
   main {
     padding: 1rem 0; // margen vertical general
 
@@ -54,10 +54,8 @@ body {
       background: linear-gradient(
         135deg,
         map.get(vars.$colors, wash) 0%,
-        // tono claro
         map.get(vars.$colors, card) 45%,
-        // centro tipo "tarjeta"
-        map.get(vars.$colors, header-bg) 100% // un pelín más oscuro
+        map.get(vars.$colors, header-bg) 100%
       );
       border: 1px solid map.get(vars.$colors, edge-line);
       border-radius: 10px;
@@ -125,6 +123,7 @@ body {
   }
 }
 
+// Animación utilizada en la copa de la sección Intro (home)
 @keyframes float-wine {
   0% {
     transform: translateY(0) scale(1);

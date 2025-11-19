@@ -1,4 +1,6 @@
 // pages/_vendimia.scss
+// Estilos específicos para la página de Vendimia (etapas del proceso)
+
 @use "sass:map";
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as *;
@@ -6,6 +8,7 @@
 
 // =========  Página Vendimia  ==========
 .vendimia-main {
+  // Intro con texto explicativo + lista de etapas
   .vendimia-intro {
     p {
       margin-bottom: 0.75rem;
@@ -22,6 +25,7 @@
     }
   }
 
+  // Bloque principal de etapas
   .vendimia-etapas {
     .vendimia-etapas-grid {
       display: flex;
@@ -30,7 +34,9 @@
     }
 
     .vendimia-etapa {
-      @extend %card-base; // mismo estilo base que tus otras cards
+      // Mismo estilo base que las otras cards
+      @extend %card-base;
+
       display: grid;
       grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
       gap: 1rem;
@@ -65,17 +71,19 @@
 }
 
 /* ======== TABLET (≤991px) ======== */
+// Una sola columna: imagen arriba, texto abajo
 @media (max-width: 991px) {
   .vendimia-main {
     .vendimia-etapas {
       .vendimia-etapa {
-        grid-template-columns: 1fr; // imagen arriba, texto abajo
+        grid-template-columns: 1fr;
       }
     }
   }
 }
 
 /* ======== MOBILE (≤480px) ======== */
+// Ajustes finos de espaciado y tamaño de texto
 @media (max-width: 480px) {
   .vendimia-main {
     .vendimia-etapas {

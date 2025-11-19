@@ -1,4 +1,6 @@
-/* layout/_footer.scss */
+// layout/_footer.scss
+// Estilos del pie de página: fondo, bordes y enlaces de contacto
+
 @use "sass:map";
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as *;
@@ -8,6 +10,7 @@
   background: map.get(vars.$colors, footer-bg);
   border-top: 1px solid map.get(vars.$colors, edge-line);
 
+  // Botones sociales (GitHub / LinkedIn)
   .btn {
     @include smooth-transition(all, 0.2s);
 
@@ -22,16 +25,19 @@
     }
   }
 
+  // Texto y bloque de contacto
   p,
   address {
     font-size: 0.95rem;
   }
 }
 
+// Utilidad para texto en color tinto
 .text-tinto {
   color: map.get(vars.$colors, tinto);
 }
 
+// Enlaces de contacto (teléfono y mail)
 .contact-link {
   color: map.get(vars.$colors, tinto);
   text-decoration: none;

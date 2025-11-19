@@ -1,22 +1,42 @@
-/* scss/abstracts/_variables.scss */
+// abstracts/_variables.scss
+// Variables globales: paleta de colores, sombras, etc.
+
+@use "sass:map";
+
+// Mapa de colores principal
 $colors: (
   bg: #ede2e0,
+  // fondo general
   ink: #2b2b2b,
+  // texto principal
   muted: #6b6b6b,
+  // texto secundario
   tinto: #6d0f20,
+  // color acento principal
   rose: #b55a6a,
+  // acento suave
   line: #e7dadd,
+  // líneas y bordes suaves
   card: #fff7f4,
+  // fondo de tarjetas
   wash: #f7f1f2,
+  // bloques suaves
   header-bg: #e1d2d0,
+  // fondo header
   footer-bg: #e1d2d0,
+  // fondo footer
   edge-line: #d7c5c4,
-  white: #ffffff,
+  // bordes externos
   brand-title: #5a0d1b,
+  // texto del brand
   dropdown-hover-bg: #f9f5f5,
+  // hover de ítems de dropdown
+  white: #ffffff // blanco puro,
 );
 
+// Sombras reutilizables
 $navbar-focus-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
 
+// Sombra para la figura de la copa en el Intro (halo + sombra)
 $intro-figure-shadow: 0 0 0 2px rgba(255, 255, 255, 0.76),
   0 12px 26px rgba(0, 0, 0, 0.22);

@@ -1,16 +1,19 @@
-/* pages/_uvas.scss */
-@use "../abstracts/variables" as vars; // por ahora no lo usamos, pero está ok para futuro
+// pages/_uvas.scss
+// Estilos propios de las páginas de uvas (tintas y blancas)
 
-/* =========  Fichas de Uvas  =========== */
+@use "sass:map";
+@use "../abstracts/variables" as vars; // por si a futuro agregás colores o ajustes
 
-/* GRID externo Uvas: 2 cards por fila */
+/* =========  Fichas de Uvas  ========== */
+
+// GRID externo: 2 cards por fila en desktop
 .fichas-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
-/* GRID interno de cada ficha: 5/7 (imagen|texto) */
+// GRID interno de cada ficha: imagen | texto
 .ficha-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -18,22 +21,25 @@
   align-items: start;
 }
 
+// Imagen en ratio Bootstrap con borde redondeado
 .ficha-media .ratio {
   border-radius: 8px;
   overflow: hidden;
 }
 
+// Ajuste para que el contenido textual no tenga padding extra
 .ficha-texto .card-body {
   padding: 0;
 }
 
-/* FLEX en card-body  */
+// Empuja elementos dentro de la card al final
 .card.h-100 .card-body {
   display: flex;
   flex-direction: column;
 }
 
 /* ======== TABLET (≤991px) ======== */
+// Una tarjeta por fila
 @media (max-width: 991px) {
   .fichas-grid {
     grid-template-columns: 1fr;
@@ -41,6 +47,7 @@
 }
 
 /* ======== MOBILE (≤480px) ======== */
+// Apila imagen y texto dentro de la tarjeta
 @media (max-width: 480px) {
   .ficha-grid {
     grid-template-columns: 1fr;

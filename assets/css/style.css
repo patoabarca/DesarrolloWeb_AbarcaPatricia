@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /* fuentes: títulos (Lora) y cuerpo (Roboto) */
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;600;700&display=swap");
-/* scss/abstracts/_variables.scss */
 /* =========  Reset  =========== */
 html {
   font-size: 18px;
@@ -112,9 +111,7 @@ body a:hover {
     transform: translateY(0) scale(1);
   }
 }
-/* abstracts/_mixins.scss */
-/* Transición suave reutilizable */
-/* Flex en columna con gap (ideal para tarjetas tipo glosario) */
+/* =========  Navbar (ajustes Bootstrap)  ========== */
 .site-header .navbar {
   background: #e1d2d0;
   border-bottom: 1px solid #d7c5c4;
@@ -171,6 +168,7 @@ body a:hover {
   box-shadow: 0 0 0 0.15rem rgba(109, 15, 32, 0.25);
 }
 
+/* ======== MOBILE (≤480px) ======== */
 @media (max-width: 480px) {
   .site-header .navbar .brand-logo {
     width: 48px;
@@ -181,7 +179,6 @@ body a:hover {
     white-space: nowrap;
   }
 }
-/* layout/_footer.scss */
 /* =========  Footer  =========== */
 .site-footer {
   background: #e1d2d0;
@@ -218,15 +215,14 @@ body a:hover {
   color: #6d0f20;
 }
 
-/* components/_cards.scss */
-/* scss/abstracts/_placeholders.scss */
-/* Base para tarjetas (card, g-card, etc.) */
 .vendimia-main .vendimia-etapas .vendimia-etapa, .g-card, .card {
   background: #fff7f4;
   border: 1px solid #e7dadd;
   box-shadow: inset 0 0 0 1px #e7dadd;
+  border-radius: 0.75rem;
 }
 
+/* =========  Cards  ==========*/
 .card {
   transition: all 0.25s ease-in-out;
 }
@@ -249,16 +245,13 @@ body a:hover {
 }
 
 /* Páginas */
-/* pages/_uvas.scss */
-/* =========  Fichas de Uvas  =========== */
-/* GRID externo Uvas: 2 cards por fila */
+/* =========  Fichas de Uvas  ========== */
 .fichas-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
-/* GRID interno de cada ficha: 5/7 (imagen|texto) */
 .ficha-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -275,7 +268,6 @@ body a:hover {
   padding: 0;
 }
 
-/* FLEX en card-body  */
 .card.h-100 .card-body {
   display: flex;
   flex-direction: column;
