@@ -58,6 +58,21 @@ body main .intro {
   padding: 0.75rem 1rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
+body main .intro .row {
+  min-height: 190px;
+}
+body main .intro .intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main .intro .intro-text .intro-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin-bottom: 0.45rem;
+}
 body main .intro .intro-text p {
   margin: 0;
 }
@@ -71,7 +86,7 @@ body main .intro .intro-figure {
   border-radius: 999px;
   overflow: hidden;
   background-color: #fff7f4;
-  border: 6px solid #d7c5c4;
+  border: 3px solid #d7c5c4;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.76), 0 12px 26px rgba(0, 0, 0, 0.22);
 }
 body main .intro .intro-figure img {
@@ -109,6 +124,19 @@ body a:hover {
   }
   100% {
     transform: translateY(0) scale(1);
+  }
+}
+@media (max-width: 991px) {
+  body main .intro {
+    text-align: center;
+  }
+  body main .intro .intro-text {
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  body main .intro .intro-figure {
+    max-width: 190px;
   }
 }
 /* =========  Navbar (ajustes Bootstrap)  ========== */

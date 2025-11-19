@@ -2,7 +2,7 @@
 @use "sass:map";
 @use "../abstracts/variables" as vars;
 
-// =========  Base del documento  ===========
+// =========  Base del documento  ==========
 body {
   margin: 0;
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -10,7 +10,7 @@ body {
   background: map.get(vars.$colors, bg);
   line-height: 1.6;
 
-  // =========  Contenido principal (main)  ===========
+  // =========  Contenido principal (main)  ==========
   main {
     padding: 1rem 0; // margen vertical general
 
@@ -48,9 +48,9 @@ body {
       padding-top: 0.75rem;
     }
 
-    // Intro (home)
+    // =========  Intro (home)  ==========
     .intro {
-      // Fondo con gradiente suave usando la paleta del mapa de colores
+      // Fondo con gradiente suave usando la paleta
       background: linear-gradient(
         135deg,
         map.get(vars.$colors, wash) 0%,
@@ -62,7 +62,23 @@ body {
       padding: 0.75rem 1rem;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 
+      .row {
+        min-height: 190px; // hace que el contenido “respire” verticalmente
+      }
+
       .intro-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; // centra el texto verticalmente
+
+        .intro-kicker {
+          font-size: 0.85rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: map.get(vars.$colors, muted);
+          margin-bottom: 0.45rem; // un toque más de separación
+        }
+
         p {
           margin: 0;
         }
@@ -79,9 +95,7 @@ body {
         border-radius: 999px;
         overflow: hidden;
         background-color: map.get(vars.$colors, card);
-
-        // borde un poquito más presente
-        border: 6px solid map.get(vars.$colors, edge-line);
+        border: 3px solid map.get(vars.$colors, edge-line);
         box-shadow: vars.$intro-figure-shadow;
 
         img {
@@ -133,5 +147,32 @@ body {
   }
   100% {
     transform: translateY(0) scale(1);
+  }
+}
+
+// =========  Ajustes responsive Intro  ==========
+@media (max-width: 991px) {
+  body {
+    main {
+      .intro {
+        text-align: center;
+
+        .intro-text {
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    main {
+      .intro {
+        .intro-figure {
+          max-width: 190px;
+        }
+      }
+    }
   }
 }
