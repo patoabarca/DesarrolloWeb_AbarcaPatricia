@@ -81,7 +81,7 @@ body {
         background-color: map.get(vars.$colors, card);
 
         // borde un poquito más presente
-        border: 3px solid map.get(vars.$colors, edge-line);
+        border: 6px solid map.get(vars.$colors, edge-line);
         box-shadow: vars.$intro-figure-shadow;
 
         img {
