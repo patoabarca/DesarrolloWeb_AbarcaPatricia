@@ -84,6 +84,12 @@ La sección _Intro_ del Home usa un gradiente propio:
 
 ## Transiciones y animaciones
 
+### Imagen animada del Intro (imagen copa)
+
+- Animación `float-wine` creada con `@keyframes`
+- Movimiento vertical + leve zoom
+- Borde circular y sombra decorativa
+
 ### - Cards (home, glosario, vendimia)
 
 - **Cards destacadas de la home**  
