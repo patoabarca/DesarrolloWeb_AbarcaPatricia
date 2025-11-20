@@ -4,7 +4,7 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as vars;
 
-// =========  Glosario (cards pequeñas)  ==========
+/*=========  Glosario (cards pequeñas)  ==========*/
 .g-card {
   @extend %card-base;
   border-radius: 10px;

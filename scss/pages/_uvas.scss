@@ -2,7 +2,6 @@
 // Estilos propios de las páginas de uvas (tintas y blancas)
 
 @use "sass:map";
-@use "../abstracts/variables" as vars; // por si a futuro agregás colores o ajustes
 
 /* =========  Fichas de Uvas  ========== */
 
@@ -38,7 +37,7 @@
   flex-direction: column;
 }
 
-/* ======== TABLET (≤991px) ======== */
+/* = TABLET (≤991px) = */
 // Una tarjeta por fila
 @media (max-width: 991px) {
   .fichas-grid {
@@ -46,7 +45,7 @@
   }
 }
 
-/* ======== MOBILE (≤480px) ======== */
+/* =MOBILE (≤480px) = */
 // Apila imagen y texto dentro de la tarjeta
 @media (max-width: 480px) {
   .ficha-grid {

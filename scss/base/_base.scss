@@ -1,8 +1,8 @@
-/* base/_base.scss */
+//base/_base.scss
 @use "sass:map";
 @use "../abstracts/variables" as vars;
 
-// =========  Base del documento  ==========
+/*=========  Base  ==========*/
 body {
   margin: 0;
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -10,7 +10,7 @@ body {
   background: map.get(vars.$colors, bg);
   line-height: 1.6;
 
-  // =========  Contenido principal (main)  ==========
+  // =========  Contenido principal (main) ==========
   main {
     padding: 1rem 0; // margen vertical general
 
@@ -37,7 +37,7 @@ body {
       margin: 0.5rem 0;
     }
 
-    // Bloques suaves + separadores
+    // Bloques suaves + separadores reutilizables
     .bg-wash {
       background: map.get(vars.$colors, wash);
       border: 1px solid map.get(vars.$colors, line);
@@ -46,66 +46,6 @@ body {
     .section-sep {
       border-top: 1px solid map.get(vars.$colors, line);
       padding-top: 0.75rem;
-    }
-
-    // =========  Intro (home)  ==========
-    .intro {
-      // Fondo con gradiente suave usando la paleta
-      background: linear-gradient(
-        135deg,
-        map.get(vars.$colors, wash) 0%,
-        map.get(vars.$colors, card) 45%,
-        map.get(vars.$colors, header-bg) 100%
-      );
-      border: 1px solid map.get(vars.$colors, edge-line);
-      border-radius: 10px;
-      padding: 0.75rem 1rem;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-
-      .row {
-        min-height: 190px; // hace que el contenido “respire” verticalmente
-      }
-
-      .intro-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center; // centra el texto verticalmente
-
-        .intro-kicker {
-          font-size: 0.85rem;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: map.get(vars.$colors, muted);
-          margin-bottom: 0.45rem; // un toque más de separación
-        }
-
-        p {
-          margin: 0;
-        }
-      }
-
-      .intro-media {
-        display: flex;
-        justify-content: center;
-      }
-
-      .intro-figure {
-        max-width: 220px;
-        margin: 0;
-        border-radius: 999px;
-        overflow: hidden;
-        background-color: map.get(vars.$colors, card);
-        border: 3px solid map.get(vars.$colors, edge-line);
-        box-shadow: vars.$intro-figure-shadow;
-
-        img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          animation: float-wine 8s ease-in-out infinite alternate;
-        }
-      }
     }
 
     // Imágenes (dentro del main)
@@ -133,46 +73,6 @@ body {
     &:hover {
       color: map.get(vars.$colors, tinto);
       text-decoration: underline;
-    }
-  }
-}
-
-// Animación utilizada en la copa de la sección Intro (home)
-@keyframes float-wine {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.06); // más alto y más zoom
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
-
-// =========  Ajustes responsive Intro  ==========
-@media (max-width: 991px) {
-  body {
-    main {
-      .intro {
-        text-align: center;
-
-        .intro-text {
-          align-items: center;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    main {
-      .intro {
-        .intro-figure {
-          max-width: 190px;
-        }
-      }
     }
   }
 }

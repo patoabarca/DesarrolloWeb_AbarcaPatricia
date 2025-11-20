@@ -5,7 +5,7 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as vars;
 
-/* =========  Navbar (ajustes Bootstrap)  ========== */
+/* =========  Navbar  ========== */
 .site-header {
   .navbar {
     background: map.get(vars.$colors, header-bg);
@@ -81,7 +81,7 @@
   }
 }
 
-/* ======== MOBILE (≤480px) ======== */
+/* = MOBILE (≤480px) = */
 @media (max-width: 480px) {
   .site-header {
     .navbar {

@@ -1,15 +1,23 @@
-@use "abstracts/_variables";
+//style.scss — archivo raíz que compila a assets/css/style.css
+//====== Abstracts (configuración y helpers) ======
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "abstracts/placeholders";
 
-@use "base/_reset";
-@use "base/_base";
-@use "base/_fonts";
+//====== Base ======
+@use "base/reset";
+@use "base/fonts";
+@use "base/base";
 
-@use "layout/_header";
-@use "layout/_footer";
+//====== Layout (estructura general) ======
+@use "layout/header";
+@use "layout/footer";
 
-@use "components/_cards";
+// ====== Componentes reutilizables ======
+@use "components/cards";
 
-/* Páginas */
-@use "pages/_uvas";
-@use "pages/_glosario";
+//====== Páginas ======
+@use "pages/uvas";
+@use "pages/glosario";
 @use "pages/vendimia";
+@use "pages/index";

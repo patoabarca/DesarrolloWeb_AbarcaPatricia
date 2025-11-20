@@ -6,7 +6,7 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/placeholders" as *;
 
-// =========  Página Vendimia  ==========
+/*=========  Página Vendimia  ==========*/
 .vendimia-main {
   // Intro con texto explicativo + lista de etapas
   .vendimia-intro {
@@ -51,8 +51,10 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
       }
 
-      .vendimia-etapa-media img {
-        object-fit: cover;
+      .vendimia-etapa-media {
+        img {
+          object-fit: cover;
+        }
       }
 
       .vendimia-etapa-texto {
@@ -70,7 +72,7 @@
   }
 }
 
-/* ======== TABLET (≤991px) ======== */
+/* =TABLET (≤991px) =*/
 // Una sola columna: imagen arriba, texto abajo
 @media (max-width: 991px) {
   .vendimia-main {
@@ -82,7 +84,7 @@
   }
 }
 
-/* ======== MOBILE (≤480px) ======== */
+/* =MOBILE (≤480px) = */
 // Ajustes finos de espaciado y tamaño de texto
 @media (max-width: 480px) {
   .vendimia-main {
