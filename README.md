@@ -47,10 +47,15 @@ El CSS fue migrado a una arquitectura **SCSS modular**:
 
 scss/
 │── abstracts/ → variables, mixins, placeholders, maps
+
 │── base/ → reset y estilos base
+
 │── layout/ → header, footer
+
 │── components/ → cards, botones, elementos reutilizables
+
 │── pages/ → estilos por página (uvas, glosario, vendimia, index)
+
 │── style.scss → archivo principal que compila al CSS final
 
 ### ✔ Elementos de SASS utilizados
