@@ -5,14 +5,13 @@
 
 /* =========  Fichas de Uvas  ========== */
 
-// GRID externo: 2 cards por fila en desktop
+/*GRID externo: 2 cards por fila en desktop*/
 .fichas-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
-
-// GRID interno de cada ficha: imagen | texto
+/*GRID interno de cada ficha: imagen | texto*/
 .ficha-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -25,18 +24,13 @@
   border-radius: 8px;
   overflow: hidden;
 }
-
-// Ajuste para que el contenido textual no tenga padding extra
 .ficha-texto .card-body {
   padding: 0;
 }
-
-// Empuja elementos dentro de la card al final
 .card.h-100 .card-body {
   display: flex;
   flex-direction: column;
 }
-
 /* = TABLET (≤991px) = */
 // Una tarjeta por fila
 @media (max-width: 991px) {

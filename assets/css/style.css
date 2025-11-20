@@ -2,9 +2,7 @@
 /* fuentes: títulos (Lora) y cuerpo (Roboto) */
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;600;700&display=swap");
 /* Estilo base de tarjeta (cards genéricas)*/
-.vendimia-main .vendimia-etapas .vendimia-etapa,
-.g-card,
-.card {
+.vendimia-main .vendimia-etapas .vendimia-etapa, .g-card, .card {
   background: #fff7f4;
   border: 1px solid #e7dadd;
   box-shadow: inset 0 0 0 1px #e7dadd;
@@ -178,8 +176,7 @@ body a:hover {
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
-.contact-link:hover,
-.contact-link:focus {
+.contact-link:hover, .contact-link:focus {
   text-decoration: underline;
   outline: none;
   color: #6d0f20;
@@ -206,17 +203,18 @@ body a:hover {
 }
 .card--destacada:hover {
   transform: translateY(-6px) scale(1.04);
-  z-index: 3;
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 }
 
 /* =========  Fichas de Uvas  ========== */
+/*GRID externo: 2 cards por fila en desktop*/
 .fichas-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
+/*GRID interno de cada ficha: imagen | texto*/
 .ficha-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -251,7 +249,7 @@ body a:hover {
     gap: 0.75rem;
   }
 }
-/*=========  Glosario ==========*/
+/*=========  Glosario (cards pequeñas)  ==========*/
 .g-card {
   border-radius: 10px;
   padding: 0.75rem 0.9rem;
@@ -269,7 +267,7 @@ body a:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-/*=========  Página Vendimia  ==========*/
+/*=========  Página Vendimia (etapas + cards)  ==========*/
 .vendimia-main .vendimia-intro p {
   margin-bottom: 0.75rem;
 }
@@ -364,8 +362,7 @@ body a:hover {
   overflow: hidden;
   background-color: #fff7f4;
   border: 3px solid #d7c5c4;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.76),
-    0 12px 26px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.76), 0 12px 26px rgba(0, 0, 0, 0.22);
 }
 .intro .intro-figure img {
   display: block;
