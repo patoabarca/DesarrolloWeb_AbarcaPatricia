@@ -1,6 +1,6 @@
 # 🍷 Guía de Vinos para Principiantes
 
-### 🧪 Pre-Entrega 3 — SASS + Responsive + Estructura final
+### Pre-Entrega 3 — SASS + Responsive + Animaciones + Estructura final
 
 **Proyecto:** PreEntrega3_Abarca  
 **Demo online:** https://patoabarca.github.io/DesarrolloWeb_AbarcaPatricia/
@@ -9,33 +9,33 @@
 
 ## Descripción
 
-Este proyecto forma parte de la **Pre-Entrega 3** del curso **Desarrollo Web – Coderhouse**.  
-En esta instancia se desarrolló:
+Este proyecto forma parte de la **Pre-Entrega 3** del curso **Desarrollo Web – Coderhouse**.
 
-- La estructura final del sitio web.
-- El diseño responsive completo para mobile, tablet y desktop.
-- La implementación total de **SASS**: variables, mixins, extend, maps y nesting.
-- Transiciones y animaciones aplicadas a elementos destacados.
-- Optimización general.
-- Publicación en GitHub Pages.
+Incluye:
 
-El sitio es una guía introductoria al mundo del vino, creada para principiantes.
+- Estructura final completa del sitio web.
+- Diseño **responsive** para mobile, tablet y desktop.
+- Implementación total de **SASS** (variables, mixins, placeholders, maps, nesting).
+- Agregado de **transiciones** y **animaciones** en elementos clave.
+- Publicación en **GitHub Pages**.
+
+El sitio es una guía introductoria para personas que quieren aprender lo básico del mundo del vino.
 
 ---
 
-## Estructura general
+## Estructura general del sitio
 
-Secciones del sitio:
+Páginas incluidas:
 
-- **Inicio**
-- **Uvas tintas**
-- **Uvas blancas**
-- **Regiones argentinas**
-- **Maridajes**
-- **Glosario**
-- **Vendimia** (nueva sección en esta entrega)
+- Inicio
+- Uvas tintas
+- Uvas blancas
+- Regiones
+- Maridajes
+- Glosario
+- **Vendimia** (nueva en esta entrega)
 
-Todas las páginas comparten una estructura semántica con:
+Cada página utiliza una estructura semántica:
 
 `header`, `nav`, `main`, `section`, `article`, `footer`.
 
@@ -43,103 +43,89 @@ Todas las páginas comparten una estructura semántica con:
 
 ## SASS — Implementación completa
 
-Todo el CSS fue migrado a una arquitectura SCSS modular:
+El CSS fue migrado a una arquitectura **SCSS modular**:
 
-```
 scss/
-│── abstracts/      → variables, mixins, placeholders, maps
-│── base/           → reset y estilos base
-│── layout/         → header, footer
-│── components/     → cards, botones, elementos reutilizables
-│── pages/          → estilos por página
-│── style.scss      → archivo principal que compila al CSS final
-```
+│── abstracts/ → variables, mixins, placeholders, maps
+│── base/ → reset y estilos base
+│── layout/ → header, footer
+│── components/ → cards, botones, elementos reutilizables
+│── pages/ → estilos por página (uvas, glosario, vendimia, index)
+│── style.scss → archivo principal que compila al CSS final
 
-### Elementos de SASS utilizados
+### ✔ Elementos de SASS utilizados
 
-- Variables: paleta de colores, sombras, tamaños.
-- Maps: uso de `map.get()` para colores globales.
-- Mixins personalizados:
+- **Variables** para colores, sombras y tamaños.
+- **Maps** para mantener la paleta centralizada y usar todo vía `map.get()`.
+- **Mixins personalizados:**
   - `smooth-transition`
   - `flex-col`
   - `object-cover`
-- Extend (%placeholders):
-  - `%card-base` para tarjetas reutilizables.
-- Nesting limpio para header, footer, main y páginas.
-- Media queries anidadas:
+- **Extend (%placeholders)**
+  - `%card-base` para unificar el estilo base de todas las cards.
+- **Nesting** ordenado en header, footer, cards e intro.
+- **Media queries por rangos de dispositivo**, definidas dentro de los partials correspondientes:
   - Mobile (≤480px)
   - Tablet (≤991px)
-- Transiciones y animaciones:
-  - Hover en cards
-  - Zoom leve en imágenes
-- Gradiente personalizado:
-  - Implementado en la sección **Intro** de la página de Inicio.
-  - Generado mediante `linear-gradient()` usando colores obtenidos desde el mapa global (`map.get(vars.$colors, ...)`), garantizando coherencia visual.
+
+### ✔ Gradiente personalizado (Intro)
+
+La sección _Intro_ del Home usa un gradiente propio:
+
+- Construido con tres colores del mapa usando `linear-gradient()`.
+- Le da contraste y profundidad al bloque principal de bienvenida.
 
 ---
 
-## Responsive design
+## Transiciones y animaciones
+
+### - Cards (home, glosario, vendimia)
+
+- **Cards destacadas de la home**  
+  (“Conocé las uvas”, “Explorá regiones”, “Maridajes simples”):
+
+  - Elevación con `transform: translateY(...)`.
+  - Sombra más marcada al hacer _hover_.
+  - Zoom suave de la imagen (`transform: scale(1.03)` en la figura).
+
+- **Cards de glosario y vendimia**:
+  - Elevación más sutil.
+  - Sombra suave para marcar jerarquía.
+
+### Navbar
+
+- Hover suave
+- Cambio de color, fondo y borde
+- `smooth-transition(all, 0.2s)`
+
+### Botones y enlaces
+
+- Subrayado con transición
+- Cambio de color suave
+
+---
+
+## Responsive Design
 
 ### Mobile (≤480px)
 
-- Cards apiladas en una sola columna.
-- Navbar compacta.
-- Textos reducidos.
-- Sección Vendimia en formato vertical.
+- Cards en una sola columna.
+- Navbar reducida.
+- Intro centrada con figura más pequeña.
+- Vendimia en formato vertical.
 
 ### Tablet (481–991px)
 
-- Grillas ajustadas.
-- Vendimia reorganizada para lectura fluida.
-- Adecuación de márgenes y tipografías.
+- Ajuste de grillas y tipografías.
+- Vendimia reorganizada.
+- Mayor separación visual.
 
 ### Desktop (≥992px)
 
-- Grillas amplias.
+- Layout amplio.
+- Vendimia horizontal.
 - Fichas de Uvas en 2 columnas.
-- Vendimia en tarjetas horizontales.
-- Layout limpio y espacioso.
-
----
-
-## Transiciones y animaciones aplicadas
-
-El proyecto incluye transiciones y animaciones sutiles para mejorar la experiencia visual:
-
-- **Cards**
-
-  - Elevación con `transform: translateY()`
-  - Sombras dinámicas
-  - Zoom suave de imágenes en el hover
-  - Transición unificada mediante el mixin `smooth-transition`
-
-- **Imagen animada del Intro (Home)**
-
-  - Animación personalizada `float-wine`
-  - Movimiento suave alternado con `@keyframes`
-  - Aplicada a `<img>` dentro de `.intro-figure`
-
-- **Navbar**
-
-  - Transición en color, fondo y borde de los links (`hover` y `active`)
-  - Implementada con `smooth-transition(all, .2s)`
-
-- **Botones y enlaces**
-  - Cambio de color y subrayado con transición suave
-
----
-
-## Nueva sección: Vendimia
-
-En esta entrega se rediseñó completamente la vista:
-
-- Ahora utiliza **tarjetas responsivas**.
-- Cada etapa incluye:
-  - Imagen 16:9
-  - Texto claro
-  - Sombra + transición suave
-- Perfecta compatibilidad entre mobile/tablet/desktop.
-- Diseño accesible y uniforme con el resto del sitio.
+- Intro equilibrada con mayor altura.
 
 ---
 
@@ -147,14 +133,14 @@ En esta entrega se rediseñó completamente la vista:
 
 ### Bootstrap
 
-- Navbar responsive (`navbar-expand-lg`)
-- Grillas (`row`, `col-*`)
+- Navbar responsive
+- Sistema de grillas
 - Utilidades de espaciado
-- Proporciones de imágenes (`ratio`)
+- Proporciones (`ratio 16x9`, `ratio 4x3`)
 
-### Grid
+### CSS Grid
 
-- Fichas de uvas
+- Fichas de Uvas
 - Etapas de Vendimia
 
 ### Flexbox
@@ -162,37 +148,36 @@ En esta entrega se rediseñó completamente la vista:
 - Header
 - Footer
 - Cards
+- Intro del Home
 
 ---
 
 ## Optimización
 
-- Imágenes optimizadas y centradas con `object-fit: cover`.
-- Carga eficiente y coherencia visual.
-- Código SCSS ordenado y limpio.
-- CSS final compilado y minificado.
+- Imágenes con `object-fit: cover`
+- CSS final ordenado y limpio
+- Código SCSS estructurado por responsabilidad
+- Paleta centralizada vía map
+- Animaciones livianas y no invasivas
 
 ---
 
 ## Git y GitHub
 
-El repositorio incluye:
+El repositorio contiene:
 
-- Todos los archivos necesarios para la visualización.
-- `.gitignore` correctamente configurado.
-- Historial de commits claro.
-- Publicación activa en GitHub Pages.
-- Arquitectura SCSS visible en `/scss`.
+- Todos los archivos del proyecto
+- `.gitignore` configurado
+- Historial claro de commits
+- GitHub Pages activado
+- Carpeta SCSS completa
 
-### Repositorio
-
-https://github.com/patoabarca/DesarrolloWeb_AbarcaPatricia
+  **Repositorio:**  
+  https://github.com/patoabarca/DesarrolloWeb_AbarcaPatricia
 
 ---
 
-## Autoría
-
 **Patricia Abarca**  
-Curso: Desarrollo Web – Coderhouse  
-Entrega: PreEntrega 3 — SASS + Responsive + Maquetado Final  
-Año: 2025
+Curso: _Desarrollo Web – Coderhouse_  
+Entrega: _PreEntrega 3 — SASS + Responsive + Animaciones + Maquetado Final_  
+Año: **2025**
