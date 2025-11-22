@@ -6,7 +6,7 @@
   transition: $prop $time $ease;
 }
 
-// Flex en columna con gap (ideal para tarjetas tipo glosario o layouts verticales)
+// Flex en columna con gap
 @mixin flex-col($gap: 0.5rem) {
   display: flex;
   flex-direction: column;
