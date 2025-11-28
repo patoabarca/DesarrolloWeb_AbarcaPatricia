@@ -1,15 +1,14 @@
 # 🍷 Guía de Vinos para Principiantes
 
-### Pre-Entrega 3 — SASS + Responsive + Animaciones + Estructura final
+### Proyecto Final
 
-**Proyecto:** PreEntrega3_Abarca  
 **Demo online:** https://patoabarca.github.io/DesarrolloWeb_AbarcaPatricia/
 
 ---
 
 ## Descripción
 
-Este proyecto forma parte de la **Pre-Entrega 3** del curso **Desarrollo Web – Coderhouse**.
+Proyecto Final del curso **Desarrollo Web – Coderhouse**.
 
 Incluye:
 
@@ -187,6 +186,22 @@ El repositorio contiene:
   https://github.com/patoabarca/DesarrolloWeb_AbarcaPatricia
 
 ---
+
+### Ajustes realizados tras la devolución de la Pre-Entrega 3
+
+Luego del feedback, revisé el uso de **Flexbox** en el proyecto. Eliminé el único caso donde no cumplía una función útil —el contenedor principal de _Vendimia_— y lo reemplacé por **CSS Grid**, más adecuado para estructurar una lista de tarjetas en columna.
+
+Los demás usos de Flexbox permanecen porque cumplen funciones reales y necesarias dentro del layout:
+
+- **Navbar y header:** alineación horizontal del logo, título y menú.
+- **Footer:** orden y alineación de columnas e íconos de redes.
+- **Cards:** estructura en columna para mantener coherencia interna.
+- **Glosario:** uso del mixin `flex-col` para separar elementos y mantener ritmo visual.
+- **Intro del Home:** combiné el grid de Bootstrap (`row` + `col-*`) con Flexbox para centrar el texto y la imagen animada dentro de la sección.
+
+Además, mejoré detalles en **mobile (≤480px)**: centrado del texto, ajuste de márgenes y optimización de lectura en pantallas pequeñas.
+
+Con estos cambios, el proyecto queda más ordenado, semántico y alineado con todos los puntos marcados en la devolución.
 
 **Patricia Abarca**  
 Curso: _Desarrollo Web – Coderhouse_  

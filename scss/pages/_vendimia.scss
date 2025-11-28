@@ -28,8 +28,7 @@
   // Bloque principal de etapas
   .vendimia-etapas {
     .vendimia-etapas-grid {
-      display: flex;
-      flex-direction: column;
+      display: grid; // ← antes era flex
       gap: 1.5rem;
     }
 

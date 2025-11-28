@@ -76,3 +76,20 @@ body {
     }
   }
 }
+
+/*==Mobile <=480px==*/
+/* Ajustes de espaciado en mobile */
+
+@media (max-width: 480px) {
+  body {
+    main {
+      .page-title {
+        margin-bottom: 1.25rem;
+      }
+
+      p {
+        margin-bottom: 0.75rem;
+      }
+    }
+  }
+}
