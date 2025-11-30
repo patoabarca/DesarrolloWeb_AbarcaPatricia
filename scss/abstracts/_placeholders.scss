@@ -4,7 +4,7 @@
 @use "sass:map";
 @use "../abstracts/variables" as vars;
 
-/* Estilo base de tarjeta (cards genéricas)*/
+/* Estilo base de tarjeta*/
 %card-base {
   background: map.get(vars.$colors, card);
   border: 1px solid map.get(vars.$colors, line);
