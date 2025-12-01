@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<!-- Home -->
+<url>
+    <loc>https://vinoparaprincipiantes.42web.io/</loc>
+    <priority>1.0</priority>
+</url>
+
+<!-- Páginas internas -->
+<url>
+    <loc>https://vinoparaprincipiantes.42web.io/pages/uvas_tintas.html</loc>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://vinoparaprincipiantes.42web.io/pages/uvas_blancas.html</loc>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://vinoparaprincipiantes.42web.io/pages/regiones.html</loc>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://vinoparaprincipiantes.42web.io/pages/vendimia.html</loc>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://vinoparaprincipiantes.42web.io/pages/maridajes.html</loc>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://vinoparaprincipiantes.42web.io/pages/glosario.html</loc>
+    <priority>0.8</priority>
+</url>
+
+</urlset>
