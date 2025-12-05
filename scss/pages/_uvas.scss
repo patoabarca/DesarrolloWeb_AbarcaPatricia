@@ -27,10 +27,7 @@
 .ficha-texto .card-body {
   padding: 0;
 }
-.card.h-100 .card-body {
-  display: flex;
-  flex-direction: column;
-}
+
 /* = TABLET (≤991px) = */
 // Una tarjeta por fila
 @media (max-width: 991px) {

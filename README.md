@@ -28,6 +28,32 @@ El sitio es una **guía introductoria** para personas que quieren aprender lo b�
 
 ---
 
+## ✔️ Ajustes realizados tras la devolución de la Pre-Entrega 3
+
+A partir del feedback recibido, revisé los puntos señalados sobre el uso de **Flexbox** y la organización del layout. Implementé los siguientes ajustes:
+
+### Flexbox innecesario que eliminé
+
+Quité el único uso de Flexbox que no cumplía una función real (un contenedor dentro de **Vendimia**) y lo reemplacé por **CSS Grid**, más adecuado para organizar tarjetas en una estructura bidimensional.
+También revisé un bloque similar en **Uvas**, originalmente usado para forzar un boton al fondo de la card, como ya no era necesario lo eliminé para mantener un código más limpio.
+
+### Flexbox que mantuve (porque cumple funciones reales)
+
+Los demás usos de Flexbox permanecen porque cumplen objetivos concretos dentro del layout:
+
+- **Navbar / Header:** alineación horizontal del logo, el título y los elementos del menú.
+- **Footer:** orden y alineación de columnas, íconos y datos de contacto.
+- **Cards destacadas y glosario:** estructura en columna para espaciar elementos y permitir animaciones suaves.
+- **Intro del Home:** combinación del grid de Bootstrap (`row` + `col-*`) con Flexbox para centrar vertical y horizontalmente el texto y la imagen animada.
+
+### Mejoras en Mobile
+
+También incorporé ajustes puntuales en mobile para mejorar la legibilidad:
+
+- Centrado del texto en la Intro.
+- Ajustes de márgenes y espaciados.
+- Correcciones en la separación entre elementos para una lectura más cómoda.
+
 ## Estructura general del sitio
 
 Páginas incluidas:
@@ -276,24 +302,6 @@ El repositorio incluye:
 
 **Repositorio:**  
 https://github.com/patoabarca/DesarrolloWeb_AbarcaPatricia
-
----
-
-## Ajustes realizados tras la devolución de la Pre-Entrega 3
-
-Luego del feedback, revisé el uso de **Flexbox** en el proyecto. Eliminé el único caso donde no cumplía una función útil —el contenedor principal de _Vendimia_— y lo reemplacé por **CSS Grid**, más adecuado para estructurar una lista de tarjetas en columna.
-
-Los demás usos de Flexbox permanecen porque cumplen funciones reales y necesarias dentro del layout:
-
-- **Navbar y header:** alineación horizontal del logo, título y menú.
-- **Footer:** orden y alineación de columnas e íconos de redes.
-- **Cards:** estructura en columna para mantener coherencia interna.
-- **Glosario:** uso del mixin `flex-col` para separar elementos y mantener ritmo visual.
-- **Intro del Home:** combinación del grid de Bootstrap (`row` + `col-*`) con Flexbox para centrar el texto y la imagen animada dentro de la sección.
-
-Además, mejoré detalles en **mobile (≤ 480px)**: centrado del texto, ajuste de márgenes y optimización de lectura en pantallas pequeñas.
-
-Con estos cambios, el proyecto queda más ordenado, semántico y alineado con todos los puntos marcados en la devolución.
 
 ---
 
