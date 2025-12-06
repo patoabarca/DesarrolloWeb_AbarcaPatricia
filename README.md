@@ -2,10 +2,10 @@
 
 ### Proyecto Final – Desarrollo Web (Coderhouse)
 
-**Demo online (GitHub Pages):**  
+**GitHub Pages:**  
 https://patoabarca.github.io/DesarrolloWeb_AbarcaPatricia/
 
-**Demo online (Hosting externo):**  
+**Hosting externo:**  
 https://vinoparaprincipiantes.42web.io/
 
 ---
