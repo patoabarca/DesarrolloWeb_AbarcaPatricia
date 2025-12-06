@@ -28,7 +28,7 @@ El sitio es una **guía introductoria** para personas que quieren aprender lo b�
 
 ---
 
-## ✔️ Ajustes realizados tras la devolución de la Pre-Entrega 3
+## Ajustes realizados tras la devolución de la Pre-Entrega 3
 
 A partir del feedback recibido, revisé los puntos señalados sobre el uso de **Flexbox** y la organización del layout. Implementé los siguientes ajustes:
 
